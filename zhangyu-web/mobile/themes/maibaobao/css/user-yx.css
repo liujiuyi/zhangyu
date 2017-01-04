@@ -1,0 +1,138 @@
+/*! user 1.0.0 pub 2015-01-09 09:55 by sejin */
+
+@font-face {
+font-family:iconfont;
+src:url(http://at.alicdn.com/t/font_1419831784_7537177.eot);
+src:url(http://at.alicdn.com/t/font_1419831784_7537177.eot?#iefix) format('embedded-opentype'), url(http://at.alicdn.com/t/font_1419831784_7537177.woff) format('woff'), url(http://at.alicdn.com/t/font_1419831784_7537177.ttf) format('truetype'), url(http://at.alicdn.com/t/font_1419831784_7537177.svg#iconfont) format('svg')
+}
+.iconfont {
+	font-family:iconfont;
+	font-style:normal;
+	-webkit-font-smoothing:antialiased;
+	-webkit-text-stroke-width:.2px
+}
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden
+}
+.clearfix {
+	zoom:1
+}
+#mbMain {
+	width:100%;
+	max-width:640px;
+	margin:0 auto;
+	background-color:#ededed
+}
+.userCenterInfoBox {
+	width:95%;
+	margin:15px auto;
+	overflow:hidden
+}
+.userCenterInfoBox .userHead {
+	width:100px;
+	border:3px solid #e8e8e8;
+	float:left;
+	-webkit-box-sizing:border-box
+}
+.userCenterInfoBox .userInfo {
+	float:left;
+	margin-left:10px;
+	text-align:left;
+	width:60%;
+	-webkit-box-sizing:border-box
+}
+.userCenterInfoBox .userInfo dt {
+	height:25px;
+	line-height:25px;
+	background:#d9e4f2;
+	color:#2f5d96;
+	padding:0 30px 0 20px;
+	margin-bottom:5px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap
+}
+.userCenterInfoBox .userInfo dd {
+	height:20px;
+	line-height:20px;
+	display:block;
+	padding:0 30px 0 20px;
+	border-bottom:1px dotted #d6d6d6
+}
+.userCenterSubBox {
+	-webkit-border-radius:5px;
+	padding-bottom:10px
+}
+.userCenterSubBox ul {
+	margin-bottom:10px;
+	background-color:#fff
+}
+.userCenterSubBox li {
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid #d1d1d1;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/25.png?a1a4e8) no-repeat center right;
+	background-size:23px 15px
+}
+.userCenterSubBox li.adress, .userCenterSubBox li.coupon {
+	border-top:1px solid #d1d1d1
+}
+.userCenterSubBox li a {
+	padding-left:3%;
+	display:block;
+	background-size:20px 20px
+}
+.userCenterSubBox li div.icon {
+	float:left;
+	width:22px;
+	height:22px;
+	background-color:#f96e95;
+	font-size:14px;
+	line-height:22px;
+	text-align:center;
+	border-radius:3px;
+	color:#fff;
+	margin-right:5px;
+	margin-top:9px
+}
+.userCenterSubBox li.pickup .icon {
+	background-color:#ff903e
+}
+.userCenterSubBox li.coupon .icon {
+	background-color:#d781b2
+}
+.userCenterSubBox li.MaiDou .icon {
+	background-color:#90ae4e
+}
+.userCenterSubBox li.collect .icon {
+	background-color:#ff576b
+}
+.userCenterSubBox li.browse .icon {
+	background-color:#9bbae8
+}
+.userCenterSubBox li.adress .icon {
+	background-color:#ae9ae1
+}
+.userCenterSubBox li.opinion .icon {
+	background-color:#63cb76
+}
+.userCenterSubBox .loginOut {
+	width:70%;
+	height:35px;
+	background-color:#e21a53;
+	margin:0 auto;
+	line-height:35px;
+	border-radius:5px
+}
+.userCenterSubBox .loginOut a {
+	display:block;
+	width:100%;
+	height:35px;
+	color:#fff;
+	text-align:center;
+	text-decoration:none
+}

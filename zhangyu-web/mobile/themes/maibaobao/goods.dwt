@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<meta name="Keywords" content="{$meta_keywords}" />
+<meta name="Description" content="{$meta_description}" />
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/item.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="{:url('index/index')}"></a>
+        <a class="user-cart" href="{:url('flow/cart')}">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="{:url('user/index')}"></a>
+    </div>
+</header>
+<div class="m-container">
+	 <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
+    <section class="i-pics">
+    	<div class="wrap">
+        	<div id="focus" class="swipe" style="visibility: visible;">
+            	<div class="swipe-wrap bd">
+                	<ul>
+                    	<!--<li><a href="{$goods.goods_img}"><img src="{$goods.goods_img}" alt="{$goods.goods_name}" width="100%"/></a></li>-->
+                <!--{if $pictures}--> 
+        				<!-- {foreach from=$pictures item=picture name=no}--> 
+        				<li><a href="{$picture.img_url}"><img src="{$picture.img_url}" alt="{$picture.img_desc}" width="100%" /></a></li>
+        				<!--{/foreach}--> 
+       					<!--{/if}-->
+                    </ul>
+                </div>
+                <div class="hd">
+      				<ul class="slider-nav">
+      				</ul>
+                    <i class="iconfont fav-btn <!--{if $sc eq 1}-->ect-colory<!--{/if}-->" onClick="collect({$goods.goods_id})" id='ECS_COLLECT'></i>
+    			</div>
+            </div>
+        </div>
+    </section>
+    <section class="i-price">
+      <div class="goods-title">{$goods.goods_style_name}</div>
+    	<div class="s-price">
+        	<span class="yuan"></span>
+            <strong id="ECS_GOODS_AMOUNT">
+            	<!--{if $goods.is_promote and $goods.gmt_end_time } 促销--> 
+        		{$goods.promote_price} 
+        		<!--{else}--> 
+        		{$goods.shop_price_formated} 
+        		<!--{/if}-->
+        	</strong>
+        </div>
+        <div class="tags-wrap">
+           <!-- {* 判断批发商*} --> 
+           <span class="rank_price_label">批发价:</span>
+           <!--{if $user_rank } 促销--> 
+            <strong id="ECS_GOODS_AMOUNT_RANK" class="rank_price">
+            </strong>
+            <!--{else}--> 
+            <span class="rank_tag">待审核</span>
+            <!--{/if}-->
+        </div>
+        <!--<div class="tags-wrap">
+        	 <div class="price-tags"><span class="tag">{$lang.market_price}</span></div>
+			     <s class="m-price"> <!-- {if $cfg.show_marketprice} 市场价格-->{$goods.market_price} <!-- {/if} --> </s>
+        </div>-->
+    </section>
+    <section class="ect-padding-lr ect-padding-tb goods-option">
+      <!-- {foreach name=spec from=$specification item=spec key=spec_key} -->
+        <div class="goods-option-conr"> 
+          <!-- {* 判断属性是复选还是单选 *} --> 
+          <!-- {if $spec.attr_type eq 1} --> 
+          <!-- {if $cfg.goodsattr_style eq 1} --> 
+          <!-- {foreach from=$spec.values item=value key=key} -->
+          <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" {if $key eq 0}checked{/if} onclick="changePrice()" />
+          <label for="spec_value_{$value.id}">{$value.label}</label>
+          <!-- {/foreach} -->
+          <input type="hidden" name="spec_list" value="{$key}" />
+          <!-- {else} -->
+          <select name="spec_{$spec_key}" onchange="changePrice()">
+            <!-- {foreach from=$spec.values item=value key=key} -->
+            <option label="{$value.label}" value="{$value.id}">{$value.label} {if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if}{if $value.price neq 0}{$value.format_price}{/if}</option>
+            <!-- {/foreach} -->
+          </select>
+          <input type="hidden" name="spec_list" value="{$key}" />
+          <!-- {/if} --> 
+          <!-- {else} --> 
+          <!-- {foreach from=$spec.values item=value key=key} -->
+          <input type="checkbox" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" onclick="changePrice()" />
+          <label for="spec_value_{$value.id}">{$value.label} [{if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if} {$value.format_price|abs}]</label>
+          <!-- {/foreach} --> 
+          <!-- {/if} --> 
+        </div>
+      <!-- {/foreach} --> 
+    </section>
+    <section class="buy-bar">
+    	<div class="bar-wrap">
+      <input type="hidden" class="form-contro form-num"  name="number" id="goods_number" autocomplete="off" value="1" />
+			<a id="j_buy_now" class="btn-buy-now" href="javascript:addToCart_quick({$goods.goods_id})">{$lang.button_buy}</a>
+        </div>
+    </section>
+    <section class="buy-get">
+    	<div class="b-1">
+            {$lang.sort_sales} <strong class="c-red">{$sales_count}</strong> {$lang.piece}
+        </div>
+        <!-- {if $goods.give_integral > 0} 购买此商品赠送积分-->
+        <div class="b-2">
+            {$lang.goods_give_integral} <strong class="c-red">{$goods.give_integral}</strong>  {$points_name}
+        </div>
+        <!-- {/if} -->
+    </section>
+     </form>
+    <section class="i-panels">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs text-center">
+          <li class="active"><a href="#one" role="tab" data-toggle="tab"><i class="iconfont"></i>{$lang.goods_brief}</a></li>
+          <li><a href="#two" role="tab" data-toggle="tab"><i class="iconfont"></i>{$lang.goods_attr}</a></li>
+          <li style=" border-right:none"><a href="#three" role="tab" data-toggle="tab"><i class="iconfont"></i>{$lang.user_comment}({$comments.count})</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content scroll-panels">
+          <div class="tab-pane panel item-pics active" id="one">
+          		<div class="content">{$goods.goods_desc}</div>
+          </div>
+          <div class="tab-pane panel item-attr" id="two">
+            <table>
+              <!-- {foreach from=$properties item=property_group key=key} -->
+              <!-- {foreach from=$property_group item=property} -->
+              <tr>
+                <th>{$property.name|escape:html}</th>
+                <td>{$property.value}</td>
+              </tr>
+              <!-- {/foreach}--> 
+              <!-- {/foreach}-->
+            </table>
+          </div>
+          <div class="tab-pane tab-msg panel" id="three">
+            <ul class="msg">
+              <!-- #BeginLibraryItem "/library/comments.lbi" -->
+              <div id="ECS_COMMENT"> {* ECSHOP 提醒您：动态载入comments_list.lbi，显示评论列表和评论表单 *}{insert name='comments' type=$type id=$id}</div>
+              <!-- #EndLibraryItem -->
+            </ul>
+          </div>
+        </div>
+       
+    </section>
+    
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript" src="__TPL__/js/lefttime.js"></script> 
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function(){Code.photoSwipe('a', '#Gallery');}, false);
+
+
+/*倒计时*/
+var goods_id = {$goods_id};
+var goodsattr_style = 1;
+var gmt_end_time = 0;
+var day = "天";
+var hour = "小时";
+var minute = "分钟";
+var second = "秒";
+var end = "结束";
+var goodsId = {$goods_id};
+var now_time = {$now_time};
+
+var use_how_oos = {:C('use_how_oos')};
+onload = function(){
+  changePrice(2);
+  fixpng();
+  try {onload_leftTime();}
+  catch (e) {}
+}
+function back_goods_number(){
+ var goods_number = document.getElementById('goods_number').value;
+  document.getElementById('back_number').value = goods_number;
+}
+/**
+ * 点选可选属性或改变数量时修改商品价格的函数
+ */
+function changePrice(type)
+{
+  var qty = document.forms['ECS_FORMBUY'].elements['number'].value;
+  if(type == 1){qty--; }
+  if(type == 3){qty++; }
+  if(qty <=0 ){ qty=1; }
+  if(!/^[0-9]*$/.test(qty)){ qty = document.getElementById('back_number').value; }
+  document.getElementById('goods_number').value = qty;
+  var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
+  $.get('{:url("goods/price")}', {'id':goodsId,'attr':attr,'number':qty}, function(data){
+    changePriceResponse(data);
+  }, 'json');
+}
+
+
+/**
+ * 接收返回的信息
+ */
+function changePriceResponse(res){
+  if (res.err_msg.length > 0){
+    alert(res.err_msg);
+  } else {
+    if (document.getElementById('ECS_GOODS_AMOUNT'))
+      document.getElementById('ECS_GOODS_AMOUNT').innerHTML = res.result_final_price;
+    if (document.getElementById('ECS_GOODS_AMOUNT_RANK'))
+      document.getElementById('ECS_GOODS_AMOUNT_RANK').innerHTML = res.result_rank_final_price;
+  }
+}
+
+/*判断user-tab是否距顶，距顶悬浮*/
+// var nav_tabs_top = $(".user-tab .nav-tabs").offset().top;//获取nav-tabs距离顶部的位
+// function func_scroll(){//定义一个事件效果置
+// 	var documentTop = $(document).scrollTop();//获取滚动条距离顶部距离
+// 	if(nav_tabs_top <= documentTop){
+// 		$(".user-tab").addClass("user-tab-fixed");
+// 		$("#is-nav-tabs").css("display","block");
+// 	}else{
+// 		$(".user-tab").removeClass("user-tab-fixed");
+// 		$("#is-nav-tabs").css("display","none");		
+// 	}
+// }
+
+window.onscroll = function () {
+	 func_scroll();
+}
+</script> 
+<script type="text/javascript">
+				TouchSlide({ 
+					slideCell:"#picScroll",
+					titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+					autoPage:"true", //自动分页
+					pnLoop:"false", // 前后按钮不循环
+					switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+				});
+			</script>
+</body></html>

@@ -1,0 +1,44 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--循环分类下商品-->
+<!--{if $cat_goods}--> 
+<!-- {foreach name=cat_goods from=$cat_goods item=cat}-->
+<!--{if $smarty.foreach.cat_goods.iteration < 6}-->
+<section class="feature">
+	<div class="feat-head">
+    	<a class="feat-tit" href="javascript:void(0);">
+        	<p>{$cat.name}</p>
+        </a>
+        <div class="feat-fl">
+        <a href="{$cat.cat_ads_url}" target="_blank"><img src="{$cat.cat_ads}" width="360" height="300" border="0"></a>
+        </div>
+        <div class="feat-fr">
+        	<!--{foreach name=goods from=$cat.goods_list item=goods}-->
+            {if $goods.id}
+            <!-- {if $smarty.foreach.goods.iteration < 2}--> 
+          	<div class="feat-rec">
+                  <p class="pic">
+          					<a href='{$goods.url}'>
+          						<img width="100%" src="{$goods.thumb}">
+          					</a>
+          				</p>
+                   <p class="tit">
+                    <a href='{$goods.url}'>{$goods.name|escape:html}</a>
+                  </p>
+            </div>
+            <!-- {/if} --> 
+            {/if}
+            <!--{/foreach}-->
+        </div>
+    </div>
+    <div class="feat-sort">
+    	<!--{foreach name=goodsbrand from=$cat.brands item=goodsbrand key=k}-->
+        <!--{if $smarty.foreach.goodsbrand.iteration < 4}-->
+    	<a href="{$goodsbrand.url}">{$goodsbrand.brand_name}</a>
+        <!--{/if}-->
+        <!--{/foreach}-->
+    </div>	
+</section>
+<!--{/if}-->
+<!--{/foreach}-->
+<!-- {/if}-->
+<!--循环分类下商品end-->

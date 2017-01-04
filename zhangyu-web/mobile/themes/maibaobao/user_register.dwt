@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/register.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<div class="m-container">
+	<!--{if $enabled_sms_signin eq 1} 支持手机短信功能-->
+	<div id="register" class="register">
+    	<section class="tabs">
+        	<ul class="nav nav-tabs" role="tablist" style="width: 100%;"> 
+    			<li class="active" style=" width:50%; border:none; text-align: center;"><a href="#one" role="tab" data-toggle="tab" class="title" style="padding: 0px;">{$lang.mobile_login}</a></li>
+    			<li style=" width:50%; border:none; text-align: center;"><a href="#two" role="tab" data-toggle="tab" class="title" style="padding: 0px;">{$lang.emaill_login}</a></li>
+  			</ul>
+        </section>
+        <section class="reg-body tab-content">
+        	<div class="tab-pane active" id="one">
+      			<form action="{:url('user/register')}" method="post" name="formUser" onsubmit="return register2();">
+        			<input type="hidden" name="flag" id="flag" value="register" />
+                    <ul class="g-login">
+                    	<li>
+                        	<input placeholder="手机号：" name="mobile" id="mobile_phone" type="text" class="input-style">
+                        </li>
+                        <li>
+                        	<input placeholder="验证码：" name="mobile_code" id="mobile_code" type="text" class="input-style" style=" width:50%">
+                            <a class="pull-right ect-bg" id="zphone" name="sendsms" onClick="sendSms();" type="botton" style=" margin-top:15px; background:#c6204d; height:32px; width:35%; color:#fff; text-align:center; line-height:32px; cursor:pointer">{$lang.get_code}</a>
+                        </li>
+                    </ul>
+                    <p style=" margin:10px 0">
+          				<input id="agreement1" name="agreement" type="checkbox" value="1" checked="checked" >
+          				<label for="agreement1">{$lang.agreement}<i></i></label>
+        			</p>
+                    <div class="go-register">
+                    	<input name="act" type="hidden" value="act_register" />
+          				<input name="enabled_sms" type="hidden" value="1" />
+          				<input type="hidden" name="sms_code" value="{$sms_code}" id="sms_code" />
+          				<input type="hidden" name="back_act" value="{$back_act}" />
+						<button class="g-b-register" name="Submit" type="submit" >注 册</button>
+					</div>
+      			</form>
+    		</div>
+    		<script type="text/javascript" src="__PUBLIC__/js/sms.js"></script> 
+    		<div class="tab-pane" id="two">
+      			<form action="{:url('user/register')}" method="post" name="formUser" class="validforms">
+        			<input type="hidden" name="flag" id="flag" value="register" />
+                    <ul class="g-login">
+                    	<li>
+                        	<input placeholder="用户名：" name="username" type="text" id="username" datatype="*3-15" errormsg="{$lang.msg_mast_length}" class="input-style" />
+                        </li>
+                        <li>
+							<input placeholder="邮箱：" name="email" type="text" id="email" datatype="e" class="input-style" />                        
+                        </li>
+                        <li>
+                        	<input  placeholder="输入密码：" class="input-style" name="password" id="password1" type="password" datatype="*6-16" style=" width:90%">
+                            <input placeholder="{$lang.no_password}" class="input-style" id="password_text" type="text" style="display:none; width:90%">
+                            <i class="glyphicon glyphicon-eye-open" onClick="clickText();"></i>
+                        </li>
+                        <!-- 判断是否启用验证码{if $enabled_captcha} -->
+                        <li>
+                        	<input placeholder="验证码："  name="captcha" id="captcha" type="text" datatype="*" class="input-style" style=" width:150px" />
+                            <img style=" margin-bottom:5px;" height="30" src="{:url('public/captcha', array('rand'=>$this->_var['rand']))}" alt="captcha"  onClick="this.src='{:url('public/captcha')}&t='+Math.random()" />
+                        </li>
+                        <!--{/if}-->
+                    </ul>
+                    <p style=" margin:10px 0">
+          				<input id="agreement" name="agreement" type="checkbox" value="1" checked="checked" />
+          				<label for="agreement"> {$lang.agreement}<i></i></label>
+        			</p>
+                    <div class="go-register">
+                    	<input name="act" type="hidden" value="act_register" />
+          				<input name="enabled_sms" type="hidden" value="0" />
+          				<input type="hidden" name="back_act" value="{$back_act}" />
+          				<button href="flow_consignee.html" name="Submit" class="g-b-register" type="submit">注 册</button>
+					</div>
+      			</form>
+    		</div>
+        </section>
+    </div>
+    <!--{/if}-->
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+</body>
+<script type="text/javascript">
+/*点击更换密码框为文本框*/
+function clickText(){
+	if($("#password_text").is(":hidden")&&$("#password1").is(":visible")&&!$(".input-text .glyphicon-eye-open").hasClass("glyphicon-eye-close")){
+	  	var pwd = $("#password1").val();
+       	$("#password1").hide();
+       	$("#password_text").val(pwd).show();
+		$(".input-text .glyphicon-eye-open").addClass("glyphicon-eye-close");
+	}else{
+		var pwd_text = $("#password_text").val();
+       	$("#password_text").hide();
+       	$("#password1").val(pwd_text).show();;;		
+		$(".input-text .glyphicon-eye-open").removeClass("glyphicon-eye-close");			
+	}
+}
+</script>

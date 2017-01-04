@@ -1,0 +1,28 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $group_buy_goods} -->
+<!--{foreach from=$group_buy_goods item=group_buy_goods name=group_buy_goods}-->
+<!--{if $smarty.foreach.group_buy_goods.index < 1}-->
+<i class="panic-ico"></i>
+<div class="panic-wrap">
+	<div class="panic-pro-img">
+    	<a href="{$group_buy_goods.url}">
+        	<img src="{$site_url}{$group_buy_goods.goods_thumb}" alt="{$group_buy_goods.goods_name|escape:html}" height="100%" />
+        </a>
+    </div>
+    <div class="panic-pro-info">
+    	<div class="name">{$group_buy_goods.goods_name|truncate:13}</div>
+        <div class="price">
+        	{$lang.gb_cur_price}<strong>{$group_buy_goods.cur_price}</strong>
+        </div>
+        <div class="countdown">
+        	<div class="timeBox countdown-time J-panic-countdown" style="float:left;" id="time{$group_buy_goods.goods_id}" s="{$group_buy_goods.start_date}" e="{$group_buy_goods.end_date}" n="{$group_buy_goods.t_now}" ></div>
+        </div>
+    </div>
+    <div class="panic-more">
+		<a href="index.php?m=default&c=groupbuy">更多</a>
+	</div>
+</div>
+<!--{/if}-->
+<!--{/foreach}-->
+<!--{/if}-->
+

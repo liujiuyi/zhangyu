@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/common.css">
+<link rel="stylesheet" href="__TPL__/css/module.css">
+<link rel="stylesheet" href="__TPL__/css/cart.css">
+</head>
+<body>
+<header class="m-head">
+  <div class="head-layout"> <a class="mbb-logo" href="index.php"></a> <a class="user-cart" href="index.php?m=default&c=flow&a=cart"> <span class="iconfont"></span> <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span> </a> <a class="iconfont user-center" href="index.php?m=default&c=user"></a> </div>
+</header>
+
+<form action="{:url('user/user_shop')}" method="post" name="theForm" onsubmit="return checkUserShop(this)">
+	<div class="m-container">
+    	<section class="container_wrap">
+        	<div id="cart-container" class="cart-container">
+            	<div id="J-view" class="cart-view">
+                	<div>
+                    	<section class="cart-address-edit-view">
+                            <dl class="f-group-l">
+                            	<dd class="f-box">
+                          	    <div class="f-line-item" style="border: 1px solid #c8c8c8;">
+                                  <input name="shop_name" placeholder="输入店铺名称{$lang.require_field}" type="text" class="inputBg" value="{$user_shop.shop_name|escape}" />
+                                </div>
+                                <div class="f-line-item">
+                                	<input  name="shop_contacts" placeholder="输入联系人{$lang.require_field}" type="text" class="inputBg" value="{$user_shop.shop_contacts|escape}" />
+                                </div>
+                                <div class="f-line-item">
+                                  <input  name="shop_mobile" placeholder="输入手机号码{$lang.require_field}" type="text" class="inputBg" value="{$user_shop.shop_mobile|escape}" />
+                                </div>
+                                <div class="f-line-item">
+                                  <input  name="shop_address" placeholder="输入店铺地址{$lang.require_field}" type="text" class="inputBg" value="{$user_shop.shop_address|escape}" />
+                                </div>
+                                <div class="f-line-item">
+                                  <input  name="shop_invite_code" placeholder="输入邀请码" type="text" class="inputBg"/>
+                                </div>
+                              </dd>
+                            </dl>
+                            <div class="upload_btn" id="upload_btn">
+                              <span>添加门店照片</span>
+                            </div>
+                            <div class="reset_btn" id="reset_btn">
+                              <span>重置门店照片</span>
+                            </div>
+                            <dl class="f-group-l">
+                              <dd class="f-box">
+                                 <ul id="ul_pics" class="ul_pics clearfix">
+                                   {foreach from=$user_shop_pic item=shop_pic} 
+                                      <li><div class='img'><img src='{$shop_pic.pic}'/></div></li>
+                                   {/foreach}
+                                 </ul>
+                              </dd>
+                            </dl>
+                            <div class="f-btns">
+                            	<button type="submit" name="submit"  class="btm btm-xl btm-red f-btn j_confirm" style=" border:none; display:inline">立即注册</button>
+                            	<input name="shop_id" type="hidden" value="{$user_shop.shop_id}" />
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</form>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript" src="__PUBLIC__/js/user.js"></script> 
+<script type="text/javascript">
+	{literal}
+	onload = function() {
+      if (!document.all)
+      {
+        document.forms['theForm'].reset();
+      }
+	}
+	{/literal}
+</script>
+
+<script type="text/javascript" src="__TPL__/js/plupload.full.min.js"></script>
+<script type="text/javascript">
+var uploader = new plupload.Uploader({//创建实例的构造方法
+    browse_button: 'upload_btn', // 上传按钮
+    url: "{:url('user/user_shop_upload')}", //远程上传地址
+    filters: {
+        max_file_size: '10mb', //最大上传文件大小（格式100b, 10kb, 10mb, 1gb）
+        mime_types: [//允许文件上传类型
+          {title: "files", extensions: "jpg,png,gif,jpeg"}
+        ]
+    },
+    multi_selection: true,
+    init: {
+        FilesAdded: function(up, files) { //文件上传前
+            if ($("#ul_pics").children("li").length > 9) {
+                alert("已经达到最大数量");
+                uploader.destroy();
+            } else {
+                var li = '';
+                plupload.each(files, function(file) { //遍历文件
+                    li += "<li id='" + file['id'] + "'></li>";
+                });
+                $("#ul_pics").append(li);
+                uploader.start();
+            }
+        },
+        FileUploaded: function(up, file, info) { //文件上传成功的时候触发
+            var data = JSON.parse(info.response);
+            $("#" + file.id).html("<div class='img'><img src='" + data.pic + "'/></div>");
+        },
+        Error: function(up, err) { //上传出错的时候触发
+            alert(err.message);
+        }
+    }
+});
+uploader.init();
+
+$(".reset_btn").click(function() {
+  if(confirm("确定要重置门店照片吗")){
+     $.post("{:url('user/user_shop_reset')}",function(msg){
+      if(msg=='true'){
+        alert("重置成功");
+        $("#ul_pics").empty();
+      }else{
+        alert(msg);
+      }
+    });
+  }
+});
+</script>
+</body></html>

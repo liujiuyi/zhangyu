@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/login.css">
+</head>
+
+<body> 
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<form name="formLogin" action="{:url('user/login')}" method="post" class="validforms">
+	<div class="m-container">
+    	<div id="login" class="login">
+        	<div id="web-login">
+            	<ul class="g-login">
+                	<li>
+                    	<input placeholder="帐  号：" name="username" type="text"  class="input-style" id="username" datatype="*">
+                    </li>
+                    <li>
+                    	<input placeholder="密  码："  name="password" type="password" class="input-style" datatype="*6-16" />
+                    </li>
+                    <!-- 判断是否启用验证码{if $enabled_captcha} -->
+                    <li>
+                    	<input name="captcha" type="text" placeholder="验 证 码：" class="input-style" style="width:70%" />
+                        <img src="{:url('Public/captcha', array('rand'=>$this->_var['rand']))}" alt="captcha" class="img-yzm pull-right" onClick="this.src='{:url('Public/captcha')}&t='+Math.random()" style="margin-top:20px" />
+                    </li>
+                    <!--{/if}-->
+                </ul>
+                <div class="go-mbb">
+                	<input type="hidden" name="back_act" value="{$back_act}" />
+                	<input type="submit" class="g-b-login" value="登 录" />
+                    <a href="{:url('user/get_password_phone')}" class="g-b-forgetpw">忘记密码？</a>  
+                </div>
+                <div class="go-other">
+                	<h4>其它帐号登录</h4>
+                    <div class="other-icons">
+                    	<a href="{:url('user/third_login',array('type'=>'qq'))}"><img src="__TPL__/images/qq.png" width="44" height="42"></a> | 
+        				<a href="{:url('user/third_login',array('type'=>'sina'))}"><img src="__TPL__/images/weibo.png" width="44" height="42"></a>
+                    </div>
+                </div>
+                <div class="go-register">
+					没有帐号？
+					<a href="{:url('user/register')}">立即注册</a>
+				</div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!-- 商品列表 start-->
+<!--{if $hot_goods}-->
+<div class="pic">
+    <a href="{$hot_goods.url}"><img src="{$hot_goods.goods_img}" alt="{$hot_goods.name}" width="100%"></a>
+</div>
+<div class="info">
+    <p class="price">
+        <span><!--{if $hot_goods.promote_price}-->{$hot_goods.promote_price}<!--{else}-->{$hot_goods.shop_price}<!--{/if}--></span>
+        <br><s>{$hot_goods.market_price}</s>
+    </p>
+</div>
+<!-- {/if}--> 
+<!-- 商品列表 end--> 

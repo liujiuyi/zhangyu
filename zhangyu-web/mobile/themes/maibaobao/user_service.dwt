@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/common.css">
+<link rel="stylesheet" href="__TPL__/css/module.css">
+<link rel="stylesheet" href="__TPL__/css/cart.css">
+</head>
+<body>
+<header class="m-head">
+  <div class="head-layout"> <a class="mbb-logo" href="index.php"></a> <a class="user-cart" href="index.php?m=default&c=flow&a=cart"> <span class="iconfont"></span> <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span> </a> <a class="iconfont user-center" href="index.php?m=default&c=user"></a> </div>
+</header>
+<div id="mbSubTitle">
+	<section class="subTitleBox">
+    	<a class="backBtn" href="javascript:history.go(-1);"></a>
+		<span>客户服务</span>
+		<a class="homeBtn" href="index.php"></a>
+    </section>
+</div>
+<div id="mbMain">
+    <section class="listTab modEmptyBox">
+        <div class="mbBd">
+            <form action="{:url('user/service')}" method="post" enctype="multipart/form-data" name="formMsg" onSubmit="return submitMsg()" style="margin: 0;padding: 0;">
+            	<section class="userFeedBack">
+                	<header>服务类型：</header>
+                    <div class="feedBackCont">
+                    	<ul class="feedBackType">
+                        	<li>
+                            	<input name="msg_type" type="radio" id="msg-type0" checked="checked" value="0">
+        						<label for="msg-type0">{$lang.type[0]}</label>
+                            </li>
+                            <li>
+                            	<input name="msg_type" type="radio" id="msg-type1" value="1">
+        						<label for="msg-type1">{$lang.type[1]}</label>
+                            </li>
+                            <li>
+                            	<input name="msg_type" type="radio" id="msg-type2" value="2">
+        						<label for="msg-type2">{$lang.type[2]}</label>
+                            </li>
+                            <li>
+                            	<input name="msg_type" type="radio" id="msg-type3" value="3">
+        						<label for="msg-type3">{$lang.type[3]}</label>
+                            </li>
+                            <li>
+                            	<input name="msg_type" type="radio" id="msg-type4" value="4">
+        						<label for="msg-type4">{$lang.type[4]}</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <header>留言主题：<input name="msg_title" type="text" placeholder="{$lang.message_title}"></header>
+                    <header>留言内容：</header>
+                    <div class="feedBackCont">
+                    	<textarea name="msg_content" placeholder="{$lang.message_content}" cols="30" rows="10" wrap="virtual" class="feedBackTextarea"></textarea>
+                    </div>
+                    <div class="btnCenterBox" style="padding:0px;padding-bottom:20px;border:0">
+                    	<div>
+							<input class="modBtnColor colorBlue modBtnWidth" type="submit" value="{$lang.submit}">
+						</div>
+                    </div>
+                </section>
+            </form> 	
+        </div>
+    </section>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>

@@ -1,0 +1,149 @@
+/*! group 1.0.0 pub 2014-09-03 09:10 by shuangzhu */
+
+.group-container {
+	width:100%;
+	max-width:640px;
+	margin:0 auto;
+	background-color:#fff
+}
+.tabs {
+	height:50px;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex
+}
+.tabs .tab {
+	width:100%;
+	text-align:center;
+	background-color:#d2d2d2
+}
+.tabs .title {
+	font-weight:700;
+	font-size:14px;
+	line-height:45px;
+	margin-top:5px;
+	color:#333
+}
+.tabs .notice {
+	color:#969696
+}
+.tabs .countdown {
+	color:#5a5a5a
+}
+.tabs .selected {
+	background-color:#fff
+}
+.tabs .selected .title {
+	color:#e21a53
+}
+.group-list {
+	padding:10px
+}
+.group-list .item {
+	position:relative;
+	padding:15px 0;
+	border-bottom:1px solid #ddd;
+	clear:both
+}
+.group-list .item:last-child {
+	margin-bottom:0;
+	border-bottom:0
+}
+.group-list .item .pic {
+	float:left;
+	margin-right:10px
+}
+.group-list .item .info {
+	color:#5a5a5a;
+	overflow:hidden
+}
+.group-list .item .info .title {
+	font-size:13px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	margin-bottom:8px;
+	color:#5a5a5a;
+	display:block
+}
+.group-list .g-price {
+	font-size:13px
+}
+.group-list .g-price .p {
+	color:#e21a53;
+	font-weight:700
+}
+.group-list .g-price strong {
+	font-size:15px
+}
+.group-list .s-price {
+	font-size:12px
+}
+.group-list .buy-btn {
+	height:25px;
+	background-color:#e21a53;
+	line-height:25px;
+	text-align:center;
+	color:#fff;
+	border-radius:3px;
+	display:block;
+	width:80px;
+	margin-top:8px
+}
+.group-list .rec-link {
+	position:absolute;
+	right:10px;
+	bottom:22px
+}
+.group-list .sale-tag {
+	background:transparent url(http://cca.mbaobao.com/mkts/201408/07/bg2.png) center top no-repeat;
+	background-size:36px 72px;
+	position:absolute;
+	top:8px;
+	left:-6px;
+	display:block;
+	width:36px;
+	height:36px;
+	line-height:36px;
+	color:#fff;
+	font-weight:700;
+	text-align:center;
+	-webkit-transform:rotate(-15deg);
+	-ms-transform:rotate(-15deg);
+	-o-transform:rotate(-15deg);
+	transform:rotate(-15deg)
+}
+.footer-pic {
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	width:100%
+}
+.footer-pic .item {
+	width:50%
+}
+.footer-pic .item img {
+	width:100%
+}
+.group-list .sellout .buy-btn, .group-list .sellout-btn {
+	background-color:#c8c8c8
+}
+.group-list .sellout:before {
+	content:'';
+	height:42px;
+	width:68px;
+	background:transparent url(http://cca.mbaobao.com/mkts/201408/06/sellout.png?0806) top left no-repeat;
+	background-size:68px 42px;
+	display:block;
+	position:absolute;
+	z-index:2;
+	left:-7px;
+	top:9px
+}
+.group-list .sellout .sale-tag {
+	background-position:center bottom
+}

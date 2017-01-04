@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<meta name="Keywords" content="{$meta_keywords}" />
+<meta name="Description" content="{$meta_description}" />
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/user-yx.css">
+</head>
+
+<body>
+<header class="m-head">
+  <div class="head-layout">
+      <a class="mbb-logo" href="{:url('index/index')}"></a>
+        <a class="user-cart" href="{:url('flow/cart')}">
+          <span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="{:url('user/index')}"></a>
+    </div>
+</header>

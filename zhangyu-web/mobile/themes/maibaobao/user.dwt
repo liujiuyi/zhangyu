@@ -1,0 +1,133 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem --> 
+<div id="mbMain">
+	<section class="modBaseBox" style="background-color:white;padding:10px;margin-bottom:10px;">
+    	<div class="modBd">
+        	<div class="userCenterInfoBox">
+            	<div class="userHead" style="border:0px;">{if $info.headimgurl}<img src="{$info.headimgurl}" style="width:5em;height:5em">{else}<i class="glyphicon glyphicon-user"></i>{/if}</div>
+                <dl class="userInfo">
+                	<dt>{$info.username}</dt>
+                    <dd>{$rank_name}</dd>
+                    <dd>{$info.integral} <span style="float:right;"><a href="{:url('user/msg_list')}" class="ect-colorf">{$sys_notice}&nbsp;<i class="fa fa-envelope-o <!-- {if $new_msg} -->fa-envelope-o-sl<!-- {/if} -->" style="font-size:12px;"></i></a></span></dd>
+                    {if $invite_code}<dd>我的邀请码:{$invite_code}</dd>{/if}
+                </dl>
+            </div>
+        </div>
+    </section>
+    <section class="userCenterSubBox modTop">
+    	<ul>
+        	<li class="order" style="font-size:15px;">
+            	<a href="{:url('user/order_list')}">
+                	<div class="iconfont icon"></div>
+					{$lang.order_list_lnk}
+                </a>
+            </li>
+            <li class="pickup" style="font-size:15px;">
+            	<a href="{:url('user/not_pay_order_list')}">
+                	<div class="iconfont icon"></div>
+					{$lang.not_pay_list}
+                </a>
+            </li>
+        </ul>
+        <ul>
+        	<li class="coupon" style="font-size:15px;">
+            	<a href="{:url('user/bonus')}">
+                	<div class="iconfont icon"></div>
+					{$lang.label_bonus}
+                </a>
+            </li>
+          <!--  <li class="MaiDou">
+            	<a href="{:url('user/tag_list')}">
+                	<div class="iconfont icon"></div>
+					{$lang.label_tag}
+                </a>
+            </li>
+            <li class="collect">
+            	<a href="{:url('user/share')}">
+                	<div class="iconfont icon"></div>
+					{$lang.label_share}
+                </a>
+            </li> -->
+            <li class="browse" style="font-size:15px;">
+            	<a href="{:url('user/booking_list')}">
+                	<div class="iconfont icon"></div>
+                    {$lang.label_booking}
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li class="profile" style="font-size:15px;">
+                <a href="{:url('user/user_shop')}">
+                    <div class="iconfont icon"></div>
+                                                                      商家注册进入
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li class="profile" style="font-size:15px;">
+                <a href="{:url('user/profile')}">
+                    <div class="iconfont icon"></div>
+                    {$lang.profile}
+                </a>
+            </li>
+            <!-- <li class="edit_password" style="font-size:15px;">
+                <a href="{:url('user/edit_password')}">
+                    <div class="iconfont icon"></div>
+                    {$lang.edit_password}
+                </a>
+            </li>
+            <li class="account_detail">
+                <a href="{:url('user/account_detail')}">
+                    <div class="iconfont icon"></div>
+                    {$lang.label_user_surplus}
+                </a>
+            </li> -->
+        	<li class="adress" style="font-size:15px;">
+            	<a href="{:url('user/address_list')}">
+                	<div class="iconfont icon"></div>
+					{$lang.label_address}
+                </a>
+            </li>
+            <li class="opinion" style="font-size:15px;">
+            	<a href="{:url('user/service')}">
+                	<div class="iconfont icon"></div>
+					{$lang.user_service}
+                </a>
+            </li>
+        </ul>
+        <div class="loginOut">
+        	<a href="{:url('user/logout')}" class="modBtnWhite modBtnWidth">{$lang.label_logout}</a>
+        </div>
+    </section>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript">
+    $(function(){
+        $(".del").click(function(){
+            if(!confirm('您确定要删除吗？')){
+                return false;
+            }
+            var obj = $(this);
+            var url = obj.attr("href");
+            $.get(url, '', function(data){
+                if(1 == data.status){
+                    if(obj.hasClass("history_clear")){
+                        obj.closest(".ect-pro-list").html("<p class='text-center  ect-margin-tb ect-padding-tb'>暂无浏览记录，点击<a href={:url('category/index')} class='ect-color ect-margin-lr' style='font-size:1.3em;'>进入</a>浏览商品</p>");
+                        obj.parent().siblings("ul").remove();
+                    } 
+                    else{
+                        if(obj.closest("li").siblings("li").length == 0){
+                            obj.closest("ul").html("<p class='text-center  ect-margin-tb ect-padding-tb'>{$lang.no_data}</p>");
+                        }
+                        obj.closest("li").remove();
+                    }
+                }
+                else{
+                    alert("删除失败");
+                }
+            }, 'json');
+            return false;
+   		});
+    })
+</script> 
+</body>
+</html>

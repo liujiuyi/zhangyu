@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/common.css">
+<link rel="stylesheet" href="__TPL__/css/module.css">
+
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<div id="mbSubTitle">
+	<section class="subTitleBox">
+        <a class="backBtn" href="javascript:history.go(-1);"></a>
+        <span>我的订单</span>
+		<a class="homeBtn" href="index.php"></a>
+    </section>
+</div>
+<div id="mbMain">
+	<section class="modEmptyBox">
+    	<div class="mbBd">
+        	<section class="userMdList">
+            	<ul id="J_ItemList">
+       				<li class="single_item"></li>
+       				<a href="javascript:;" style="text-align:center" class="get_more"></a>
+    			</ul>
+            </section>
+        </div>
+    </section>
+</div>
+
+
+<div class="ect-pro-list user-order" style="border-bottom:none;">
+    <ul id="J_ItemList">
+       <li class="single_item"></li>
+       <a href="javascript:;" style="text-align:center" class="get_more"></a>
+    </ul>
+</div>
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+{foreach from=$lang.merge_order_js item=item key=key}
+    var {$key} = "{$item}";
+{/foreach}
+get_asynclist('index.php?m=default&c=user&a=async_order_list&pay={$pay}' , '__TPL__/images/loader.gif');
+</script> 
+</body>
+</html>

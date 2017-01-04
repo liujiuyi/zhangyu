@@ -1,0 +1,103 @@
+<section class="cart-header">
+	<div id="cart-title" class="cart-title">{$lang.shopping_cart}</div>
+</section>
+<!-- {if $goods_list } -->
+<div id="cart-container" class="cart-container">
+	<div id="J-view" class="cart-view">
+    	<div>
+        	<section class="cart-sheet-view">
+            	<div class="c-goods-list">
+                	<ul class="list">
+                    	<!-- {foreach from=$goods_list item=goods key=k} -->
+                    	<li class="item">
+                        	<div class="pic">
+                            	<a class="goods-img j_goods_img" href="{:url('goods/index',array('id'=>$this->_var['goods']['goods_id']))}"><img src="{$goods.goods_thumb}" title="{$goods.goods_name|escape:html}" width="80" height="80"></a>
+                            </div>
+                            <div class="info">
+                            	<div class="info-wrap">
+                                	<div class="title">{$goods.goods_name}</div>
+                                    <div class="qty">
+                                    	<!-- {if $goods.goods_id gt 0 && $goods.is_gift eq 0 && $goods.parent_id eq 0} 普通商品可修改数量 -->
+          								<button class="decrease j_goods_decrease" onClick="change_goods_number('1',{$goods.rec_id})" type="button">-</button>
+            							<input type="hidden" id="back_number{$goods.rec_id}" value="{$goods.goods_number}" />
+            							<input type="text" class="num j_qty_nubmer"  name="{$goods.rec_id}" id="goods_number{$goods.rec_id}" autocomplete="off" value="{$goods.goods_number}" onFocus="back_goods_number({$goods.rec_id})"  onblur="change_goods_number('2',{$goods.rec_id})" />
+            							<button class="increase  j_goods_increase" onClick="change_goods_number('3',{$goods.rec_id})" type="button">+</button>         
+         								<!-- {else} -->
+          								<input type="text" class="txtnum" readonly value="{$goods.goods_number}"/>
+          								<!-- {/if} --> 
+                                      </div>
+                                      <div class="price j_price_type">
+                                      		<div class="p-1 have-sale">{$goods.goods_price}</div>
+                                      </div>
+                                      <span class="remove-btn-wrap j_goods_remove">
+                                      		<a href="javascript:if (confirm('{$lang.drop_goods_confirm}')) location.href='{:url('flow/drop_goods',array('id'=>$this->_var['goods']['rec_id']))}';" class="remove-btn"></a>
+                                      </span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- {/foreach} -->
+                    </ul>
+                </div>
+                <footer class="pay-bar">
+                	<div class="count-bar" style=" height:auto">
+                    	<ul class="c-price-list">
+                        	<li>{$lang.total}<b id="total_number">{$total.total_number}</b>{$lang.total_number}，{$lang.goods_price}：<span class="c-total" id="goods_subtotal">{$total.goods_price}</span></li>
+                        </ul>
+                        <a class="btm btm-xl btm-red" href="{:url('flow/checkout')}" type="button" style=" color:#fff">{$lang.check_out}</a>
+                    </div>
+                </footer>
+            </section>
+            <!-- {if $linked_goods} 关联商品-->
+            <section id="j_exchange_list" class="exchange-list">
+            	<header class="ex-hd">
+					<h4>{$lang.releate_goods}</h4>
+				</header>
+                <div class="ex-bd">
+                	<ul>
+                    	<!--{foreach from=$linked_goods item=releated_goods_data}-->
+                        <li>
+                        	<div class="pic">
+                            	<a href="{$releated_goods_data.url}"><img src="{$releated_goods_data.goods_thumb}" alt="{$releated_goods_data.goods_name}" width="100%" /></a>
+                            </div>
+                            <div class="title">{$releated_goods_data.short_name}</div>
+                            <div class="p-wrap">
+                            	<div class="price">
+									<s>{$releated_goods_data.market_price}</s>
+									<strong>
+                                    <!-- {if $releated_goods_data.promote_price neq 0} --> 
+                					{$releated_goods_data.formated_promote_price}
+                					<!-- {else} --> 
+                					{$releated_goods_data.shop_price}
+                					<!-- {/if} --> 
+                                    </strong>
+                                    
+								</div>
+                            </div>
+                        </li>
+                        <!-- {/foreach} -->
+                    </ul>
+                </div>
+            </section>
+            <!-- {/if} -->
+        </div>
+    </div>
+</div>
+<!--{else}-->
+<div id="cart-container" class="cart-container">
+	<div id="J-view" class="cart-view">
+    	<div>
+        	<section class="cart-empty-view">
+            	<div class="empty-view">
+                	<ul>
+                    	<li class="pic">
+							<img src="__TPL__/images/cart.png">
+						</li>
+                        <li class="tell"> <a href="{:url('index/index')}">{$lang.empty_shopping}</a> </li>
+                    </ul>
+                </div>
+            </section> 
+        </div>
+    </div>
+</div>
+<!-- {/if} -->
+

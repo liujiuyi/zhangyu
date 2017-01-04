@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/common.css">
+<link rel="stylesheet" href="__TPL__/css/cart.css">
+</head>
+<style>.rg-selects{height:23px;text-align:left}.rg-selects .rg-item{position:relative;margin-right:4px;height:21px;border-top:1px solid #888;border-left:1px solid #888;border-bottom:1px solid #afafaf;border-right:1px solid #afafaf;float:left;display:inline-block;*display:inline;*zoom:1}.rg-selects .rg-current{height:19px;margin:1px;font-size:12px;cursor:pointer;float:left;background-color:#fff;*display:inline}.rg-selects .rg-cur-title{float:left;height:19px;line-height:19px;padding:0 8px;color:#333}.rg-selects .rg-ico{width:19px;height:19px;float:left;background-color:#888;position:relative}.rg-selects .rg-arrow{width:0;height:0;border-width:4px;border-style:solid;border-color:#fff #888 #888;font-size:0;line-height:0;position:absolute;top:8px;left:5px}.rg-selects .rg-list{display:none;position:absolute;top:21px;left:-1px;float:left}.rg-selects .rg-list{border:1px solid #888;padding:8px;background-color:#fff;width:400px;text-align:left;color:#333;box-shadow:3px 3px 5px #ababab}.rg-selects .rg-list .rg-tip{color:#888}.rg-selects .rg-list a{display:inline-block;*display:inline;*zoom:1;width:100px;text-align:left;line-height:22px;height:22px;text-indent:4px}.rg-selects .rg-list .rg-item-select{background-color:#ff6c00;color:#fff}.rg-selects .rg-list .rg-item-select:hover{color:#fff}.rg-selects .rg-over .rg-list{display:block}.rg-selects .rg-over .rg-ico{background-color:#a5a5a5}.rg-selects .rg-over .rg-arrow{border-color:#fff #a5a5a5 #a5a5a5}</style>
+<body>
+
+<script type="text/javascript" src="__PUBLIC__/js/region.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/shopping_flow.js"></script>
+<script type="text/javascript">
+          region.isAdmin = false;
+          {foreach from=$lang.flow_js item=item key=key}
+          var {$key} = "{$item}";
+          {/foreach}
+
+          {literal}
+          onload = function() {
+            if (!document.all)
+            {
+              document.forms['theForm'].reset();
+            }
+          }
+          {/literal}
+        </script>
+<div class="m-container">
+	<section class="container_wrap">
+    	<section class="cart-header">
+        	<a class="backBtn" style="" href="javascript:history.go(-1)"></a>
+			<div id="cart-title" class="cart-title">收货人信息</div>
+			<a class="homeBtn" style="" href="index.php"></a>
+        </section>
+        <div id="cart-container" class="cart-container"> 
+  			<!-- {foreach from=$consignee_list item=consignee key=sn} -->    
+     		<form action="{:url('flow/consignee')}" method="post" name="theForm" id="theForm" onSubmit="return checkConsignee(this)">
+       			 <!-- #BeginLibraryItem "/Library/consignee.lbi" --><!-- #EndLibraryItem -->
+     		</form>
+  			<!-- {/foreach} -->
+        </div>
+    </section>
+</div>        
+</body>

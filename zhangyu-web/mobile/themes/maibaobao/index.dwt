@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="Keywords" content="{$meta_keywords}" />
+<meta name="Description" content="{$meta_description}" />
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/home.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="{:url('index/index')}"></a>
+        <a class="user-cart" href="{:url('flow/cart')}">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="{:url('user/index')}"></a>
+    </div>
+</header>
+<div class="m-container">
+	<section id="search">
+    	<form action="{:url('category/index')}<!-- {if $id} -->&id={$id}<!-- {/if} -->"  method="post" id="searchForm" name="searchForm">
+        	<div class="search-key-form">
+            	<input name="keywords" type="search" placeholder="输入关键词或商品编号" id="keywordBox" class="search-key">
+            </div>
+            <button type="submit" value="{$lang.search}" onclick="return check('keywordBox')" class="search-submit"></button>
+        </form>
+    </section>
+    <section class="handover">
+    	<div id="focus" class="focus ect-margin-tb wrap">    		
+    		<div class="bd">
+      			{insert name='ads' id=1 num=8}
+    		</div>
+            <div class="hd slider-nav">
+      			<ul>
+      			</ul>
+    		</div>
+  		</div>
+    </section>
+    <section class="channel">
+    	<ul class="channel-menu">
+        	<!--{foreach from=$navigator item=nav}-->
+            <li>
+            	<a class="channel-item menu-new" href="{$nav.url}">
+                	<span class="c-logo"><img src="{$nav.pic}" ></span>
+                    <span class="c-name">{$nav.name}</span>
+                </a>
+            </li>
+            <!--{/foreach}--> 
+        </ul>
+    </section>
+    <section class="panicbuying">
+    	<!-- #BeginLibraryItem "/library/group_buy.lbi" --><!-- #EndLibraryItem -->
+    </section>
+    <section class="insertbanner">
+    	{insert name='ads' id=5 num=1}
+    </section>
+	<!-- #BeginLibraryItem "/library/cat_goods.lbi" --><!-- #EndLibraryItem -->
+    <section class="leaderboard">
+    	<!-- #BeginLibraryItem "/library/recommend_hot.lbi" --><!-- #EndLibraryItem -->
+    </section>
+     <!-- <section class="classify">
+    	<!-- {foreach name=cate from=$categories item=cate} -->
+        <dl class="item">
+        	<dt>{$cate.name}</dt>
+            <dd>
+            	<!-- {foreach name=child from=$cate.cat_id item=child} -->
+        		<a href="{$child.url}">{$child.name}</a>
+        		<!-- {/foreach} -->
+            </dd>
+        </dl>
+       <!-- {/foreach} -->
+    </section> -->
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript">
+<!-- {if $show_asynclist == 1} -->
+get_asynclist("{:url('index/ajax_goods', array('type'=>'best'))}" , '__TPL__/images/loader.gif');
+<!-- {/if} -->
+</script>
+</body>
+</html>

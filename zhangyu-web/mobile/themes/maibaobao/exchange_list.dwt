@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/list.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<div class="m-container">
+	<!-- #BeginLibraryItem "/library/goods_list_exchange.lbi" --><!-- #EndLibraryItem -->
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript">
+<!--{if $show_asynclist}-->
+get_asynclist("{:url('exchange/asynclist_list', array('page'=>$this->_var['page'], 'sort'=>$this->_var['sort'], 'order'=>$this->_var['order']))}" , '__TPL__/images/loader.gif');
+<!--{/if}-->
+</script>
+</body>
+</html>

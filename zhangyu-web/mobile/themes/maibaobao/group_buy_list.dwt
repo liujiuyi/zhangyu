@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/group.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-select-layout">
+    	<a class="goto-prev" href="javascript:history.go(-1);">
+        	<span class="iconfont "></span>
+			返回
+        </a>
+        <h4 class="head-title"><!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --></h4>
+        <div class="user-handle">
+        	<a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        		<span class="iconfont"></span>
+            	<span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        	</a>
+            <a class="iconfont user-more J-link-more" href="javascript:void(0);"></a>
+            <div class="user-more-box J-top-links">
+            	<div class="more-head">
+					<i></i>
+				</div>
+                <ul>
+                	<li>
+						<a href="index.php">
+							<span class="iconfont"></span>
+							首页
+						</a>
+					</li>
+                    <li>
+						<a href="index.php?c=category&a=top_all">
+							<span class="iconfont"></span>
+							类目
+						</a>
+					</li>
+                    <li>
+						<a href="index.php?m=default&c=user">
+							<span class="iconfont"></span>
+							我的
+						</a>
+					</li>
+                    <li>
+						<a href="javascript:openSearch();">
+							<span class="iconfont"></span>
+							搜索
+						</a>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="group-container">
+	<section class="tabs">
+    	<div class="tab selected">
+        	<h2 class="title">聚单生产</h2>
+        </div>
+    </section>
+    <!--{if $show_asynclist}-->
+    <section id="J_ItemList" class="group-list">
+    	<div class="item">
+        	
+        </div>
+        <a href="javascript:;" class="get_more"></a>
+    </section>
+    <!--{else}-->
+    <section id="J_ItemList" class="group-list">
+    	<!--{foreach name=gb_list from=$gb_list item=groupbuy}-->
+        <div class="item">
+        	<div class="pic">
+            	<a href="{$groupbuy.url}"><img src="{$groupbuy.goods_thumb}" alt="{$groupbuy.goods_name}" width="90" height="90"></a>
+                <div class="sale-tag">{$groupbuy.spare_discount}{$lang.favourable_zk}</div>
+            </div>
+            <div class="info">
+            	<a class="title" href="{$groupbuy.url}">{$groupbuy.goods_name}</a>
+                <div class="g-price">
+                	<span class="t">聚单价</span>
+                    <span class="p">
+						<strong>{$groupbuy.cur_price}</strong>
+					</span>
+                </div>
+                <div class="s-price">
+					<s>本店价：{$groupbuy.market_price}</s>
+				</div>
+                <a class="buy-btn" href="{$groupbuy.url}">参与聚单</a>
+            </div>
+        </div>
+        <!--{/foreach}-->
+    </section>
+    <!--{/if}-->
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript">
+		$(function(){
+			$('.J-link-more').on('click', function () {
+				$('.J-top-links').toggleClass("toggle-show");
+				return false;
+			});
+		})
+	</script>
+<script type="text/javascript">
+if({$show_asynclist}){
+	get_asynclist("{:url('groupbuy/asynclist', array('page'=>$this->_var['page'], 'sort'=>$this->_var['sort'], 'order'=>$this->_var['order']))}" , '__TPL__/images/loader.gif');
+}
+</script>
+</body></html>

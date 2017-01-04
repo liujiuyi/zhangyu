@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/home.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<div class="con">
+  <div class="ect-bg">
+    <header class="ect-header ect-margin-tb ect-margin-lr text-center icon-write article"><a class="ect-icon ect-icon-home pull-left" href="index.php"></a><span>{$lang.shophelp}</span><a class="ect-icon ect-icon-cate pull-right" href="{:url('article/index')}"></a></header>
+  </div>
+  <div class="article-list">
+  <form action="{:url('article/art_list')}" name="search_form" method="post" class="article_search">
+    <div class="input-search"> <span>
+      <input autocomplete="off" placeholder="{$lang.art_no_keywords}"  name="keywords" id="requirement" class="J_SearchInput inputSear" type="text">
+      </span>
+      <input name="id" type="hidden" value="{$cat_id}" />
+      <input name="cur_url" id="cur_url" type="hidden" value="" />
+      <button type="button" disabled="true" class="input-delete J_InputDelete"> <span></span> </button>
+      <button type="submit" ><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </form>
+  <!-- {if $article_categories} -->
+  <div class="nav">
+    <ul>
+      <!--{foreach from=$article_categories item=cat name="article_cat"}-->
+      <li><a href="{:url('article/art_list', array('id'=>$this->_var['cat']['id']))}">{$cat.name|escape:html}</a></li>
+      <!--{/foreach}-->
+    </ul>
+  </div>
+  <!--{else}-->
+  <div class="article-list-ol">
+    <ol>
+      <!-- {foreach from=$artciles_list item=article name="artciles_list"} -->
+      <li><a href="{$article.url}"> <span class="num">{$smarty.foreach.artciles_list.iteration}</span>{$article.short_title}
+        </a> </li>
+      <!-- {/foreach} --> 
+      <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+    </ol>
+  </div>
+  <!-- {/if} --> 
+  </div>
+    <footer class="logo"><a href="http://www.ectouch.cn" title="ECTouch官网" target="_blank"><img src="__TPL__/images/copyright.png" width="176" height="60"></a></footer>
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+</body></html>

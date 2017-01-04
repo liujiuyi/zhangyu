@@ -1,0 +1,8 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{if $user_info}
+ 您好，<a href="{:url('user/index')}">{$user_info.user_name}</a> 
+ <a href="{:url('user/logout')}">{$lang.user_logout}</a>
+{else}
+ <a href="{:url('user/login')}">登录</a>
+ <a href="{:url('user/register')}">注册</a>
+{/if}

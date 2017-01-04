@@ -1,0 +1,150 @@
+/*! choice 1.0.0 pub 2014-09-29 11:12 by baoluo */
+
+.m-container {
+	background-color:#fff;
+	padding-bottom:20px
+}
+#search {
+	position:relative
+}
+#search .search-key-form {
+	width:95%;
+	margin:0 auto;
+	padding:8px 0;
+	height:32px;
+	position:relative
+}
+#search .search-key {
+	width:100%;
+	display:block;
+	height:30px;
+	line-height:30px;
+	border:1px solid #969696;
+	border-radius:16px;
+	padding-left:8px
+}
+#search .search-submit {
+	font-family:iconfont;
+	font-size:20px;
+	position:absolute;
+	top:11px;
+	right:25px;
+	color:#969696
+}
+#search .search-submit:after {
+	content:"\e600"
+}
+#search .hot-search-box {
+	width:100%;
+	position:absolute;
+	top:48px;
+	left:0;
+	background-color:#fff;
+	z-index:9999;
+	display:none
+}
+#search .hot-search-box ul {
+	border-top:1px solid #d2d2d2
+}
+#search .hot-search-box li {
+	height:35px;
+	line-height:35px;
+	border-bottom:1px solid #d2d2d2;
+	padding-left:15px
+}
+#search .hot-search-box a, #search .search-isfocus {
+	display:block
+}
+.m-loading {
+	width:16px;
+	height:11px;
+	margin:50px auto;
+	background:url(http://cca.mbaobao.com/static/mod/mobile/mtouch/choice/1.0.0/img/ico_loading.gif?e52e13) no-repeat center center
+}
+.m-choice-body {
+	min-height:100px;
+	border-top:1px solid #dadada;
+	padding:20px 0;
+	overflow:hidden
+}
+.side {
+	width:20%;
+	border-right:1px solid #dadada;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	float:left; 
+	position:relative;
+}
+.side li {
+	position:relative
+}
+.side .side-a {
+	display:block;
+	width:82%;
+	margin:5px auto
+}
+.side .side-a img{ width: 100%;height: auto;}
+.side ul img {
+	width:100%
+}
+.side i.arrow {
+	position:absolute;
+	top:50%;
+	right:-1px;
+	margin-top:-5px;
+	width:6px;
+	height:10px;
+	font-size:0;
+	line-height:0;
+	background:url(../images/ico_arrow.png) #fff no-repeat;
+	background-size:6px 10px;
+	display:none
+}
+.side i.arrow:first-child {
+	display:block
+}
+.main {
+	width:80%;
+	padding:0 10px;
+	float:right;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	display:none;
+}
+.category-wrap {
+	width:100%;
+	overflow:hidden;
+	display:none
+}
+.category-wrap:first-child {
+	display:block
+}
+.category-banner {
+	padding:2px 0 8px
+}
+.category-list {
+	width:100%;
+	overflow:hidden
+}
+.category-list .item {
+	width:33.3%;
+	float:left;
+	padding:3px;
+	text-align:center;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box
+}
+.category-list .item img {
+	width:100%
+}
+.cate-price-list .item {
+	width:50%;
+	text-align:center;
+	padding-bottom:10px
+}
+.cate-price-list .item img {
+	width:90%
+}

@@ -1,0 +1,21 @@
+<!-- {if $pager} -->
+<section class="pager">
+	<ul>
+    	<li class="p-prev">
+        	<a href="{$pager.page_prev|default:#}">{$lang.page_prev}</a>
+        </li>
+        <li class="p-center">
+        	<a class="page-handle" href="javascript:void(0);">
+            	<select name="sel_question" onChange="window.location.href=this.value;">
+					<!-- {foreach from=$pager.page_number key=key item=num} -->
+					<option value="{$num}" {if $pager.page == $key}selected{/if} >{$key}/{$pager.page_count}</option>
+					<!-- {/foreach} -->
+				</select>
+            </a>
+        </li>
+        <li class="p-next">
+			<a href="{$pager.page_next|default:#}">{$lang.page_next}</a>
+		</li>
+    </ul>
+</section>
+<!-- {/if} -->

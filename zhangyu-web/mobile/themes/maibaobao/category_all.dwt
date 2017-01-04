@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/home.css">
+<link rel="stylesheet" href="__TPL__/css/choice.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-select-layout">
+    	<a class="goto-prev" href="javascript:history.go(-1);">
+        	<span class="iconfont "></span>
+			返回
+        </a>
+        <h4 class="head-title">{$title}</h4>
+        <div class="user-handle">
+        	<a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        		<span class="iconfont"></span>
+            	<span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        	</a>
+            <a class="iconfont user-more J-link-more" href="javascript:void(0);"></a>
+            <div class="user-more-box J-top-links">
+            	<div class="more-head">
+					<i></i>
+				</div>
+                <ul>
+                	<li>
+						<a href="index.php">
+							<span class="iconfont"></span>
+							首页
+						</a>
+					</li>
+                    <li>
+						<a href="index.php?c=category&a=top_all">
+							<span class="iconfont"></span>
+							类目
+						</a>
+					</li>
+                    <li>
+						<a href="index.php?m=default&c=user">
+							<span class="iconfont"></span>
+							我的
+						</a>
+					</li>
+                    <li>
+						<a href="javascript:openSearch();">
+							<span class="iconfont"></span>
+							搜索
+						</a>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="m-container">
+<section id="search">
+  <form action="{:url('category/index')}<!-- {if $id} -->&id={$id}<!-- {/if} -->"  method="post" id="searchForm" name="searchForm">
+      <div class="search-key-form">
+          <input name="keywords" type="search" placeholder="输入关键词或商品编号" id="keywordBox" class="search-key">
+        </div>
+        <button type="submit" value="{$lang.search}" onclick="return check('keywordBox')" class="search-submit"></button>
+    </form>
+</section>
+<section id="choice-load-body" class="m-choice-body"> 
+<div class="ect-category-all ect-border-radius0" >
+    <ul>
+     <!--{foreach from=$category item=cat name=no}-->
+     <li>
+     	<!--{if $cat.cat_id}-->
+        <div class="media panel-body"> 
+            <div class="pull-left ect-category-right">
+                <h3>{$cat.name|escape:html}</h3>
+                <h5 style="display:none;"> 
+                	<!--{foreach from=$cat.cat_id item=child name=no1}-->
+            		<!--{if $smarty.foreach.no1.index lt 3}-->
+            		<!--{if $smarty.foreach.no1.index gt 0}-->/<!--{/if}-->
+            		{$child.name|escape:html|truncate:5,false} 
+            		<!--{/if}-->
+            		<!--{/foreach}-->
+            	</h5>
+            </div>
+            <i class="fa fa-angle-down ect-transition05"></i>
+        </div>
+        <!--{else}-->
+        <a href="{:url('category/index',array('id'=>$this->_var['cat']['id']))}"><div class="media panel-body"> 
+            <div class="pull-left ect-category-right">
+                <h3>{$cat.name|escape:html}</h3>
+                <h5 style="display:none;"> <!--{foreach from=$cat.cat_id item=child name=no1}-->
+            <!--{if $smarty.foreach.no1.index lt 3}-->
+            <!--{if $smarty.foreach.no1.index gt 0}-->/<!--{/if}-->
+            {$child.name|escape:html|truncate:5,false} 
+            <!--{/if}-->
+            <!--{/foreach}--></h5>
+            </div>
+            <i class="fa fa-angle-right ect-transition05"></i>
+        </div></a>
+        <!--{/if}-->
+        <div class="ect-category-child">
+        <!--{foreach from=$cat.cat_id item=child name=no1}-->
+        <a href="{$child.url}">{$child.name|escape:html}</a>
+        <!--{/foreach}--> 
+        </div>
+      </li>
+      <!--{/foreach}-->
+    </ul> 
+</div>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>
+

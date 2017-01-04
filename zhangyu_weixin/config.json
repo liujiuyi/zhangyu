@@ -1,0 +1,27 @@
+{
+  "host" : "127.0.0.1",
+  "port" : 3005,
+  "tmpdir" : "/work/tmp",
+
+  "appname": "/zhangyu",
+  "app" : {
+    "id" :  "wx7e3ff472fdf82001",
+    "secret" : "e0292ef43555103723474ab77028dcdc",
+    "token" : "ae61268246c931c4160f1dbd539cc073"
+  },
+
+  "mysql" : {
+    "weixin" : {
+      "main" : {
+        "host" : "ttt_main_db",
+        "user" : "tttalk",
+        "port" : 3306,
+        "password" : "password0123",
+        "database" : "zhangyu",
+        "charset" : "utf8mb4",
+        "dateStrings" : true,
+        "multipleStatements" : true
+      }
+    }
+  }
+}

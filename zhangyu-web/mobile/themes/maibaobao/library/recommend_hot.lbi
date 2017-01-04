@@ -1,0 +1,37 @@
+<div class="ect-margin-tb ect-pro-list ect-margin-bottom0" style="border-bottom:none;" >
+<h4 class="leader-tit">热销TOP风云榜</h4>
+<!-- {if $show_asynclist == 1} -->
+<div class="products-list" id="J_ItemList">
+	<div class="product single_item">
+    	
+    </div>
+    <a href="javascript:;" style="text-align:center" class="get_more"></a>
+</div>
+
+<!-- {else} -->
+<!--{if $hot_goods}-->
+<div class="products-list" id="">
+    <!-- {foreach name=hot_goods from=$hot_goods item=hot_goods} -->
+    <div class="product single_item">
+       <div class="pic">
+        <a href="{$hot_goods.url}"><img src="{$hot_goods.goods_img}" alt="{$hot_goods.name}" width="100%"></a>
+        </div>
+        <div class="info">
+            <p class="name">
+              <a href="{$hot_goods.url}">{$hot_goods.name}</a>
+            </p>
+            <p class="price">
+                <span><!--{if $hot_goods.promote_price}-->{$hot_goods.promote_price}<!--{else}-->{$hot_goods.shop_price}<!--{/if}--></span>
+                <s>{$hot_goods.market_price}</s>
+            </p>
+        </div> 
+    </div>
+    <!-- {/foreach}-->
+    <div class="clearfix"></div>
+    <a href="{:url('category/index');}"><div class="see-more" id="see-all-pic"><span class="more-loading">点击查看更多</span></div></a>
+</div>
+<!-- {/if}--> 
+
+<!-- {/if}-->
+
+  

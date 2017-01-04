@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/common.css">
+<link rel="stylesheet" href="__TPL__/css/cart.css">
+
+
+</head>
+<body>
+<header class="m-head">
+	<div class="head-select-layout">
+    	<a class="goto-prev" href="javascript:history.go(-1);">
+        	<span class="iconfont "></span>
+			返回
+        </a>
+        <h4 class="head-title">{$title}</h4>
+        <div class="user-handle">
+        	<a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        		<span class="iconfont"></span>
+            	<span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        	</a>
+            <a class="iconfont user-more J-link-more" href="javascript:void(0);"></a>
+            <div class="user-more-box J-top-links">
+            	<div class="more-head">
+					<i></i>
+				</div>
+                <ul>
+                	<li>
+						<a href="index.php">
+							<span class="iconfont"></span>
+							首页
+						</a>
+					</li>
+                    <li>
+						<a href="index.php?c=category&a=top_all">
+							<span class="iconfont"></span>
+							类目
+						</a>
+					</li>
+                    <li>
+						<a href="index.php?m=default&c=user">
+							<span class="iconfont"></span>
+							我的
+						</a>
+					</li>
+                    <li>
+						<a href="javascript:openSearch();">
+							<span class="iconfont"></span>
+							搜索
+						</a>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="m-container">
+	<section class="container_wrap">
+    	<div id="cart-container" class="cart-container">
+        	<div id="J-view" class="cart-view">
+            	<div class="flow-consignee-list ect-bg-colorf">
+                	<section class="cart-address-view" style=" font-size:14px; line-height:25px">
+                    	<div class="list-wrap">
+                        	<ul id="J_ItemList">
+                            	<li class="checked checkout-add single_item">
+                                	
+                                </li>
+                                <a href="javascript:;" style="text-align:center" class="get_more"></a>
+                            </ul>
+                        </div>
+                        <div class="bottom-option">
+                        	<a href="{:url('flow/consignee')}" type="botton" class="btm btm-xl btm-red j_add_btn" style=" color:#fff">{$lang.add_address}</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript" src="__PUBLIC__/js/jquery.more.js"></script> 
+<script type="text/javascript">
+get_asynclist('index.php?m=default&c=flow&a=consignee_list' , '__TPL__/images/loader.gif');</script>
+<script type="text/javascript">
+		$(function(){
+			$('.J-link-more').on('click', function () {
+				$('.J-top-links').toggleClass("toggle-show");
+				return false;
+			});
+		})
+	</script>
+</body></html>

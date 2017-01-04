@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/common.css">
+<link rel="stylesheet" href="__TPL__/css/module.css">
+
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<div class="user-tags">
+  <ul>
+   <!-- {if $tags} -->
+    <!-- 标签云开始 {foreach from=$tags item=tag}-->
+    <li class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span>&times;</span><span class="sr-only">Close</span></button>
+      <a href="{:url('category/index', array('keywords'=>$this->_var['tag']['tag_words']))}" title="{$tag.tag_words|escape:html}">{$tag.tag_words|escape:html}</a>
+	</li>
+	<!-- {/foreach} -->
+   <!-- {/if} -->
+  </ul>
+</ul>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+$(function(){
+	$(".alert").on('close.bs.alert', function(){
+		var tag_words = $(this).find("a").attr("title");
+		$.get("{:url('user/del_tag')}", {tag_wrods:tag_words}, function(data){
+			if(data.status == 0){
+				alert(data.msg);
+			}
+		}, 'json');
+	});
+})
+</script>
+</body>
+</html>

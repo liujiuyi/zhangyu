@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/common.css">
+<link rel="stylesheet" href="__TPL__/css/module.css">
+<link rel="stylesheet" href="__TPL__/css/others.css">
+<link rel="stylesheet" href="__TPL__/css/list.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<div class="m-container">
+     <div class="ect-pro-list ect-booking-list">
+      <ul>
+      <!-- {foreach from=$booking_list item=item} -->
+        <li>
+          <dl>
+            <dt>
+              <h4 class="title"><a href="{$item.url}">{$item.goods_name} <span>[订购数量：{$item.goods_number}]</span></a></h4>
+            </dt>
+            <dd class="date ect-color999">{$item.booking_time}</dd>
+            <dd>{$item.dispose_note}</dd>
+            <dd><a href="javascript:if(confirm('{$lang.confirm_remove_account}')){window.location.href='{:url('user/del_booking', array('rec_id'=>$this->_var['item']['rec_id']))}'};" class="pull-right del"><i class="glyphicon glyphicon-trash"></i></a></dd>
+          </dl>
+        </li>
+      <!-- {/foreach} -->
+      </ul>
+    </div>
+	<!-- #BeginLibraryItem "/library/page.lbi" --><!-- #EndLibraryItem -->
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

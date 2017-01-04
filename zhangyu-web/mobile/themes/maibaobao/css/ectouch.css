@@ -1,0 +1,424 @@
+/*
+Template Name: ECTouch maibaobao
+Template URI: http://www.ectouch.cn/
+Description: ECTouch麦包包模板.
+Version: 1.0
+Author: ECTouch Team
+Author URI: http://www.ectouch.cn/
+Logo filename: logo.gif
+Template Type: type_0
+*/
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	margin:0;
+	padding:0;
+	border:0;
+	font:inherit;
+	vertical-align:baseline
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style:normal
+}
+img {
+	border:0;
+	vertical-align:bottom
+}
+img a {
+	border:0;
+	text-decoration:none
+}
+ol, ul {
+	list-style:none
+}
+a {
+	margin:0;
+	padding:0;
+	vertical-align:baseline;
+	background:0 0;
+	text-decoration:none;
+	color:#333;
+  font-size: 100%;
+}
+a:hover {
+	text-decoration:none
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0
+}
+input, select {
+	font-size:100%
+}
+body {
+	line-height:1;
+	-webkit-text-size-adjust:none;
+	background-color:#e4e4e4;
+	font:13px/1.231 arial;
+	color:#333
+}
+@font-face {
+	font-family:iconfont;
+	src:url(http://at.alicdn.com/t/font_1419495808_6654632.eot);
+	src:url(http://at.alicdn.com/t/font_1419495808_6654632.eot?#iefix) format('embedded-opentype'), url(http://at.alicdn.com/t/font_1419495808_6654632.woff) format('woff'), url(http://at.alicdn.com/t/font_1419495808_6654632.ttf) format('truetype'), url(http://at.alicdn.com/t/font_1419495808_6654632.svg#iconfont) format('svg')
+}
+.iconfont {
+	font-family:iconfont;
+	font-style:normal;
+	-webkit-font-smoothing:antialiased;
+	-webkit-text-stroke-width:.2px
+}
+.m-head {
+	background-color:#c7154a;
+	line-height:35px;
+	height:35px;
+	color:#fff;
+}
+.m-head .head-layout {
+	position:relative;
+	max-width:640px;
+	height:35px;
+	margin:0 auto;
+	overflow:hidden
+}
+.m-head .mbb-logo {
+	width:120px;
+	height:20px;
+	background:url(../images/logo.png) no-repeat;
+	background-size:120px 20px;
+	display:block;
+	margin:7px 0 0 6px;
+	float:left
+}
+.m-head .user-center {
+	font-size:20px;
+	color:#fff;
+	font-style:normal;
+	float:right;
+	margin-right:10px
+}
+.m-head .user-cart {
+	font-size:24px;
+	color:#fff;
+	font-style:normal;
+	float:right;
+	margin-right:15px;
+	position:relative
+}
+.m-head .user-cart .cart-num {
+	position:absolute;
+	top:2px;
+	right:-10px;
+	min-width:20px;
+	height:20px;
+	background-color:#e60012;
+	border:2px solid #fff;
+	display:block;
+	border-radius:10px;
+	font-size:12px;
+	text-align:center;
+	line-height:18px
+}
+.m-head .head-select-layout {
+	position:relative;
+	max-width:640px;
+	margin:0 auto
+}
+.m-head .head-select-layout .head-title {
+	text-align:center;
+	display:block;
+	margin:0 auto;
+	font-weight:700;
+	font-size:14px;
+	width:100%
+}
+.m-head .head-select-layout .goto-prev {
+	color:#fff;
+	position:absolute;
+	font-size:14px;
+	height:35px;
+	line-height:35px;
+	top:0;
+	left:5px
+}
+.m-head .head-select-layout .goto-prev .iconfont {
+	font-size:16px
+}
+.m-head .head-select-layout .user-handle {
+	position:absolute;
+	top:0;
+	right:5px
+}
+.m-head .head-select-layout .user-cart {
+	float:left
+}
+.m-head .head-select-layout .user-more {
+	padding-left:8px;
+	padding-right:5px;
+	color:#fff;
+	font-size:18px;
+	float:right
+}
+.m-head .head-select-layout .user-more-box {
+	position:absolute;
+	top:35px;
+	right:0;
+	display:none;
+	z-index:100
+}
+.m-head .head-select-layout .user-more-box .more-head {
+	height:6px;
+	overflow:hidden
+}
+.m-head .head-select-layout .user-more-box i {
+	width:0;
+	height:0;
+	border-width:6px;
+	border-style:solid;
+	border-color:#fff #fff #ca1f4c;
+	font-size:0;
+	line-height:0;
+	float:right;
+	margin-right:9px;
+	margin-top:-6px
+}
+.m-head .head-select-layout .user-more-box ul {
+	padding:0;
+	background-color:#c7204e;
+	border-radius:3px
+}
+.m-head .head-select-layout .user-more-box li {
+	width:90px;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+	border-bottom:1px solid #fff
+}
+.m-head .head-select-layout .user-more-box li:last-child {
+	border-bottom:none
+}
+.m-head .head-select-layout .user-more-box a {
+	color:#fff;
+	display:block;
+	padding:0 10px
+}
+.m-head .head-select-layout .user-more-box span {
+	font-size:16px;
+	padding-right:15px
+}
+.m-head .head-select-layout .toggle-show {
+	display:block
+}
+.m-container {
+	max-width:640px;
+	margin:0 auto;
+}
+.fl {
+	float:left
+}
+.fr {
+	float:right
+}
+.clearfix:after {
+	content:".";
+	display:block;
+	clear:both;
+	height:0;
+	visibility:hidden
+}
+.loading-bg {
+	/*background-image:url(http://cca.mbaobao.com/mkts/201405/14/loading.gif);*/
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:50px 50px
+}
+.loading-box {
+	position:absolute;
+	top:0;
+	height:100%;
+	text-align:center;
+	z-index:9999;
+	display:none;
+	width:100%
+}
+.loading-box .box-wrap {
+	width:60px;
+	height:60px;
+	border-radius:4px;
+	background-color:rgba(0, 0, 0, .5);
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform:translate(-50%, -50%)
+}
+.loading-box i {
+	display:block;
+	position:absolute;
+	z-index:1;
+	left:50%;
+	top:50%;
+	-webkit-transform:translate(-50%, -50%);
+	width:30px;
+	height:30px;
+	/*background:url(http://cca.mbaobao.com/mkts/201405/14/loading_me.png) 0 0;*/
+	-webkit-animation-duration:500ms;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:step-start;
+	-webkit-animation-name:animate-loading
+}
+@-webkit-keyframes animate-loading {
+0% {
+background-position:0 0
+}
+12.5% {
+background-position:-30px 0
+}
+25% {
+background-position:-60px 0
+}
+37.5% {
+background-position:-90px 0
+}
+50% {
+background-position:-120px 0
+}
+62.5% {
+background-position:-150px 0
+}
+75% {
+background-position:-180px 0
+}
+87.5% {
+background-position:-210px 0
+}
+100% {
+background-position:-240px 0
+}
+}
+.m-footer {
+	max-width:640px;
+	margin:0 auto
+}
+.m-footer .footer-info {
+	padding-bottom:0
+}
+.m-footer .footer-login {
+	height:35px;
+	line-height:35px;
+	padding:2px 8px 0
+}
+.m-footer .footer-cs {
+	height:36px;
+	line-height:20px;
+	text-align:center;
+	background-color:#e21a53;
+	font-size:14px;
+	color:#fff;
+	padding:8px 0
+}
+.m-footer .footer-cs a {
+	color:#fff
+}
+.m-footer .copyright {
+	line-height:18px;
+	text-align:center;
+	background-color:#fff;
+	font-size:12px;
+	color:#d2d2d2;
+	padding:8px 0
+}
+.m-footer .f-callback {
+	float:left
+}
+.m-footer .f-login {
+	float:right
+}
+.m-footer .f-login .line {
+	color:#d2d2d2;
+	padding:0 10px
+}
+.m-footer .go-other {
+	clear:both;
+	display:-webkit-box;
+	border-top:1px solid #d2d2d2;
+	padding:10px 0 15px
+}
+.m-footer .go-other a {
+	-webkit-box-flex:1;
+	display:block;
+	text-align:center;
+	color:#5a5a5a;
+	font-size:12px
+}
+.m-footer .go-other .iconfont {
+	font-size:20px;
+	display:block
+}
+.g-top {
+	width:30px;
+	height:30px;
+	position:fixed;
+	bottom:55px;
+	right:10px;
+	font-size:30px;
+	color:#000;
+	opacity:0;
+	filter:alpha(opacity=0);
+	display:none;
+	z-index:400;
+	-webkit-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	transform:rotate(180deg);
+	-webkit-transition:opacity 350ms cubic-bezier(0, 0, .25, 1);
+	transition:opacity 350ms cubic-bezier(0, 0, .25, 1)
+}
+.noLogin a:first-child {
+	border-right:1px solid #d1d1d1;
+	padding-right:15px;
+	margin-right:10px;
+	font-size:13px
+}
+.yesLogin .loginL {
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	display:block;
+	text-align:right
+}
+.yesLogin .loginR {
+	display:none
+}
+.tabs {
+	height:40px;
+	width:100%;
+	display:table
+}
+.tabs .item {
+	display:table-cell;
+	text-align:center;
+	line-height:40px;
+	font-size:14px;
+	font-weight:700
+}
+.top-tabs {
+	background-color:#ddd
+}
+.top-tabs .active {
+	background-color:#fff
+}
+.sub-tabs .item {
+	font-size:13px
+}
+.sub-tabs .active a {
+	border-bottom:2px solid #c52153;
+	color:#c52153;
+	padding:3px 2px
+}
+/*增加修复样式*/
+#ur_here a {color: #FFFFFF;}
+#ur_here code { color: #FFFFFF; background: none;}
+
+li {list-style-type: none;}

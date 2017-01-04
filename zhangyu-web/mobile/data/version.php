@@ -1,0 +1,5 @@
+<?php
+define('APPNAME', 'ECTouch');
+define('VERSION', '1.0');
+define('RELEASE', '20141218');
+define('ECTOUCH_AUTH_KEY', '0BE6524EB21D673BEA7D079B7B7964AF');

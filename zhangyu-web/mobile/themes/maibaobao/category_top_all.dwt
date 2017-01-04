@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/home.css">
+<link rel="stylesheet" href="__TPL__/css/choice.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-select-layout">
+    	<a class="goto-prev" href="javascript:history.go(-1);">
+        	<span class="iconfont "></span>
+			返回
+        </a>
+        <h4 class="head-title">{$title}</h4>
+        <div class="user-handle">
+        	<a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        		<span class="iconfont"></span>
+            	<span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        	</a>
+            <a class="iconfont user-more J-link-more" href="javascript:void(0);"></a>
+            <div class="user-more-box J-top-links">
+            	<div class="more-head">
+					<i></i>
+				</div>
+                <ul>
+                	<li>
+						<a href="index.php">
+							<span class="iconfont"></span>
+							首页
+						</a>
+					</li>
+                    <li>
+						<a href="index.php?c=category&a=top_all">
+							<span class="iconfont"></span>
+							类目
+						</a>
+					</li>
+                    <li>
+						<a href="index.php?m=default&c=user">
+							<span class="iconfont"></span>
+							我的
+						</a>
+					</li>
+                    <li>
+						<a href="javascript:openSearch();">
+							<span class="iconfont"></span>
+							搜索
+						</a>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="m-container">
+	<section id="search">
+    	<form action="{:url('category/index')}<!-- {if $id} -->&id={$id}<!-- {/if} -->"  method="post" id="searchForm" name="searchForm">
+        	<div class="search-key-form">
+            	<input name="keywords" type="search" placeholder="输入关键词或商品编号" id="keywordBox" class="search-key">
+            </div>
+            <button type="submit" value="{$lang.search}" onclick="return check('keywordBox')" class="search-submit"></button>
+        </form>
+    </section>
+    <section id="choice-load-body" class="m-choice-body"> 
+        <div class="side">   	
+        	<ul>
+        	<!--{foreach from=$category item=cat name=no}-->
+            		<li class="nav-item" data-title="{$cat.name|escape:html}" style=" width:100%; float:left; position:relative">
+            		  <a href="#choice-load-body" class="side-a">
+                		<img src="{$cat.cat_image}">
+                	</a>
+                	<i class="arrow" style="display: none;"></i>
+                </li>
+           <!--{/foreach}-->
+           </ul>
+        </div> 
+        <div class="main" style="display: block;">
+          <!--{foreach from=$category item=cat name=no}-->
+          <div class="category-wrap ">        
+             <ul class="category-list">
+               <!--{foreach from=$cat.cat_id item=child name=no1}-->
+                   <li class="item">
+                    <!--{if $child.cat_id}-->
+                        <a href="{:url('category/all',array('id'=>$this->_var['child']['id']))}">
+                        <img src="{$child.cat_image}" style="width: 100%; height: auto; margin-bottom: 5px;"><br>
+                        {$child.name|escape:html}</a>
+                    <!--{else}-->
+                        <a href="{$child.url}">
+                        <img src="{$child.cat_image}" style="width: 100%; height: auto; margin-bottom: 5px;"><br>
+                        {$child.name|escape:html}</a>
+                    <!--{/if}-->
+                    </li>
+               <!--{/foreach}--> 
+             </ul>
+          </div>       
+          <!--{/foreach}-->
+        </div>
+    </section>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+	function Options(id,cName,model){
+		this.id=$("#"+id);
+		this.li=this.id.find("."+cName);
+		this.model=this.id.find("."+model);
+		this.i=this.id.find(".arrow");
+		this.init();
+	}
+	Options.prototype.init=function(){
+		var that=this;
+		this.model.eq(0).show();
+		this.i.eq(0).show();
+		this.li.eq(0).addClass("active");
+		this.li.click(function(){
+			var index=that.li.index(this);
+			that.model.hide().eq(index).show();
+			that.i.hide().eq(index).show();
+			
+		});	
+	}
+	new Options("choice-load-body","side-a","<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/home.css">
+<link rel="stylesheet" href="__TPL__/css/choice.css">
+</head>
+<body>
+<header class="m-head">
+  <div class="head-select-layout">
+      <a class="goto-prev" href="javascript:history.go(-1);">
+          <span class="iconfont "></span>
+      返回
+        </a>
+        <h4 class="head-title">{$title}</h4>
+        <div class="user-handle">
+          <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+            <span class="iconfont"></span>
+              <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+          </a>
+            <a class="iconfont user-more J-link-more" href="javascript:void(0);"></a>
+            <div class="user-more-box J-top-links">
+              <div class="more-head">
+          <i></i>
+        </div>
+                <ul>
+                  <li>
+            <a href="index.php">
+              <span class="iconfont"></span>
+              首页
+            </a>
+          </li>
+                    <li>
+            <a href="index.php?c=category&a=top_all">
+              <span class="iconfont"></span>
+              类目
+            </a>
+          </li>
+                    <li>
+            <a href="index.php?m=default&c=user">
+              <span class="iconfont"></span>
+              我的
+            </a>
+          </li>
+                    <li>
+            <a href="javascript:openSearch();">
+              <span class="iconfont"></span>
+              搜索
+            </a>
+          </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="m-container">
+  <section id="search">
+      <form action="{:url('category/index')}<!-- {if $id} -->&id={$id}<!-- {/if} -->"  method="post" id="searchForm" name="searchForm">
+          <div class="search-key-form">
+              <input name="keywords" type="search" placeholder="输入关键词或商品编号" id="keywordBox" class="search-key">
+            </div>
+            <button type="submit" value="{$lang.search}" onclick="return check('keywordBox')" class="search-submit"></button>
+        </form>
+    </section>
+    <section id="choice-load-body" class="m-choice-body"> 
+        <div class="side">    
+          <ul>
+          <!--{foreach from=$category item=cat name=no}-->
+                <li class="nav-item" data-title="{$cat.name|escape:html}" style=" width:100%; float:left; position:relative">
+                  <a href="#choice-load-body" class="side-a">
+                    <img src="{$cat.cat_image}">
+                  </a>
+                  <i class="arrow" style="display: none;"></i>
+                </li>
+           <!--{/foreach}-->
+           </ul>
+        </div> 
+        <div class="main">
+          <!--{foreach from=$category item=cat name=no}-->
+          <div class="category-wrap ">        
+             <ul class="category-list">
+               <!--{foreach from=$cat.cat_id item=child name=no1}-->
+                   <li class="item">
+                    <!--{if $child.cat_id}-->
+                        <a href="{:url('category/all',array('id'=>$this->_var['child']['id']))}">
+                        <img src="{$child.cat_image}" style="width: 50px; height: 50px; margin-bottom: 5px;"><br>
+                        {$child.name|escape:html}</a>
+                    <!--{else}-->
+                        <a href="{$child.url}">
+                        <img src="{$child.cat_image}" style="width: 50px; height: 50px; margin-bottom: 5px;"><br>
+                        {$child.name|escape:html}</a>
+                    <!--{/if}-->
+                    </li>
+               <!--{/foreach}--> 
+             </ul>
+          </div>       
+          <!--{/foreach}-->
+        </div>
+    </section>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+  function Options(id,cName,model){
+    this.id=$("#"+id);
+    this.li=this.id.find("."+cName);
+    this.model=this.id.find("."+model);
+    this.i=this.id.find(".arrow");
+    this.init();
+  }
+  Options.prototype.init=function(){
+    var that=this;
+    this.model.eq(0).show();
+    this.i.eq(0).show();
+    this.li.eq(0).addClass("active");
+    this.li.click(function(){
+      var index=that.li.index(this);
+      that.model.hide().eq(index).show();
+      that.i.hide().eq(index).show();
+      
+    }); 
+  }
+  new Options("choice-load-body","side-a","category-wrap");
+</script>
+<script type="text/javascript">
+    $(function(){
+      $('.J-link-more').on('click', function () {
+        $('.J-top-links').toggleClass("toggle-show");
+        return false;
+      });
+    })
+  </script>
+</body>
+</html>
+");
+</script>
+<script type="text/javascript">
+		$(function(){
+			$('.J-link-more').on('click', function () {
+				$('.J-top-links').toggleClass("toggle-show");
+				return false;
+			});
+		})
+	</script>
+</body>
+</html>

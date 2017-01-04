@@ -1,0 +1,91 @@
+/*! login 1.0.0 pub 2014-08-29 16:33 by baoluo */
+
+.m-container {
+	background:#fff
+}
+.m-container input {
+	-webkit-appearance:none
+}
+.footer-login {
+	display:none
+}
+.tabs {
+	height:38px;
+	line-height:38px;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex
+}
+.tabs .tab {
+	text-align:center;
+	background-color:#d2d2d2;
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	width:50%;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1
+}
+.tabs .tab a {
+	display:block
+}
+.tabs .title {
+	font-weight:700;
+	font-size:14px;
+	line-height:38px;
+	color:#333
+}
+.tabs .selected {
+	background-color:#fff
+}
+.tabs .active .title {
+	color:#c6204d
+}
+.register .reg-body {
+	padding:33px 0 60px
+}
+.register .error-tips, .register .reg-body {
+	width:260px;
+	margin:0 auto
+}
+.reg-body .input-style {
+	-webkit-tap-highlight-color:rgba(255, 255, 255, 0);
+	width:100%;
+	height:35px;
+	color:#000;
+	background:0;
+	padding-left:10px;
+	margin-top:15px;
+	font-size:16px;
+	-webkit-appearance:none;
+	border:1px solid #888;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px
+}
+.error-tips {
+	padding:20px 0 10px;
+	height:25px;
+	line-height:25px;
+	color:#c6204d
+}
+.reg-body .g-b-register {
+	display:block;
+	background:#c6204d;
+	color:#fff;
+	width:100%;
+	height:40px;
+	margin:5px 0;
+	font-size:18px;
+	line-height:40px;
+	text-align:center;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:none
+}

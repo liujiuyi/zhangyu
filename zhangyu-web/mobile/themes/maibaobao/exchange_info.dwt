@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/item.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<div class="m-container">
+	 <form action="{:url('exchange/buy')}" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
+	<section class="sub-title">
+    	<div class="wrap">
+        	<a class="backBtn iconfont" href="javascript:history.go(-1)"></a>
+            <a class="homeBtn iconfont" href="index.php"></a>
+        </div>
+    </section>
+    <section class="i-pics">
+    	<div class="wrap">
+        	<div id="focus" class="swipe" style="visibility: visible;">
+            	<div class="swipe-wrap bd">
+                	<ul>
+                    	<li><a href="#"><img src="{$goods.original_img}" alt="{$goods.goods_name}" width="320" height="320" /></a></li>
+                    	<!--{if $pictures}--> 
+        				<!-- {foreach from=$pictures item=picture name=no}--> 
+        				<!-- {if $smarty.foreach.no.iteration > 1}  -->
+        				<li><a href="#"><img src="{$picture.img_url}" alt="{$picture.img_desc}" width="320" height="320" /></a></li>
+        				<!-- {/if}--> 
+        				<!--{/foreach}--> 
+       					<!--{/if}-->
+                    </ul>
+                </div>
+                <div class="hd">
+      				<ul class="slider-nav">
+      				</ul>
+                    <i class="iconfont fav-btn <!--{if $sc eq 1}-->ect-colory<!--{/if}-->" onClick="collect({$goods.goods_id})" id='ECS_COLLECT'></i>
+    			</div>
+            </div>
+        </div>
+    </section>
+    <section class="i-price">
+    	<div class="s-price">
+        	<span class="yuan">积分：</span>
+            <strong>
+            	{$goods.exchange_integral}
+        	</strong>
+        </div>
+    </section>
+    <section class="buy-bar">
+    	<div class="bar-wrap">
+        	<input type="hidden" name="goods_id" value="{$goods.goods_id}" />
+            <button type="submit" class="btn-buy-now" style=" border:none; width:100%">{$lang.exchange_goods}</button>
+        </div>
+    </section>
+    <section class="buy-get">
+    	<!-- {if $cfg.show_goodssn} 显示商品货号-->
+    	<div class="b-1">
+            商品货号： <strong class="c-red">{$goods.goods_sn}</strong>
+        </div>
+        <!-- {/if} -->
+        <!-- {if $goods.goods_brand neq "" and $cfg.show_brand} 显示商品品牌-->
+        <div class="b-2">
+            商品品牌： <strong class="c-red">{$goods.goods_brand}</strong>
+        </div>
+        <!-- {/if} -->
+    </section>
+    <section class="i-panels">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs text-center">
+          <li class="active"><a href="#one" role="tab" data-toggle="tab"><i class="iconfont"></i>{$lang.goods_brief}</a></li>
+          <li><a href="#two" role="tab" data-toggle="tab"><i class="iconfont"></i>{$lang.goods_attr}</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content scroll-panels">
+          <div class="tab-pane panel item-pics active" id="one">
+          		<div class="content">{$goods.goods_desc}</div>
+          </div>
+          <div class="tab-pane panel item-attr" id="two">
+            <table>
+              <!-- {foreach from=$properties item=property_group key=key} -->
+              <!-- {foreach from=$property_group item=property} -->
+              <tr>
+                <th>{$property.name|escape:html}</th>
+                <td>{$property.value}</td>
+              </tr>
+              <!-- {/foreach}--> 
+              <!-- {/foreach}-->
+            </table>
+          </div>
+        </div>
+    </section>
+    </form>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+</body>
+</html>

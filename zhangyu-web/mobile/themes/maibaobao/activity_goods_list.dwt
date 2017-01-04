@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/list.css">
+</head>
+<body>
+<header class="m-head">
+  <div class="head-select-layout">
+      <a class="goto-prev" href="javascript:history.go(-1);">
+          <span class="iconfont "></span>
+      返回
+        </a>
+        <h4 class="head-title"><!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --></h4>
+        <div class="user-handle">
+          <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+            <span class="iconfont"></span>
+              <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+          </a>
+            <a class="iconfont user-more J-link-more" href="javascript:void(0);"></a>
+            <div class="user-more-box J-top-links">
+              <div class="more-head">
+          <i></i>
+        </div>
+                <ul>
+                  <li>
+            <a href="index.php">
+              <span class="iconfont"></span>
+              首页
+            </a>
+          </li>
+                    <li>
+            <a href="index.php?c=category&a=top_all">
+              <span class="iconfont"></span>
+              类目
+            </a>
+          </li>
+                    <li>
+            <a href="index.php?m=default&c=user">
+              <span class="iconfont"></span>
+              我的
+            </a>
+          </li>
+                    <li>
+            <a href="javascript:openSearch();">
+              <span class="iconfont"></span>
+              搜索
+            </a>
+          </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="m-container">
+  <!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem -->
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript">
+    $(function(){
+      $('.J-link-more').on('click', function () {
+        $('.J-top-links').toggleClass("toggle-show");
+        return false;
+      });
+    })
+</script>
+<script type="text/javascript">
+<!--{if $show_asynclist}-->
+get_asynclist("{:url('activity/asynclist_list', array('id'=>$this->_var['id'], 'category'=>$this->_var['category'], 'brand'=>$this->_var['brand_id'], 'price_min'=>$this->_var['price_min'], 'price_max'=>$this->_var['price_max'], 'filter_attr'=>$this->_var['filter_attr'], 'sort'=>$this->_var['sort'], 'order'=>$this->_var['order']))}" , '__TPL__/images/loader.gif');
+<!--{/if}--> 
+</script>
+</body>
+</html>
+

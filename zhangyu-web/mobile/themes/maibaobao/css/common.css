@@ -1,0 +1,564 @@
+/*! mbbMobile 1.0.2 pub 2014-10-16 10:14 by douban */
+
+@charset "utf-8";
+html{ font-size:100px}
+article, aside, body, dd, dl, dt, figcaption, figure, footer, h1, h2, h3, h4, h5, h6, header, hgroup, html, li, nav, ol, p, section, ul {
+	margin:0;
+	padding:0
+}
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+	display:block
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style:normal
+}
+img {
+	border:0;
+	vertical-align:bottom
+}
+img a {
+	border:0;
+	text-decoration:none
+}
+ol, ul {
+	list-style:none
+}
+a {
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:0 0;
+	text-decoration:none;
+	color:#666
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0
+}
+input, select {
+	font-size:100%
+}
+hr {
+	display:block;
+	height:1px;
+	border:0;
+	border-top:1px solid #ccc;
+	margin:1em 0;
+	padding:0
+}
+body {
+	background:#e8e8e8;
+	font-family:Helvetica, san-serif;
+	line-height:1.5;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	color:#666;
+	-webkit-text-size-adjust:none;
+	-webkit-touch-callout:none;
+	-webkit-tap-highlight-color:rgba(0, 0, 0, .5)
+}
+div, li, p {
+	-webkit-tap-highlight-color:rgba(0, 0, 0, .5)
+}
+.modTop {
+	margin-top:8px
+}
+.modRigth {
+	margin-right:8px
+}
+.modBottom {
+	margin-bottom:8px
+}
+.modLeft {
+	margin-left:8px
+}
+.modFb {
+	font-size:12px;
+	font-weight:700
+}
+.modFn {
+	font-weight:400
+}
+.clearfix:after, dl:after, ul:after {
+	content:".";
+	display:block;
+	clear:both;
+	height:0;
+	visibility:hidden
+}
+h2 {
+	font-size:1.5em
+}
+h3, h4, h5 {
+	font-size:100%;
+	font-weight:700
+}
+em {
+	font-weight:700
+}
+.fb {
+	font-size:15px;
+	font-weight:700
+}
+.fn {
+	font-weight:400
+}
+#mbMain {
+	padding:8px;
+	min-width:320px;
+	max-width:640px
+}
+.mbHead .mbTop {
+	height:35px;
+	background-color:#DC0005;
+	background-size:auto 50px;
+	background-position:0 -10px;
+	top:0;
+	width:100%;
+	z-index:1200;
+	box-shadow:0 2px 5px rgba(9, 9, 9, .3);
+	-webkit-box-shadow:0 2px 5px rgba(9, 9, 9, .3)
+}
+.mbHead .mbTop_wrap {
+	max-width:640px;
+	position:relative;
+	margin:0 auto
+}
+.mbHead .mbTop .mbLogo {
+	width:119px;
+	height:19px;
+	display:block;
+	padding:7px 0 0 8px
+}
+.mbHead .mbTop .userLogo {
+	width:30px;
+	height:30px;
+	display:block;
+	position:absolute;
+	top:0;
+	right:44px
+}
+.mbHead .mbTop .mbCart {
+	width:37px;
+	height:37px;
+	display:block;
+	position:absolute;
+	top:-4px;
+	right:8px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/cart.png?07f3a4) no-repeat 1px 0;
+	background-size:37px 37px;
+	color:#fff;
+	text-align:center;
+	padding-top:5px;
+	font-size:12px
+}
+#userLoginBox {
+	position:relative
+}
+#userLoginBox .tLogin {
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/2.png?07f3a4) repeat-x;
+	height:10px;
+	width:100%
+}
+#userLoginBox .mLogin {
+	padding:0 8px
+}
+#userLoginBox .loginMenu {
+	display:none;
+	line-height:24px;
+	padding:8px;
+	color:#26547e;
+	background:#efe3ca;
+	border-radius:0 0 5px 5px;
+	-webkit-border-radius:0 0 5px 5px;
+	-webkit-box-shadow:0 2px 3px #999
+}
+#userLoginBox .userLogin {
+	width:100%;
+	text-align:center
+}
+#userLoginBox .userLogin a, #userLoginBox .userLogin a:hover {
+	color:#26547e;
+	display:block
+}
+#userLoginBox .userLogin dd, #userLoginBox .userLogin dt {
+	width:25%;
+	-webkit-box-sizing:border-box;
+	height:25px;
+	overflow:hidden;
+	display:inline-block
+}
+#userLoginBox .userLogin dt {
+	padding-right:8px;
+	line-height:25px;
+	width:38%;
+	text-align:left
+}
+#userLoginBox .userLogin dd {
+	margin-right:5px;
+	border:1px solid #a5bacc;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#ecf0f4), to(#d9e2e9));
+	-webkit-box-shadow:0 1px 0 #8ca7be;
+	text-align:center
+}
+#userLoginBox .userLogin dd:nth-child(2) {
+width:30%
+}
+#userLoginBox .userLogin dd:nth-child(3) {
+width:20%
+}
+#userLoginBox .userLogin dd:last-child {
+	width:25%
+}
+#userLoginBox .userLogin a {
+	padding-left:14px;
+	padding-right:2px;
+	-webkit-box-sizing:border-box;
+	display:inline-block;
+	text-overflow:ellipsis
+}
+#userLoginBox .userLogin a.userSub1 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/15.png?07f3a4) no-repeat 0 7px;
+	background-size:11px 11px
+}
+#userLoginBox .userLogin a.userSub2 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/16.png?07f3a4) no-repeat 0 7px;
+	background-size:11px 11px
+}
+#userLoginBox .userLogin a.userSub3 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/17.png?07f3a4) no-repeat 0 7px;
+	background-size:11px 11px
+}
+#userLoginBox .userLogin .loginL {
+	width:100px;
+	overflow:hidden;
+	text-overflow:ellipsis
+}
+#mbPrompt {
+	padding:0 8px
+}
+#mbPrompt .promptBox {
+	color:#3d689a;
+	padding:8px;
+	height:20px;
+	line-height:20px;
+	background:#fcfbd2;
+	position:relative;
+	border-radius:0 0 5px 5px;
+	-webkit-border-radius:0 0 5px 5px;
+	-webkit-box-shadow:0 2px 3px #999;
+	margin:0 auto
+}
+#mbPrompt .promptClose {
+	width:14px;
+	height:14px;
+	display:block;
+	text-indent:-999em;
+	position:absolute;
+	top:10px;
+	right:8px;
+	cursor:pointer;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/close.png?07f3a4) no-repeat;
+	background-size:14px 14px
+}
+#mbMain .mbNav {
+	overflow:hidden;
+	-webkit-box-shadow:0 1px 2px #999
+}
+#mbMain .mbNav .navTab {
+	background:#666;
+	border-radius:5px 5px 0 0;
+	-webkit-border-radius:5px 5px 0 0;
+	height:30px;
+	line-height:30px
+}
+#mbMain .mbNav .navTab li {
+	float:left;
+	width:25%;
+	border-right:1px solid #fff;
+	background:#666;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	height:30px
+}
+#mbMain .mbNav .navTab li a, .mbHead .mbNav .navTab li a:hover {
+	display:block;
+	color:#fff;
+	text-decoration:none;
+	text-align:center
+}
+#mbMain .mbNav .navTab .navCurrent {
+	background:#fff
+}
+#mbMain .mbNav .navTab .navCurrent a, .mbHead .mbNav .navTab .navCurrent a:hover {
+	color:#666
+}
+#mbMain .mbNav .navTab li:first-child {
+	-webkit-border-radius:4px 0 0
+}
+#mbMain .mbNav .navTab li:last-child {
+	border-right:0;
+	-webkit-border-radius:0 4px 0 0
+}
+#mbMain .mbNav .navTab span {
+	display:inline-block;
+	padding-left:25px;
+	padding-right:15px
+}
+#mbMain .mbNav .navTab li .navTab1 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/s_tag_33.png?07f3a4) no-repeat 6px 9px;
+	background-size:14px 12px
+}
+#mbMain .mbNav .navTab li .navTab2 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/6.png?07f3a4) no-repeat 6px 9px;
+	background-size:15px 15px
+}
+#mbMain .mbNav .navTab li .navTab3 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/7.png?07f3a4) no-repeat 6px 9px;
+	background-size:15px 15px
+}
+#mbMain .mbNav .navTab li .navTab4 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/8.png?07f3a4) no-repeat 6px 9px;
+	background-size:15px 15px
+}
+#mbMain .mbNav .navTab .navCurrent .navTab1 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/5.png?07f3a4) no-repeat 6px 9px;
+	background-size:15px 15px
+}
+#mbMain .mbNav .navTab .navCurrent .navTab2 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/s_tag_03.png?07f3a4) no-repeat 6px 9px;
+	background-size:12px 12px
+}
+#mbMain .mbNav .navTab .navCurrent .navTab3 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/s_tag_05.png?07f3a4) no-repeat 6px 9px;
+	background-size:12px 12px
+}
+#mbMain .mbNav .navTab .navCurrent .navTab4 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/s_tag_07.png?07f3a4) no-repeat 6px 9px;
+	background-size:12px 12px
+}
+#mbMain .mbSearch {
+	padding:8px 10px;
+	background:#fff
+}
+#mbMain .mbSearch .mbSearchForm {
+	position:relative
+}
+#mbMain .mbSearch .searchBox {
+	width:100%;
+	height:30px;
+	line-height:30px;
+	background:#e9e9e9;
+	-webkit-border-radius:1px;
+	-webkit-box-shadow:0 -1px 2px #999;
+	font-size:14px;
+	padding-left:3px
+}
+#mbMain .mbSearch input {
+	vertical-align:middle;
+	border:0;
+	display:block
+}
+#mbMain .mbSearch .searchSubmit {
+	width:40px;
+	height:28px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/10.png?07f3a4) no-repeat #e9e9e9 top right;
+	background-size:30px 27px;
+	position:absolute;
+	top:1px;
+	right:0;
+	z-index:10;
+	cursor:pointer
+}
+.layoutBody {
+	max-width:640px;
+	margin:0 auto
+}
+.mbFoot {
+	padding:8px;
+	padding-top:0;
+	color:#666;
+	max-width:640px
+}
+.mbFoot a, .mbFoot a:hover {
+	color:#333;
+	text-decoration:none
+}
+.mbFoot .mbService {
+	line-height:18px;
+	color:#666;
+	background:#fff;
+	fong-size:0;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999;
+	margin-bottom:8px;
+	width:100%;
+	padding:0 2px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box
+}
+.mbFoot .mbService li:first-child {
+	width:47%;
+	float:left;
+	font-size:12px;
+	padding:10px 0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	text-align:center
+}
+.mbFoot .mbService li:last-child {
+	width:52%;
+	float:left;
+	font-size:12px;
+	padding:10px 0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	text-align:center
+}
+.mbFoot .mbService li:first-child span {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/3.png?07f3a4) no-repeat;
+	background-size:15px 15px;
+	vertical-align:middle;
+	padding:0 3px 0 0;
+	display:inline-block;
+	width:15px;
+	height:15px
+}
+.mbFoot .mbService li:last-child span {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/4.png?07f3a4) no-repeat;
+	background-size:15px 15px;
+	display:inline-block;
+	vertical-align:middle;
+	padding:0 3px 0 0;
+	width:15px;
+	height:15px
+}
+.mbFoot .mbBotLink {
+	line-height:18px;
+	background:#fff;
+	fong-size:0;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999;
+	margin-bottom:8px
+}
+.mbFoot .mbBotLink li {
+	width:30%;
+	float:left;
+	font-size:12px;
+	padding:10px 0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	text-align:center
+}
+.mbFoot .mbBotLink li a {
+	display:block
+}
+.mbFoot .mbBotLink li:nth-child(2) {
+border-left:1px solid #e8e8e8;
+border-right:1px solid #e8e8e8;
+width:38%
+}
+.mbFoot .mbBotInfo {
+	text-align:center
+}
+.mbFoot .noLogin .loginL {
+	width:40%;
+	float:left;
+	text-align:right
+}
+.mbFoot .noLogin .loginR {
+	width:40%;
+	float:right;
+	text-align:left
+}
+.mbFoot .yesLogin .loginL {
+	width:60%;
+	float:left;
+	text-align:center;
+	overflow:hidden
+}
+.mbFoot .yesLogin .loginR {
+	width:30%;
+	float:right;
+	text-align:left
+}
+.mbFoot .mbBotInfo nav a {
+	width:32%;
+	display:inline-block;
+	text-align:center
+}
+.mbFoot .mbBotInfo li {
+	height:35px;
+	line-height:35px;
+	width:75%;
+	border-bottom:1px solid #ccc;
+	margin:0 auto
+}
+.mbFoot .mbCopyright {
+	text-align:center;
+	line-height:18px;
+	margin-top:8px;
+	font-size:11px
+}
+#mbSubTitle {
+	padding:8px 8px 0;
+	max-width:642px;
+	margin:0 auto
+}
+.subTitleBox {
+	position:relative;
+	height:36px;
+	color:#666;
+	padding:8px;
+	background:#fff;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 2px 3px #999;
+	text-align:center
+}
+.subTitleBox .backBtn {
+	display:block;
+	width:20px;
+	height:20px;
+	position:absolute;
+	top:8px;
+	left:8px;
+	background:url(../images/back-order.png) no-repeat;
+	background-size:20px 20px
+}
+.subTitleBox .homeBtn {
+	display:block;
+	width:20px;
+	height:20px;
+	position:absolute;
+	top:8px;
+	right:8px;
+	background:url(../images/home-order.png) no-repeat;
+	background-size:20px 20px
+}
+.postErrorBox {
+	width:100%;
+	text-align:center
+}
+.postError {
+	width:98%;
+	display:inline-block;
+	background:#ddecf6;
+	padding:10px 0;
+	text-align:center;
+	-webkit-border-radius:3px;
+	border:1px solid #8badc2
+}
+@media only screen and (min-device-width:320px) {
+#mbMain, .mbFoot {
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
+margin:0 auto
+}
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/item.css">
+</head>
+<body>
+<script type="text/javascript" src="__TPL__/js/lefttime.js"></script>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<div class="m-container">
+	 <form action="{:url("groupbuy/buy")}" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY">
+     <input type="hidden" name="valid_goods" value="{$group_buy.restrict_amount}" />
+        <input type="hidden" name="group_buy_id" value="{$group_buy.group_buy_id}" />
+    <section class="i-pics">
+    	<div class="wrap">
+        	<div id="focus" class="swipe" style="visibility: visible;">
+            	<div class="swipe-wrap bd">
+                	<ul>
+                    	<li><a href="{$gb_goods.goods_img}"><img alt="{$gb_goods.goods_name}" src="{$gb_goods.goods_img}" width="100%" /></a></li>
+                    </ul>
+                </div>
+                <div class="hd">
+      				<ul class="slider-nav">
+      				</ul>
+                    <i class="iconfont fav-btn <!--{if $sc eq 1}-->ect-colory<!--{/if}-->" onClick="collect({$goods.goods_id})" id='ECS_COLLECT'></i>
+    			</div>
+            </div>
+        </div>
+    </section>
+    <section class="i-price">
+      <div class="goods-title">{$gb_goods.goods_name}</div>
+    	<div class="s-price">
+        	<span class="yuan"></span>
+			<strong>{$group_buy.formated_cur_price}</strong>
+        </div>
+        <div class="tags-wrap">
+			<div class="price-tags">
+				<span class="tag">聚单价</span>
+			</div>
+		</div>
+    </section>
+    <section class="buy-bar">
+    	<div class="bar-wrap">
+            <a href="javascript:;" class="btn-buy-now" onClick="document.getElementById('ECS_FORMBUY').submit()">立即购买</a> 
+        </div>
+    </section>
+    <section class="buy-get">
+    	<div class="b-2">
+        	 已聚单
+			<strong class="c-red">{$group_buy.trans_amount}</strong>
+			件 
+        </div>
+    </section>
+    <section class="i-panels">
+    	<div class="tabs nav-tabs">
+        	<div class="panels-tab">
+            	<a class="active" href="#item-pics">
+					<i class="iconfont"></i>
+					图文详情
+				</a>
+            </div>
+        </div>
+        <div class="scroll-panels">
+        	<div id="item-pics" class="panel item-pics" style="height: inherit;">
+            	<div class="content">
+                	<p>
+                    	{$gb_goods.goods_desc}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </form>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript">
+$(function() {
+/*判断user-tab内容高度不够时撑开*/
+	var user_tab_height = $(".group-buy-infos");
+	var window_height = $(window).height()/3;
+	user_tab_height.css("min-height",window_height);
+});
+var gmt_end_time = "{$group_buy.gmt_end_date|default:0}";
+{foreach from=$lang.goods_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var now_time = {$now_time};
+<!-- {literal} -->
+
+onload = function()
+{
+  try
+  {
+    onload_leftTime();
+  }
+  catch (e)
+  {}
+}
+function changeNum( type ){
+	var qty = document.forms['ECS_FORMBUY'].elements['number'].value;
+	var valid = document.forms['ECS_FORMBUY'].elements['valid_goods'].value;
+    if(type == 1){qty--; }
+    if(type == 3){qty++; }
+    if(qty <=0 ){ qty=1; }
+	if(qty > valid){ qty--;}
+    if(!/^[0-9]*$/.test(qty)){ qty = document.getElementById('back_number').value; }
+    document.getElementById('goods_number').value = qty;
+  }
+<!-- {/literal} -->
+
+document.addEventListener('DOMContentLoaded', function(){Code.photoSwipe('a', '#Gallery');}, false);
+</script>
+</body></html>

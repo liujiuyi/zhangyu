@@ -1,0 +1,3323 @@
+/*! mbbMobile 1.0.2 pub 2014-10-16 10:14 by douban */
+
+.frameLoginBox .formLogin {
+	padding:8px 0 15px;
+	text-align:center
+}
+.frameLoginBox .formLogin li {
+	width:100%;
+	display:inline-block;
+	padding:5px;
+	-webkit-box-sizing:border-box
+}
+.frameLoginBox .formLogin label {
+	width:70px;
+	text-align:left;
+	display:inline-block
+}
+.frameLoginBox .formLogin span {
+	display:inline-block
+}
+.frameLoginBox .formLogin input {
+	height:24px;
+	line-height:24px;
+	border:2px solid #8badc2;
+	width:180px
+}
+.frameLoginBox .btnLoginBox {
+	padding:15px 0 10px;
+	text-align:center
+}
+.frameLoginBox .btnLoginBox .register {
+	display:inline-block;
+	color:#456f8b;
+	padding:10px 0
+}
+.modBaseBox {
+	background:#fff;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999;
+	padding:8px
+}
+.modBaseBox h3 {
+	height:30px;
+	line-height:20px;
+	color:#333;
+	padding:0 5px;
+	position:relative
+}
+.modEmptyBox {
+	background:#fff;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999
+}
+.modHd {
+	background:#fff
+}
+.modBd {
+	background:#fff;
+	color:#666
+}
+.modTop {
+	margin-top:8px
+}
+.modRigth {
+	margin-right:8px
+}
+.modBottom {
+	margin-bottom:8px
+}
+.modLeft {
+	margin-left:8px
+}
+.modFb {
+	font-size:12px;
+	font-weight:700
+}
+.modFn {
+	font-weight:400
+}
+.modBtnWidth {
+	width:80%
+}
+.modHide {
+	display:none
+}
+.modShow {
+	display:block
+}
+.modFeft {
+	float:left
+}
+.modRight {
+	float:right
+}
+.modRed {
+	color:#e13636
+}
+.modTi {
+	text-indent:24px
+}
+.modHotTag {
+	display:block;
+	position:absolute;
+	top:2px;
+	right:2px;
+	background:#7b7b7b;
+	color:#fff;
+	padding:3px 5px;
+	-webkit-border-radius:5px 0
+}
+.modMoreTag {
+	display:block;
+	position:absolute;
+	top:0;
+	right:5px;
+	background:#fff;
+	color:#666;
+	border:1px solid #bdbdbd;
+	height:24px;
+	overflow:hidden;
+	-webkit-box-sizing:border-box;
+	-webkit-box-shadow:0 1px 0 #a8a8a8
+}
+.modMoreTag .tL, .modMoreTag .tR {
+	color:#666;
+	display:block;
+	float:left;
+	-webkit-box-sizing:border-box
+}
+.modMoreTag .tL {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#d6d6d6), to(#b4b4b4));
+	width:20px;
+	text-align:center;
+	border:1px solid #c4c4c4;
+	border-top:1px solid #fff
+}
+.modMoreTag .tR {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#e6e6e6));
+	font-weight:400;
+	padding:0 3px 0 8px;
+	border-bottom:1px solid #fff;
+	border-top:1px solid #fcfcfc;
+	border-right:1px solid #f9f9f9;
+	border-left:1px solid #b7b7b7
+}
+.modMoreTag .tR i {
+	display:inline-block;
+	border-width:4px;
+	border-color:#f1f1f1 #f1f1f1 #f1f1f1 #7c7c7c;
+	border-style:solid;
+	width:0;
+	height:0;
+	line-height:0;
+	margin-left:5px
+}
+a.modHotTag {
+	color:#666;
+	text-decoration:none
+}
+a.modMoreTag .tL {
+	text-decoration:none
+}
+.modRankBTag {
+	position:absolute;
+	top:-12px;
+	left:-12px;
+	width:26px;
+	height:26px;
+	display:block;
+	-webkit-border-radius:13px;
+	background:#fff;
+	-webkit-box-shadow:1px 1px 1px #999
+}
+.modRankBTag span {
+	background:#ec1b23;
+	width:16px;
+	height:22px;
+	display:block;
+	line-height:20px;
+	-webkit-border-radius:11px;
+	margin:3px 0 0 3px;
+	font-size:16px;
+	text-align:left;
+	padding:0 0 0 6px;
+	color:#fff;
+	font-weight:700
+}
+.modRankSTag {
+	width:16px;
+	height:16px;
+	display:inline-block;
+	-webkit-border-radius:8px;
+	background:#fff;
+	-webkit-box-shadow:1px 1px 1px #999;
+	margin-right:3px
+}
+.modRankSTag em {
+	background:#ec1b23;
+	width:10px;
+	height:14px;
+	line-height:14px;
+	display:block;
+	-webkit-border-radius:7px;
+	margin:1px 0 0 1px;
+	font-size:12px;
+	text-align:left;
+	padding:0 0 0 4px;
+	color:#fff;
+	font-weight:700;
+	list-style:none
+}
+.modBtnWhite {
+	display:inline-block;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#e6e6e6));
+	height:22px;
+	line-height:22px;
+	padding:0 15px;
+	text-align:center;
+	border:1px solid #bdbdbd;
+	-webkit-box-shadow:0 1px 2px #ccc
+}
+.modBtnWhite span.icoPreSales {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/22.png?a1a4e8) no-repeat;
+	padding-left:18px
+}
+.modBtnWhite span.icoConsult {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/23.png?a1a4e8) no-repeat;
+	padding-left:18px
+}
+.modBtnColor {
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	padding:0 15px;
+	text-align:center;
+	color:#fff;
+	-webkit-border-radius:2px;
+	-webkit-box-shadow:0 1px 3px #444
+}
+.modBtnColor span {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/ico_jt.png?a1a4e8) no-repeat center right;
+	padding-right:12px;
+	padding-left:12px;
+	background-size:8px 8px
+}
+.modBtnLarge {
+	padding:0 45px
+}
+.colorBlue {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#489cd3), to(#3980af));
+	border:1px solid #2c6287
+}
+.colorBlack {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#8d8d8d), to(#747474));
+	border:1px solid #595959
+}
+.colorGreen {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#55b1c3), to(#4391a1));
+	border:1px solid #2f6d7a
+}
+.colorWhite {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f3f3f3), to(#d5d5d5));
+	border:1px solid #aeaeae;
+	color:#666
+}
+.colorOrange {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#FFA656), to(#e87a00));
+	border:1px solid #e66f05;
+	color:#fff
+}
+.colorRed-11 {
+	position:relative;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#db2324), to(#ac0c0d));
+	border:1px solid #9d0a0a;
+	color:#fff;
+	padding:0 10px
+}
+.colorRed-11 i {
+	display:block;
+	position:absolute;
+	top:8px;
+	left:11px;
+	width:34px;
+	height:16px;
+	background:transparent url(http://cca.mbaobao.com/mkts/201312/07/mob/4.gif?1207) 0 0 no-repeat;
+	background-size:34px 16px
+}
+.colorRed-11 span {
+	padding-right:12px;
+	padding-left:44px
+}
+.starLevel {
+	display:inline-block;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/ico_star.png?a1a4e8) no-repeat;
+	background-size:115px 18px;
+	text-indent:-999em;
+	height:20px
+}
+.start1 {
+	width:22px
+}
+.start2 {
+	width:44px
+}
+.start3 {
+	width:68px
+}
+.start4 {
+	width:88px
+}
+.start5 {
+	width:110px
+}
+.smallStarLevel {
+	display:inline-block;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/ico_smallstart.png?a1a4e8) no-repeat;
+	background-size:59px 11px;
+	position:absolute;
+	top:5px;
+	right:5px;
+	text-indent:-999em;
+	height:20px
+}
+.smallStart1 {
+	width:12px
+}
+.smallStart2 {
+	width:24px
+}
+.smallStart3 {
+	width:36px
+}
+.smallStart4 {
+	width:48px
+}
+.smallStart5 {
+	width:60px
+}
+.modBd .modList {
+	width:100%
+}
+.modBd .modList li {
+	float:left;
+	text-align:center;
+	padding:5px;
+	-webkit-box-sizing:border-box;
+	width:33.3%
+}
+.modBd .modList .productImg {
+	margin-bottom:5px;
+	position:relative
+}
+.modBd .modList .productImg img {
+	background:#e8e8e8 url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/loading.png?a1a4e8) center center no-repeat;
+	background-size:130px 130px
+}
+.modBd .modList .productName {
+	height:38px;
+	overflow:hidden
+}
+.modBd .modList .productImg img {
+	width:100%;
+	height:auto;
+	border:0
+}
+.modBd .modList .productPrice em {
+	list-style:none;
+	color:#ed1b23
+}
+.modBd .modTextList {
+	margin-top:5px;
+	padding:0 5px;
+	clear:both
+}
+.modBd .modTextList li {
+	padding:8px 0;
+	border-top:1px solid #e8e8e8;
+	position:relative
+}
+.modBd .modTextList li a, .productMod .modBd .modTextList li a:hover {
+	color:#666;
+	text-decoration:none
+}
+.modBd .modTextList li .modTextHide {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	display:block
+}
+.modBd .modTextList .modGoodsName {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	display:inline-block
+}
+.modBd .modTextList .modGoodsPrice {
+	color:#ed1b23;
+	display:inline-block;
+	position:absolute;
+	top:8px;
+	right:8px;
+	background:#fff
+}
+@media screen and (max-width:640px) {
+.modBd .modTextList .modGoodsName {
+width:200px
+}
+}
+@media screen and (min-width:640px) {
+.modBd .modTextList .modGoodsName {
+width:auto
+}
+}
+.modList .brandsImg {
+	border:3px solid #e8e8e8;
+	position:relative
+}
+.modList .brandsImg img {
+	width:100%;
+	border:0
+}
+.modList .brandsName {
+	background:#e8e8e8;
+	padding:3px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap
+}
+.modList .productImg .tag-pic {
+	width:30px;
+	height:30px;
+	position:absolute;
+	left:0;
+	top:0
+}
+.modList .productImg .tag-pic img {
+	width:30px;
+	height:30px
+}
+.recomendMod {
+	position:relative;
+	-webkit-border-radius:0 0 5px 5px;
+	-webkit-box-shadow:0 1px 2px #999;
+	padding:10 0 5px
+}
+.recomendMod .aRecomend {
+	width:100%;
+	display:block
+}
+#imgBlockBox {
+	width:100%;
+	background-color:#fff;
+	text-align:center;
+	position:relative
+}
+#imgBlockBox div.moveWrap {
+	width:100%;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box
+}
+#imgBlockBox ul.moveWrapBG {
+	width:100%;
+	height:auto;
+	visibility:hidden;
+	display:inline-block;
+	position:relative;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	margin:0 auto;
+	padding:0;
+	overflow:hidden
+}
+#imgBlockBox li {
+	width:100%;
+	display:none;
+	margin:0;
+	padding:0;
+	float:left;
+	list-style:none;
+	text-align:center
+}
+#imgBlockBox li div {
+	width:100%
+}
+#imgBlockBox div.slideMask {
+	position:absolute;
+	top:0;
+	left:0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	margin-right:0!important
+}
+#imgBlockBox div.moveWrap>ul.move {
+	position:relative;
+	left:0;
+	top:0;
+	list-style:none;
+	width:20000px;
+-webkit-transition:all .6s ease-in-out;
+	-webkit-transition-duration:400ms;
+	-webkit-transition-property:-webkit-transform;
+	margin:0;
+	padding:0;
+	display:none
+}
+#imgBlockBox div.moveWrap>ul.move li {
+	width:304px;
+	height:125px
+}
+#imgBlockBox div.moveWrap>ul.move li.slideUnit {
+	margin:0;
+	padding:0;
+	height:100%;
+	float:left;
+	list-style:none;
+	text-align:center;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box
+}
+#imgBlockBox li.slideUnit>div {
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	text-align:center;
+	-webkit-box-sizing:border-box
+}
+#imgBlockBox div.flickSlideBottom {
+	width:100%;
+	height:30px;
+	line-height:30px;
+	background:#fff;
+	text-align:center;
+	-webkit-border-radius:0 0 5px 5px
+}
+#imgBlockBox div.flickSlideBottom div.bottomLeft, #imgBlockBox div.flickSlideBottom div.bottomRight {
+	width:25px;
+	height:20px;
+	position:absolute;
+	bottom:5px;
+	cursor:pointer;
+	outline:0;
+	background-size:25px 20px;
+	background-repeat:no-repeat;
+	text-indent:-999em
+}
+#imgBlockBox div.flickSlideBottom div.bottomRight {
+	right:5px;
+	background-image:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/12.png?a1a4e8)
+}
+#imgBlockBox div.flickSlideBottom div.bottomLeft {
+	left:5px;
+	background-image:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/11.png?a1a4e8)
+}
+#imgBlockBox div.flickSlideBottom ul.slidePager {
+	display:inline-block;
+	width:auto;
+	text-align:center;
+	margin:0 6px;
+	padding:0;
+	vertical-align:middle
+}
+#imgBlockBox div.flickSlideBottom ul.slidePager li.slidePagerPointer {
+	background:#e8e8e8;
+	width:10px;
+	height:10px;
+	display:inline-block;
+	margin:0 4px;
+	text-indent:-999em;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px
+}
+#imgBlockBox div.flickSlideBottom ul.slidePager li.slidePagerPointer.active {
+	background:#ec1b23
+}
+#detail_title {
+	text-align:center;
+	background-color:#fff
+}
+#detail_title h1 {
+	font-size:14px;
+	margin:0 auto;
+	text-align:center
+}
+#detail_title h1 span {
+	display:block
+}
+.subInfoMod {
+	height:46px;
+	width:100%;
+	line-height:16px;
+	color:#666;
+	background:#fff;
+	fong-size:0;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999
+}
+.subInfoMod li {
+	width:50%;
+	height:46px;
+	float:left;
+	font-size:12px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	padding-left:44px;
+	padding-top:7px
+}
+.subInfoMod li:first-child {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/13.png?a1a4e8) no-repeat 6px 8px;
+	background-size:30px 30px
+}
+.subInfoMod li:last-child {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/online.png?a1a4e8) no-repeat 6px 8px;
+	background-size:30px 30px
+}
+.selectBagBox {
+	padding:10px 0;
+	background:#fff;
+	-webkit-border-radius:0 0 5px 5px;
+	-webkit-box-shadow:0 1px 3px #999
+}
+.selectBagBox .selectHead {
+	display:block;
+	height:30px;
+	line-height:30px;
+	background:#fff;
+	padding:1px 0;
+	position:relative;
+	border-top:1px solid #a9cde6;
+	border-bottom:1px solid #a9cde6
+}
+.selectBagBox .selectHead a {
+	display:block;
+	background:#ddecf6;
+	color:#335d7a;
+	padding-left:20px;
+	font-weight:700;
+	outline:0
+}
+.selectBagBox .selectCont {
+	padding:8px
+}
+.selectBagBox .selectNav {
+	width:100%;
+	text-align:center;
+	height:25px;
+	line-height:25px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box
+}
+.selectBagBox .selectNav li {
+	width:25%;
+	float:left;
+	border:1px solid #a8a8a8;
+	border-right:0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#e6e6e6))
+}
+.selectBagBox .selectNav li.current {
+	border:1px solid #9d0000;
+	color:#fff;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#d5161d), to(#c6070e))
+}
+.selectBagBox .selectNav li.current:last-child {
+	border-right:1px solid #9d0000
+}
+.selectBagBox .selectNav li a {
+	color:#666;
+	display:block
+}
+.selectBagBox .selectNav li.current a {
+	color:#fff
+}
+.selectBagBox .selectNav li:last-child {
+	border-right:1px solid #a8a8a8
+}
+.selectBagBox .selectArrows {
+	display:block;
+	position:absolute;
+	top:4px;
+	right:5px;
+	width:20px;
+	height:20px;
+	text-align:center;
+	-webkit-border-radius:10px;
+	border:1px solid #aac8dc;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f6f9fc), to(#cee0ec))
+}
+.selectBagBox .selectArrows i {
+	width:16px;
+	height:16px;
+	display:inline-block;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/42.png?a1a4e8) no-repeat top center;
+	background-size:15px 15px
+}
+.selectBagBox .selectMainBox {
+	margin:8px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/43.png?a1a4e8) repeat
+}
+.selectBagBox .selectMainBox li {
+	padding:8px 8px 5px;
+	height:16px;
+	line-height:16px;
+	float:left
+}
+.selectBagBox .selectMainBox li a {
+	display:inline-block;
+	border-right:1px solid #bababa;
+	padding-right:12px
+}
+.selectBagBox .selectMainBox li:last-child a {
+	border-right:none
+}
+#detailBox .detailTit {
+	padding:2px 0 10px
+}
+#detailBox .detailImg {
+	overflow:hidden;
+	height:320px;
+	width:278px;
+	margin:0 auto
+}
+#detailBox .detailPrice {
+	height:30px;
+	line-height:30px;
+	background:#e81a22;
+	color:#fff;
+	text-align:center;
+	padding:5px 0
+}
+#detailBox .detailPrice span {
+	padding:0 5px
+}
+#detailBox .detailPrice em {
+	font-weight:700;
+	font-size:14px
+}
+#detailBox .detailPrice s {
+	text-decoration:line-through;
+	color:#fce2e3
+}
+#detailBox .detailColor {
+	min-height:40px;
+	line-height:40px;
+	position:relative
+}
+#detailBox .detailColorL {
+	width:60px;
+	position:absolute
+}
+#detailBox .detailColorR {
+	padding-left:65px
+}
+#detailBox .detailColorList li {
+	width:40px;
+	height:40px;
+	float:left;
+	border:2px solid #e8e8e8;
+	margin:0 0 5px 5px;
+	cursor:pointer
+}
+#detailBox .detailColorList li.select {
+	border:2px solid #e81a22
+}
+#detailBox .detailNumber li {
+	height:30px;
+	line-height:30px;
+	float:left;
+	margin-right:20px
+}
+#detailBox .detailNumber li span {
+	padding-left:8px
+}
+#detailBox .detailBtn {
+	padding:5px 2px 15px
+}
+#detailBox .detailBtn img {
+	width:113px;
+	height:26px
+}
+#detailBox .detailBtn a {
+	outline:0
+}
+#detailBox .detailAttr {
+	padding:0 2px
+}
+#detailBox .detailAttr h4 {
+	color:#666;
+	padding:8px 0;
+	border-top:1px solid #e8e8e8
+}
+#detailBox .detailAttrList {
+	width:100%;
+	padding:8px 0;
+	border-top:1px solid #e8e8e8
+}
+#detailBox .detailAttrList li {
+	width:50%;
+	float:left;
+	line-height:25px
+}
+#detailBox .detailBtnBot {
+	padding:10px 2px 5px;
+	border-top:1px solid #e8e8e8
+}
+#detailBox .detailBtnL {
+	float:left
+}
+#detailBox .detailBtnR {
+	float:right
+}
+#detailBox #imgBlockBox div.moveWrap {
+	width:100%;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	height:272px
+}
+#commentBox {
+	width:100%;
+	padding:8px 0
+}
+#commentBox .commentRate {
+	float:left;
+	width:50%
+}
+#commentBox .rateBox {
+	width:50px;
+	height:44px;
+	border:2px solid #ed1c24;
+	padding-top:6px;
+	text-align:center;
+	display:inline-block;
+	float:left
+}
+#commentBox .rateBox em, #commentBox .rateBox span {
+	display:block
+}
+#commentBox .rateBox span {
+	color:#484848
+}
+#commentBox .rateBox em {
+	color:#ed1c24;
+	font-weight:700
+}
+#commentBox .rateInfoBox {
+	display:inline-block;
+	text-align:left;
+	float:left;
+	padding-left:10px
+}
+#commentBox .rateInfoBox p {
+	line-height:18px
+}
+#commentBox .commentBtn {
+	float:right;
+	width:50%;
+	text-align:right;
+	padding-top:10px
+}
+#commentBox .commentBtn span {
+	display:inline-block
+}
+.commentList {
+	clear:both;
+	border-bottom:1px solid #e8e8e8;
+	margin:5px 0 8px
+}
+.commentList li {
+	padding-bottom:8px
+}
+.commentList .commentHead {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/24.png?a1a4e8) 8px 8px no-repeat #e1f0f5;
+	height:25px;
+	line-height:25px;
+	padding-left:25px;
+	color:#415969;
+	background-size:11px 11px;
+	position:relative
+}
+.commentList .commentCont {
+	line-height:20px
+}
+.commentList .commentDate {
+	padding:5px 0 3px;
+	color:#627379
+}
+.qaListBox {
+	padding:8px
+}
+.qaList {
+	clear:both;
+	border-bottom:1px solid #e8e8e8;
+	margin:5px 0 8px
+}
+.qaTit {
+	padding:10px 0 0;
+	font-size:14px;
+	font-weight:700;
+	text-align:center
+}
+.qaList li {
+	padding-bottom:8px
+}
+.qaList .qaHead {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/37.png?a1a4e8) 8px 8px no-repeat #e1f0f5;
+	height:25px;
+	line-height:25px;
+	padding-left:25px;
+	color:#415969;
+	background-size:11px 11px;
+	position:relative
+}
+.qaList .qaCont {
+	line-height:20px;
+	padding:8px 0 8px 25px
+}
+.qaList .qaCont .q {
+	color:#ff1d26
+}
+.qaList .qaCont .a {
+	color:#2c5377;
+	padding-top:5px
+}
+.qaList .qaDate {
+	color:#627379;
+	position:absolute;
+	top:0;
+	right:5px
+}
+.setBox header {
+	padding:5px 8px;
+	margin-top:10px;
+	background:#ececec
+}
+.setBox .setCont {
+	padding:8px
+}
+.setBox .setText {
+	height:25px;
+	line-height:25px;
+	padding:3px;
+	width:100%;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box
+}
+.setBox .setType li {
+	height:20px;
+	padding:5px 10px;
+	cursor:pointer
+}
+.setBox .setType input {
+	vertical-align:middle
+}
+.setBox .setType label {
+	padding-left:8px;
+	cursor:pointer;
+	display:inline-block;
+	vertical-align:middle
+}
+.userCenterInfoBox {
+	width:90%;
+	margin:15px auto;
+	overflow:hidden
+}
+.userCenterInfoBox .userHead {
+	width:35%;
+	border:3px solid #e8e8e8;
+	float:left;
+	-webkit-box-sizing:border-box
+}
+.userCenterInfoBox .userInfo {
+	float:left;
+	margin-left:10px;
+	text-align:left;
+	width:60%;
+	-webkit-box-sizing:border-box
+}
+.userCenterInfoBox .userInfo dt {
+	height:25px;
+	line-height:25px;
+	background:#d9e4f2;
+	color:#2f5d96;
+	padding:0 30px 0 20px;
+	margin-bottom:5px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap
+}
+.userCenterInfoBox .userInfo dd {
+	height:20px;
+	line-height:20px;
+	display:block;
+	padding:0 30px 0 20px;
+	border-bottom:1px dotted #d6d6d6
+}
+.userCenterSubBox {
+	background:#fff;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999
+}
+.userCenterSubBox li {
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid #d1d1d1;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/25.png?a1a4e8) no-repeat center right;
+	background-size:23px 15px
+}
+.userCenterSubBox li a {
+	padding-left:40px;
+	display:block;
+	background-size:20px 20px
+}
+.userSub1 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/26.png?a1a4e8) no-repeat 10px 10px
+}
+.userSub2 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/27.png?a1a4e8) no-repeat 10px 10px
+}
+.userSub3 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/28.png?a1a4e8) no-repeat 10px 10px
+}
+.userSub4 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/29.png?a1a4e8) no-repeat 10px 10px
+}
+.userSub5 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/30.png?a1a4e8) no-repeat 10px 10px
+}
+.userSub6 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/31.png?a1a4e8) no-repeat 10px 10px
+}
+.userSub7 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/32.png?a1a4e8) no-repeat 10px 10px
+}
+.userSub8 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/33.png?a1a4e8) no-repeat 10px 10px
+}
+.userCenterSubBox li .userSub9 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/16copy.png?a1a4e8) no-repeat 10px 13px;
+	background-size:18px 15px
+}
+.userCenterSubBox .loginOut {
+	padding:20px;
+	text-align:center
+}
+.cartSuccessBox {
+	padding:10px;
+	padding-bottom:0
+}
+.cartSuccessBox .cartSuccess {
+	border:1px solid #d7d7d7;
+	padding:5px 10px
+}
+.cartSuccessBox .cartRedTit {
+	color:red;
+	text-align:center;
+	padding:10px 0 20px
+}
+.cartSuccessBox .cartSuccess li {
+	padding:5px 0;
+	text-align:left;
+	color:#507490;
+	border-bottom:1px dotted #d7d7d7
+}
+.cartSuccessBox .cartSuccess li:last-child {
+	border-bottom:none
+}
+.userAddressList li {
+	padding-bottom:10px
+}
+.userAddressList .select header {
+	background:#b8d6e1;
+	color:#375667
+}
+.userAddressList header {
+	background:#ececec;
+	height:35px;
+	line-height:35px;
+	padding-left:40px;
+	position:relative
+}
+.userAddressList li:first-child header {
+	-webkit-border-radius:5px 5px 0 0
+}
+.userAddressList p {
+	padding:5px 0;
+	line-height:20px;
+	padding-left:10px;
+	border-bottom:1px dotted #d9d9d9
+}
+.userAddressList p:last-child {
+	border-bottom:none
+}
+.userAddressList .btnEdit {
+	position:absolute;
+	top:5px;
+	right:5px
+}
+.userAddressList .btnDelete {
+	position:absolute;
+	text-indent:-999em;
+	top:8px;
+	left:10px;
+	display:block;
+	width:20px;
+	height:20px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/34.png?a1a4e8) no-repeat;
+	background-size:20px 20px;
+	cursor:pointer
+}
+.btnCenterBox {
+	padding:20px;
+	text-align:center;
+	border-top:1px solid #d0d0d0
+}
+.addressInfo {
+	text-align:center
+}
+.addressInfo li {
+	width:100%;
+	display:inline-block;
+	padding:5px;
+	-webkit-box-sizing:border-box
+}
+.addressInfo label {
+	text-align:left;
+	display:inline-block;
+	width:60px
+}
+.addressInfo span {
+	display:inline-block
+}
+.addressInfo input {
+	height:24px;
+	line-height:24px;
+	border:2px solid #8badc2;
+	width:190px
+}
+.addressInfo select {
+	height:24px;
+	line-height:24px;
+	border:2px solid #8badc2;
+	width:194px
+}
+.addressInfo textarea {
+	height:80px;
+	line-height:20px;
+	border:2px solid #8badc2;
+	width:190px
+}
+.addressInfo .textareaLable {
+	position:relative;
+	display:inline-block;
+	height:80px;
+	line-height:80px
+}
+.addressInfo .textareaLable span {
+	position:absolute;
+	top:0;
+	left:0;
+	display:block
+}
+@media screen and (min-width:400px) {
+.addressInfo label {
+text-align:left;
+display:inline-block;
+width:80px
+}
+.addressInfo input {
+height:24px;
+line-height:24px;
+border:2px solid #8badc2;
+width:250px
+}
+.addressInfo select {
+height:24px;
+line-height:24px;
+border:2px solid #8badc2;
+width:254px
+}
+.addressInfo textarea {
+height:80px;
+line-height:24px;
+border:2px solid #8badc2;
+width:250px
+}
+}
+.userFeedBack header {
+	padding:5px 8px;
+	background:#ececec
+}
+.userFeedBack .feedBackCont {
+	padding:8px
+}
+.userFeedBack .feedBackText {
+	height:25px;
+	padding:3px;
+	width:100%;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box
+}
+.userFeedBack .feedBackTextarea {
+	height:80px;
+	padding:3px;
+	width:100%;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box
+}
+.userFeedBack .feedBackType li {
+	padding:5px 10px;
+	float:left;
+	cursor:pointer
+}
+.userFeedBack .feedBackType label {
+	padding-left:8px;
+	cursor:pointer
+}
+.userFeedBack .feedBackQ {
+	color:#7d2f2f;
+	padding-bottom:5px
+}
+.userFeedBack .feedBackA {
+	color:#3e5c8e
+}
+.userFeedBack .mdTime {
+	float:right
+}
+.feedBackPage {
+	padding:8px;
+	border-top:1px solid #d0d0d0
+}
+.mdInfoBox em {
+	color:#396597
+}
+.mdInfoBox .mdBalance {
+	padding-right:30px
+}
+.userMdList header {
+	padding:8px;
+	background:#ececec;
+	overflow:hidden
+}
+.userMdList .mdCont {
+	overflow:hidden;
+	padding:8px
+}
+.userMdList .mdCont .mdNum {
+	float:left;
+	font-size:14px;
+	font-weight:700
+}
+.userMdList .mdCont .mdNum em {
+	color:#b21f1b;
+	font-size:16px;
+	font-weight:700
+}
+.userMdList .mdCont .mdTime {
+	float:right
+}
+.userMdList .mdName .mdNum {
+	float:left;
+	color:#41789f
+}
+.userMdList .mdRedName {
+	float:left;
+	color:#e62231;
+	font-size:20px;
+	font-weight:bolder
+}
+.userMdList .couponId {
+	padding:0 0 0 10px
+}
+.userMdList .mdNameNumDot {
+	float:left;
+	font-size:15px;
+	color:#fff;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	background-color:#e62231;
+	margin-top:4px;
+	margin-left:4px;
+	-webkit-border-radius:12px
+}
+.userMdList .mdTime {
+	float:right;
+	color:#666
+}
+.userMdList li {
+	display:block;
+	border-bottom:1px dotted #d9d9d9
+}
+.userMdList li:last-child {
+	border-bottom:0
+}
+.userMdList .goodImg {
+	width:30%;
+	float:left
+}
+.userMdList .goodImg img {
+	border:2px solid #e8e8e8
+}
+.userMdList .goodInfo {
+	width:50%;
+	float:left;
+	padding-left:20px;
+	line-height:20px
+}
+.userMdList .goodInfo em {
+	list-style:none;
+	color:#ED1B23
+}
+.userMdList .goodTxtInfo {
+	width:100%;
+	float:left;
+	padding-left:0;
+	line-height:25px
+}
+.userMdList .goodGoInfo {
+	width:10%;
+	float:right;
+	display:block;
+	padding-top:25px;
+	line-height:25px
+}
+.userMdList .couponIntro {
+	color:#e62231;
+	font-family:Helvetica;
+	font-weight:bolder;
+	font-size:18px;
+	line-height:20px
+}
+.userMdList .btnDelete {
+	float:right;
+	text-indent:-999em;
+	display:block;
+	width:20px;
+	height:20px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/34.png?a1a4e8) no-repeat;
+	background-size:20px 20px;
+	cursor:pointer
+}
+.userMdList .deleItem {
+	width:10%;
+	float:right;
+	padding:30px 0 0
+}
+.goodOrderTotal {
+	line-height:25px
+}
+.queryTrackNum {
+	padding:15px 8px
+}
+.queryTrackNum label {
+	height:32px;
+	line-height:32px;
+	width:20%;
+	color:#418ec0
+}
+.queryTrackNum .queryTrackText {
+	height:24px;
+	line-height:24px;
+	border:2px solid #8badc2;
+	width:43%;
+	margin-right:10px
+}
+.sendOrderInfo {
+	border-top:1px solid #d0d0d0;
+	border-bottom:1px solid #d0d0d0;
+	padding:8px 0 8px 8px;
+	color:#ff1d26;
+	background:#ececec
+}
+.queryOrderInfo {
+	background:#fff;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999;
+	text-align:center;
+	padding:15px
+}
+.queryOrderInfo .myInfoBox {
+	padding:0 0 10px
+}
+.queryOrderInfo li {
+	height:40px;
+	line-height:40px;
+	border-bottom:1px dotted #d1d1d1
+}
+.queryOrderInfo .stress {
+	color:#3e5c8e
+}
+.queryOrderInfo li span {
+	position:relative
+}
+.queryOrderInfo li:last-child .arrows {
+	display:none
+}
+.queryOrderInfo .arrows {
+	display:block;
+	position:absolute;
+	left:40%;
+	top:28px;
+	border-width:8px;
+	border-color:#8c8c8c #fff #fff;
+	border-style:solid;
+	width:0;
+	height:0;
+	line-height:0
+}
+.queryOrderInfo .stress .arrows {
+	border-color:#718ebf #fff #fff
+}
+.commentGoodsBox {
+	padding:8px 0
+}
+.commentGoodsBox h3 {
+	padding:5px 0 10px;
+	font-size:14px;
+	font-weight:700;
+	text-align:center
+}
+.commentGoods {
+	padding:0 8px;
+	text-align:center
+}
+.commentGoods .commentGoodsImg {
+	border:3px solid #e8e8e8;
+	padding:0 30px
+}
+.commentGoods .commentGoodsName {
+	padding:8px 0 0
+}
+.commentGoodsList li {
+	padding:5px 8px;
+	display:block
+}
+.commentGoodsList li input {
+	vertical-align:middle;
+	margin-right:5px
+}
+.commentGoodsList li label {
+	cursor:pointer
+}
+.commentGoodsText {
+	border:1px solid #666;
+	width:96%;
+	margin:0 auto;
+	display:block;
+	height:100px;
+	padding:5px;
+	margin-bottom:5px
+}
+.commentSubmitBtn {
+	text-align:center;
+	padding:20px 0;
+	border-top:1px solid #e8e8e8
+}
+.productMod {
+	background:#fff;
+	-webkit-box-shadow:0 1px 3px #999;
+	padding:8px;
+	border-radius:5px
+}
+.productMod h3 {
+	height:30px;
+	line-height:20px;
+	color:#333;
+	padding:0 5px;
+	position:relative
+}
+.helpMod {
+	background:#fff;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999
+}
+.helpMod .mbHd {
+	text-align:center;
+	padding:8px 0;
+	border-bottom:1px solid #d6d6d6
+}
+.helpMod .helpHead {
+	font-size:12px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/38.png?a1a4e8) no-repeat 0 2px;
+	background-size:15px 15px;
+	display:inline-block;
+	padding-left:20px;
+	font-weight:400
+}
+.helpMod .mbBd {
+	padding:8px
+}
+.helpCenterBox .mbBd {
+	padding:8px;
+	display:none
+}
+.helpCenterBox {
+	background:#fff;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999
+}
+.helpCenterBox li {
+	height:40px;
+	line-height:40px;
+	color:#405f73;
+	border-bottom:1px solid #d1d1d1;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/25.png?a1a4e8) no-repeat center right;
+	background-size:23px 15px
+}
+.helpCenterBox li:last-child {
+	border-bottom:none
+}
+.helpCenterBox li a {
+	color:#405f73;
+	padding-left:12px;
+	display:block;
+	background-size:20px 20px
+}
+.helpCenterBox .help-hover {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/25down.png?a1a4e8) no-repeat center right;
+	background-size:23px 15px
+}
+.helpInfo .helpTitle {
+	display:block;
+	height:30px;
+	line-height:30px;
+	background:#fff;
+	padding:1px 0;
+	position:relative;
+	border-top:1px solid #A9CDE6;
+	border-bottom:1px solid #A9CDE6
+}
+.helpInfo .helpTitle .txt {
+	display:block;
+	cursor:pointer;
+	background:#DDECF6;
+	color:#335D7A;
+	padding-left:20px;
+	font-weight:700;
+	outline:0;
+	line-height:30px
+}
+.helpMod .helpCont {
+	display:none;
+	padding:8px
+}
+.helpInfo .helpArrow {
+	display:block;
+	position:absolute;
+	top:4px;
+	right:5px;
+	width:20px;
+	height:20px;
+	text-align:center;
+	-webkit-border-radius:10px;
+	border:1px solid #AAC8DC;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#F6F9FC), to(#CEE0EC))
+}
+.helpInfo .helpArrow i {
+	width:16px;
+	height:16px;
+	display:inline-block;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/42.png?a1a4e8) no-repeat top center;
+	background-size:15px 15px
+}
+.helpMod .helpBd {
+	padding-left:0;
+	padding-right:0
+}
+.helpCont .mdCont p {
+	line-height:14px
+}
+.downLoadImg {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f1f1f1));
+	-webkit-border-radius:5px 5px 0 0
+}
+.downLoadImg img {
+	width:100%;
+	-webkit-border-radius:5px 5px 0 0
+}
+.downLoadTxt {
+	text-align:center;
+	padding:10px 0;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#fefefe), to(#f6f6f6))
+}
+.applyDownLoad {
+	width:100%;
+	-webkit-box-sizing:border-box
+}
+.applyDownLoad li {
+	width:50%;
+	float:left;
+	height:40px;
+	line-height:40px;
+	-webkit-box-sizing:border-box;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f6f6f6), to(#ebebeb));
+	-webkit-box-shadow:0 0 3px #999;
+	font-size:16px;
+	text-align:center
+}
+.applyDownLoad li a {
+	display:inline-block;
+	background-size:30px 30px;
+	padding-left:30px
+}
+.applyDownLoad .liL {
+	border-left:none
+}
+.applyDownLoad .liR {
+	border-left:none;
+	border-right:none
+}
+.applyDownLoad .liIP {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/39.png?a1a4e8) no-repeat 0 2px
+}
+.applyDownLoad .liAND {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/40.png?a1a4e8) no-repeat 0 2px
+}
+.serviceTel {
+	background:#DDECF6;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999;
+	padding:8px;
+	text-align:center;
+	color:#335D7A;
+	font-weight:700
+}
+.tabMod .modHd {
+	background:0 0
+}
+.tabMod .modBd {
+	-webkit-box-shadow:0 1px 2px #999;
+	-webkit-border-radius:0 0 5px 5px;
+	padding:8px 13px
+}
+.tabMod .modTab {
+	background:#666;
+	border-radius:5px 5px 0 0;
+	-webkit-border-radius:5px 5px 0 0;
+	height:30px;
+	line-height:30px;
+	width:100%;
+	margin:0;
+	padding:0;
+	overflow:hidden
+}
+.tabMod .modTab li {
+	width:25%;
+	float:left;
+	border-right:1px solid #fff;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	height:30px
+}
+.tabMod .modTab li a, .tabMod .modTab li a:hover {
+	display:block;
+	color:#fff;
+	text-decoration:none;
+	text-align:center
+}
+.tabMod .modTab .current a, .tabMod .modTab .current a:hover {
+	color:#666;
+	background:#fff
+}
+.tabMod .modTab li:first-child {
+	-webkit-border-radius:4px 0 0
+}
+.tabMod .modTab li:last-child {
+	border-right:0
+}
+.tabMod .modTab span {
+	display:inline-block;
+	padding-left:25px;
+	padding-right:10px
+}
+.tabMod .modTab li .navTab1 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/s_tag_21.png?a1a4e8) no-repeat 6px 7px;
+	background-size:12px 14px
+}
+.tabMod .modTab li .navTab2 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/19.png?a1a4e8) no-repeat 6px 7px;
+	background-size:15px 15px
+}
+.tabMod .modTab li .navTab3 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/s_tag_93.png?a1a4e8) no-repeat 6px 7px;
+	background-size:13px 14px
+}
+.tabMod .modTab li .navTab4 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/21.png?a1a4e8) no-repeat 6px 7px;
+	background-size:15px 15px
+}
+.tabMod .modTab .current .navTab1 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/18.png?a1a4e8) no-repeat 6px 7px;
+	background-size:15px 15px
+}
+.tabMod .modTab .current .navTab2 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/s_tag_20.png?a1a4e8) no-repeat 6px 7px;
+	background-size:12px 14px
+}
+.tabMod .modTab .current .navTab3 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/s_tag_14.png?a1a4e8) no-repeat 6px 7px;
+	background-size:13px 14px
+}
+.tabMod .modTab .current .navTab4 {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/s_tag_16.png?a1a4e8) no-repeat 6px 7px;
+	background-size:12px 15px
+}
+.tabMod .modTabShow {
+	width:100%;
+	overflow:hidden;
+*zoom:1;
+	-webkit-box-sizing:border-box
+}
+.tabMod .modTabShow .modTabActBox {
+	padding:5px 0
+}
+.tabMod .modTabShow .imgShow {
+	width:30%;
+	float:left
+}
+.tabMod .modTabShow .imgShow img {
+	width:100%
+}
+.tabMod .modTabShow .textShow {
+	width:70%;
+	float:left;
+	padding-left:10px;
+	-webkit-box-sizing:border-box
+}
+.tabMod .modTabShow .textShow h4 {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	font-size:12px;
+	font-weight:700
+}
+.modTabThree {
+	background:#666;
+	border-radius:5px 5px 0 0;
+	-webkit-border-radius:5px 5px 0 0;
+	height:30px;
+	line-height:30px;
+	width:100%;
+	margin:0;
+	padding:0;
+	overflow:hidden
+}
+.modTabThree li {
+	width:33%;
+	float:left;
+	border-right:1px solid #fff;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	height:30px
+}
+.modTabThree li a, .modTabThree li a:hover {
+	display:block;
+	color:#fff;
+	text-decoration:none;
+	text-align:center
+}
+.modTabThree .current a, .modTabThree .current a:hover {
+	color:#666;
+	background:#fff
+}
+.modTabThree li:first-child {
+	-webkit-border-radius:4px 0 0
+}
+.modTabThree li:last-child {
+	border-right:0
+}
+.modTabThree span {
+	display:inline-block;
+	padding-left:25px;
+	padding-right:10px
+}
+.activeInfo .modHd {
+	padding:8px;
+	-webkit-border-radius:5px 5px 0 0;
+	background:#fff;
+	text-align:center;
+	line-height:20px
+}
+.activeInfo .aCont {
+	padding:8px;
+	-webkit-border-radius:0 0 5px 5px;
+	background:#fff;
+	line-height:20px;
+	-webkit-box-shadow:0 2px 3px #999
+}
+.modHd .listIcon {
+	height:20px;
+	position:absolute;
+	top:5px;
+	right:6px;
+	padding:0 5px;
+	border:1px solid #cdcdcd;
+	font-weight:400;
+	line-height:18px;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#E6E6E6));
+	-webkit-box-sizing:border-box;
+	-webkit-box-shadow:0 1px 0 #A8A8A8;
+	-webkit-border-radius:1px
+}
+.listPage {
+	position:relative;
+	height:25px;
+	padding:10px 0 0;
+	text-align:center
+}
+.listPage .prev {
+	display:block;
+	width:80px;
+	height:25px;
+	border:1px solid #cdcdcd;
+	position:absolute;
+	top:5px;
+	left:0;
+	line-height:24px;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#E6E6E6));
+	-webkit-box-sizing:border-box;
+	-webkit-box-shadow:0 1px 0 #A8A8A8;
+	-webkit-border-radius:2px
+}
+.listPage .prev .arrowL {
+	display:block;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/arrow_03.png?a1a4e8) no-repeat 6px 8px;
+	background-size:10px 10px;
+	text-shadow:0 2px 0 #fff
+}
+.listPage .next {
+	display:block;
+	width:80px;
+	height:25px;
+	border:1px solid #cdcdcd;
+	position:absolute;
+	top:5px;
+	right:0;
+	line-height:24px;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#E6E6E6));
+	-webkit-box-sizing:border-box;
+	-webkit-box-shadow:0 1px 0 #A8A8A8;
+	-webkit-border-radius:2px
+}
+.listPage .next .arrowR {
+	display:block;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/arrow_05.png?a1a4e8) no-repeat 60px 8px;
+	background-size:10px 10px;
+	text-shadow:0 2px 0 #fff
+}
+.listTab {
+	position:relative
+}
+.listTab .listArrow {
+	display:block;
+	width:100%;
+	height:8px;
+	position:absolute;
+	bottom:-8px;
+	left:0;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/list_arrow.png?a1a4e8) no-repeat center 0;
+	background-size:15px 8px
+}
+.listTab .modTab li {
+	width:50%;
+	float:left;
+	height:30px;
+	text-align:center
+}
+.listTab .modTab li a {
+	display:block;
+	padding:5px 0 0;
+	background:#666;
+	height:25px;
+	color:#fff
+}
+.listTab .modTab li:first-child a {
+	-webkit-border-radius:5px 0 0
+}
+.listTab .modTab li:last-child a {
+	-webkit-border-radius:0 5px 0 0
+}
+.listTab .modTab li .current {
+	background:#fff;
+	color:#666
+}
+.listTab .modTableShow {
+	-webkit-border-radius:0 0 5px 5px;
+	padding:8px;
+	-webkit-box-shadow:0 2px 3px #999;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#E6E6E6))
+}
+.listTab .modSubTab li {
+	float:left;
+	width:33.3%
+}
+.listTab .modSubTab li a {
+	display:block;
+	padding:3px 0 0;
+	height:22px;
+	text-align:center;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#E6E6E6));
+	border:1px solid #bdbdbd;
+	border-right:0;
+	-webkit-box-shadow:0 1px 0 #A8A8A8
+}
+.modSubTab li:first-child a {
+	-webkit-border-radius:2px 0 0 2px
+}
+.modSubTab li:last-child a {
+	-webkit-border-radius:0 2px 2px 0;
+	border:1px solid #bdbdbd
+}
+.listTab .modSubTab li .current {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#d5161d), to(#c6070e));
+	color:#fff;
+	border:1px solid #9d0000
+}
+.limitedPro {
+	background:#fff
+}
+.limitedPro li {
+	border-top:2px solid #e6e6e6;
+	padding:15px 0 0 5px;
+	-webkit-box-sizing:border-box
+}
+.limitedPro .goodImg {
+	float:left;
+	background:#fff;
+	width:41.2%
+}
+.limitedPro .goodImg img {
+	border:2px solid #E8E8E8
+}
+.limitedPro .promotInfo {
+	float:left;
+	width:58.8%;
+	height:100%;
+	padding:0 0 0 6px;
+	line-height:1.5;
+	-webkit-box-sizing:border-box
+}
+.limitedPro .getBuy {
+	clear:left
+}
+.limitedPro .first {
+	padding:30px 0 0 5px;
+	border-top:0;
+	-webkit-box-sizing:border-box
+}
+.promotInfo .time {
+	height:57px;
+	background:#fff3eb;
+	font-size:12px;
+	color:#474747;
+	padding:10px 0 0 5px;
+	-webkit-box-sizing:border-box;
+	border-bottom:1px dashed #e6e6e6
+}
+.promotInfo .time .lightRed {
+	color:#f2545a
+}
+.promotInfo .name {
+	color:#666;
+	padding:10px 0 0 5px;
+	-webkit-box-sizing:border-box
+}
+.promotInfo .name .mbPrice {
+	text-decoration:line-through
+}
+.promotInfo .showComment {
+	height:auto;
+	padding-bottom:10px
+}
+.getBuy .price {
+	float:left;
+	width:50%;
+	height:47px;
+	color:#ef0a07;
+	font-size:12px;
+	padding:5px 0 0 5px;
+	-webkit-box-sizing:border-box
+}
+.getBuy .price .bigNum {
+	font-size:25px
+}
+.getBuy .quickBuyBox {
+	float:left;
+	width:50%;
+	padding:5px 0 0 5px;
+	-webkit-box-sizing:border-box
+}
+.getBuy .quickBuy {
+	display:block;
+	width:90px;
+	height:30px;
+	line-height:30px;
+	padding:0 15px;
+	text-align:center;
+	color:#fff;
+	-webkit-border-radius:2px;
+	-webkit-box-shadow:0 1px 3px #444
+}
+.getBuy .quickBuy span {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/ico_jt.png?a1a4e8) no-repeat center right;
+	padding-right:12px;
+	padding-left:12px;
+	background-size:8px 8px
+}
+.tuanBtnBox {
+	text-align:center
+}
+.tuanBtnBox .quickBuyTuan {
+	display:inline-block;
+	width:70%;
+	height:30px;
+	line-height:30px;
+	padding:0 15px;
+	text-align:center;
+	color:#fff;
+	-webkit-border-radius:2px;
+	-webkit-box-shadow:0 1px 3px #444
+}
+.tuanBtnBox .quickBuyTuan span {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/ico_jt.png?a1a4e8) no-repeat center right;
+	padding-right:12px;
+	padding-left:12px;
+	background-size:8px 8px
+}
+.cart {
+	background:#fcf8e9;
+	-webkit-border-radius:5px
+}
+.cart .bgBlue {
+	background:#e9fcfb
+}
+.cart .bgWhite {
+	background:#fff
+}
+.cart .goodInfo {
+	line-height:20px
+}
+.btnDeleteYellow {
+	float:right;
+	text-indent:-999em;
+	display:block;
+	width:20px;
+	height:20px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/cart_icon_03.png?a1a4e8) no-repeat;
+	background-size:20px 20px;
+	cursor:pointer
+}
+.btnDeleteBlue {
+	float:right;
+	text-indent:-999em;
+	display:block;
+	width:20px;
+	height:20px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/cart_icon_13.png?a1a4e8) no-repeat;
+	background-size:20px 20px;
+	cursor:pointer
+}
+.cartInfo {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f1f1f1));
+	border-top:1px dotted #d9d9d9;
+	border-top:1px solid #d9d9d9;
+	text-align:center;
+	padding:10px 0;
+	-webkit-border-radius:0 0 5px 5px
+}
+.cartBtn {
+	padding:15px 15px 22px
+}
+.cartInfo p {
+	font-size:16px
+}
+.cartInfo .red {
+	color:#ef0a07
+}
+.numChange .numBtn {
+	display:block;
+	float:left;
+	width:15px;
+	height:15px;
+	border:1px solid #8da2a2;
+	-webkit-box-shadow:0 -2px 2px #999 inset;
+	-webkit-border-radius:2px;
+	text-indent:-9999em
+}
+.numChange .add {
+	background:#fff url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/cart_icon_07.png?a1a4e8) no-repeat 3px 3px;
+	background-size:8px 8px
+}
+.numChange .reduce {
+	background:#fff url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/cart_icon_09.png?a1a4e8) no-repeat 3px 3px;
+	background-size:8px 8px
+}
+.numChange .num {
+	float:left;
+	height:14px;
+	padding-top:1px
+}
+.numChange .numInput {
+	text-align:center;
+	vertical-align:top;
+	width:25px;
+	height:13px;
+	border:1px solid #96adad;
+	border-left:0;
+	border-right:0;
+	background:#e2eced;
+	font-size:12px;
+	color:#666;
+	margin:0;
+	padding:0
+}
+.hgPart {
+	padding:10px 0;
+	background:#fff;
+	-webkit-border-radius:5px;
+	text-align:center;
+	margin:10px 0 0;
+	-webkit-box-shadow:0 1px 3px #999
+}
+.hgPart .hgBtn {
+	padding:0 40px
+}
+.hgPart {
+	width:100%;
+	position:relative
+}
+.hgList {
+	width:85%;
+	margin:0 auto;
+	padding-left:2%
+}
+.hgList li {
+	float:left;
+	border:0;
+	padding:0 3px 0 0;
+	width:23.6%
+}
+.hgList .pic {
+	display:block;
+	border:3px solid #e3e3e3
+}
+.hgList .hgPrice {
+	color:#ef0a07;
+	font-size:14px
+}
+.hgList .current .pic {
+	border:3px solid #b4b4b4
+}
+.hgPart .prev {
+	position:absolute;
+	top:55px;
+	left:0;
+	display:block
+}
+.hgPart .next {
+	position:absolute;
+	top:55px;
+	right:0;
+	display:block
+}
+.hgPart .giftT {
+	color:#666;
+	font-weight:400;
+	font-size:14px;
+	padding:0 0 5px
+}
+.checkoutCenterList li {
+	padding-bottom:0;
+	border-bottom:1px solid #d0d0d0
+}
+.checkoutCenterList li:last-child {
+	border-bottom:none
+}
+.checkoutCenterList li:last-child header {
+	-webkit-border-radius:0 0 5px 5px
+}
+.checkoutCenterList .dotDecorationHead {
+	border-bottom:1px dotted #d9d9d9
+}
+.checkoutCenterList .solidDecorationHead {
+	border-bottom:1px solid #d9d9d9;
+	text-align:center;
+	color:#666;
+	margin-bottom:8px
+}
+.checkoutCenterList .steelbluetitle {
+	color:#3e5c8e
+}
+.checkoutCenterList header {
+	background:#fff;
+	height:35px;
+	line-height:35px;
+	padding-left:10px;
+	position:relative
+}
+.checkoutCenterList header .txt {
+	position:absolute;
+	top:0;
+	right:5px
+}
+.checkoutCenterList .nobottomBorder {
+	border-bottom:none
+}
+.checkoutCenterList li:first-child header {
+	-webkit-border-radius:5px 5px 0 0
+}
+.checkoutCenterList p {
+	padding:2px 0;
+	line-height:20px;
+	padding-left:10px
+}
+.checkoutCenterList section {
+	padding:10px
+}
+.checkoutCenterList .totalPriceShow {
+	padding:5px 0;
+	text-align:center;
+	font-size:18px
+}
+.checkoutCenterList .totalPriceShow .redRemind {
+	font-size:18px;
+	color:#e10000;
+	font-weight:bolder
+}
+.checkoutCenterList .btnEdit {
+	position:absolute;
+	top:5px;
+	right:5px
+}
+.checkoutCenterPricelist {
+	margin-top:9px
+}
+.checkoutCenterPricelist .modBtnWidth {
+	width:60%
+}
+.checkoutCenterList .bgArrow {
+	padding-right:10px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/arrow3.png?a1a4e8) no-repeat 26px 3px;
+	background-size:6px 9px
+}
+.checkoutCenterList .mdInput {
+	width:40px;
+	height:17px;
+	border:1px solid #6e86ae
+}
+.checkoutCenterList .mdCount {
+	padding:0 0 0 4px
+}
+.checkoutCenterList .checkoutShow {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#fbfbfb));
+	padding:5px 10px;
+	display:none;
+	-webkit-border-radius:0 0 5px 5px;
+	overflow:hidden
+}
+.checkoutShow .checkType {
+	padding:0 0 5px
+}
+.checkoutShow .checkType dt {
+	float:left;
+	padding:2px 0 0
+}
+.checkoutShow .checkType dd {
+	float:left
+}
+.checkoutShow .checkTitle {
+	padding:0 0 5px
+}
+.checkoutShow .checkTitle dt {
+	float:left;
+	padding:2px 0 0
+}
+.checkoutShow .checkTitle dd {
+	float:left
+}
+.checkoutShow .checkTitle .txt {
+	width:150px;
+	height:17px;
+	border:1px solid #6E86AE
+}
+.checkoutShow .checkInfo {
+	padding:0
+}
+.checkoutShow .msg {
+	width:100%;
+	height:50px;
+	-webkit-box-sizing:border-box;
+	resize:none
+}
+.contHide {
+	position:relative;
+	cursor:pointer
+}
+.contHide .tagShow {
+	display:block;
+	width:16px;
+	height:16px;
+	position:absolute;
+	top:10px;
+	right:10px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/cart_icon_07.png?a1a4e8) no-repeat;
+	background-size:13px 13px
+}
+.contHide .tagHide {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/cart_icon_09.png?a1a4e8) no-repeat;
+	background-size:13px 13px
+}
+.checkoutShow li {
+	border:0
+}
+.checkoutShow .payWay li {
+	float:left;
+	margin-right:10px
+}
+.checkoutShow .payWay .alipay {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/pay_01.png?a1a4e8) no-repeat;
+	background-size:13px 17px;
+	padding:0 0 0 18px
+}
+.checkoutShow .payWay .chinapay {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/pay_02.png?a1a4e8) no-repeat 0 2px;
+	background-size:18px 12px;
+	padding:0 0 0 22px
+}
+.checkoutShow .payWay .cod {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/pay_03.png?a1a4e8) no-repeat;
+	background-size:13px 17px;
+	padding:0 0 0 18px
+}
+.couponDetail {
+	text-align:center;
+	background:#fff;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999;
+	padding:15px 15px 10px
+}
+.couponDetail .coupon {
+	width:100%;
+	margin:0 auto
+}
+.couponDetail .coupon .title {
+	color:#E62231;
+	font-weight:700;
+	font-size:14px;
+	padding:0 0 10px
+}
+.couponDetail .couponItem {
+	padding:4px 0;
+	border-bottom:1px dotted #ccc
+}
+.couponDetail .couponItem:last-child {
+	border-bottom:0
+}
+.couponDetail .couponItem .red {
+	color:#E62231
+}
+.couponDetail .couponItem header {
+	display:block;
+	float:left;
+	text-align:right
+}
+.couponDetail .couponItem span {
+	display:block;
+	float:left;
+	text-align:left;
+	width:180px
+}
+.teleNum {
+	color:#ed1c24
+}
+.searchKeyWord {
+	margin-top:5px
+}
+.searchKeyWord .red {
+	color:#f41e1e
+}
+.appFloatWrap {
+	width:100%;
+	position:fixed;
+	top:auto;
+	bottom:0;
+	z-index:10000;
+	height:0;
+	height:0;
+	overflow:hidden
+}
+.appFloat {
+	-webkit-border-radius:5px 5px 0 0;
+	position:relative;
+	width:220px;
+	height:50px;
+	margin:0 auto;
+	border:1px solid #ccc;
+	padding:10px;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), color-stop(0.9, #ededed), to(#ededed))
+}
+.appFloat .floatLogo {
+	float:left;
+	width:50px;
+	padding:0 5px 0 0
+}
+.appFloat .floatTxt {
+	float:left;
+	width:160px
+}
+.appFloat .floatTxt p {
+	font-size:11px
+}
+.appFloat .floatTxt .plusSign {
+	display:inline-block;
+	width:10px;
+	height:10px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/plus_icon2.png?a1a4e8) no-repeat 2px 0;
+	background-size:10px 10px;
+	padding-left:2px
+}
+.appFloat .floatTxt .backSign {
+	display:inline-block;
+	width:16px;
+	height:12px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/plus_icon1.png?a1a4e8) no-repeat 2px 0;
+	background-size:16px 12px;
+	padding-left:2px
+}
+.appFloat .floatClose {
+	width:9px;
+	height:9px;
+	position:absolute;
+	top:7px;
+	left:225px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/floatpic3.png?a1a4e8) no-repeat;
+	background-size:9px 9px
+}
+.appFloat .floatarrow {
+	width:19px;
+	height:10px;
+	position:absolute;
+	bottom:-10px;
+	left:110px;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/floatpic4.png?a1a4e8) no-repeat;
+	background-size:19px 10px
+}
+.miss_goods {
+	overflow:hidden
+}
+.miss_goods a img {
+	background:#e8e8e8 url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/loading.png?a1a4e8) center center no-repeat;
+	background-size:130px 130px;
+	float:left;
+	margin-left:5px
+}
+.userMdList .mdSubclass i {
+	width:28px;
+	height:24px;
+	border-bottom:2px solid #ebeae8;
+	border-left:2px solid #ebeae8;
+	display:block;
+	float:left;
+	margin-top:12px;
+	margin-right:22px;
+	margin-left:30px
+}
+.userMdList .mdSubclass .goodImg {
+	width:15%
+}
+.userMdList .mdSubclass .goodInfo {
+	width:42%
+}
+.singleBuy {
+	border-top:1px solid #d9d9d9;
+	background-color:#fff;
+	padding-bottom:6px
+}
+.singleBuy h3 {
+	line-height:34px;
+	height:23px;
+	margin-left:10px
+}
+.singleBuy .exchange .goodInfo_01 {
+	height:42px;
+	overflow:hidden
+}
+.singleBuy .exchange .goodInfo_02 {
+	width:35%;
+	line-height:15px;
+	margin-top:15px
+}
+.singleBuy .exchange .addTrolley .modBtnColor {
+	padding:0 5px;
+	margin-top:15px
+}
+.singleBuy .replaceButtom {
+	width:290px;
+	background-color:#FFF;
+	border:1px solid #cfcfcf;
+	margin:0 auto;
+	overflow:hidden;
+	margin-bottom:10px;
+	-webkit-border-radius:2px;
+	-webkit-box-shadow:0 1px 3px #cfcfcf
+}
+.singleBuy .replaceButtom .topButtom {
+	float:left;
+	width:130px
+}
+.singleBuy .replaceButtom .topButtom img {
+	padding:7px 60px
+}
+.singleBuy .replaceButtom .showLayer {
+	width:28px;
+	line-height:25px;
+	height:25px;
+	float:left;
+	text-align:center;
+	font-size:12px
+}
+.singleBuy .replaceButtom .bottomButtom {
+	float:right;
+	width:130px
+}
+.singleBuy .replaceButtom .bottomButtom img {
+	padding:7px 60px
+}
+#detailBox .Present .favorable {
+	color:#c14948;
+	margin-left:5px;
+	font-weight:300
+}
+#detailBox .Present .goods {
+	border-top:1px solid #e8e8e8;
+	position:relative;
+	overflow:hidden
+}
+#detailBox .Present .goods .mainGoods {
+	width:50%;
+	border-right:1px solid #e8e8e8;
+	padding-top:15%;
+	padding-bottom:15%;
+	float:left
+}
+#detailBox .Present .goods .mainGoods img {
+	width:120px;
+	height:120px
+}
+#detailBox .Present .goods .mainGoods .mainPrice {
+	color:#c14948;
+	font-weight:bolder;
+	margin-left:31%
+}
+#detailBox .Present .goods .addGoods {
+	position:absolute;
+	top:36%;
+	left:47%;
+	background:#FFF;
+	padding-top:25px;
+	padding-bottom:25px
+}
+#detailBox .Present .goods .subclassGoods {
+	float:right;
+	width:115px
+}
+#detailBox .Present .goods .subclassGoods .replaceButton {
+	display:none
+}
+#detailBox .Present .goods .subclassGoods li {
+	display:block;
+	overflow:hidden;
+	margin-top:12px
+}
+#detailBox .Present .goods .subclassGoods li .chuangGoods {
+	float:left;
+	margin-top:38px
+}
+#detailBox .Present .goods .subclassGoods .goodsInfo {
+	width:75px;
+	float:right
+}
+#detailBox .Present .goods .subclassGoods .goodsInfo img {
+	width:75px;
+	height:80px
+}
+#detailBox .Present .goods .subclassGoods .goodsInfo .mainPrice {
+	color:#c14948
+}
+#detailBox .Present .goods .subclassGoods .goodsInfo .mainPrice del {
+	color:#bababa
+}
+#detailBox .Present .addTrolley {
+	background-color:#eee;
+	height:40px;
+	line-height:40px;
+	position:relative
+}
+#detailBox .Present .addTrolley .Price {
+	margin-left:8px
+}
+#detailBox .Present .addTrolley .modBtnColor {
+	padding:0 10px;
+	position:absolute;
+	right:10px;
+	top:7px;
+	height:25px;
+	line-height:25px
+}
+#detailBox .Present .addTrolley .modBtnColor2 {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#efefef));
+	color:#666;
+	border:1px solid #dcdcdc
+}
+#detailBox .Present .addTrolley .trolleyPrice {
+	color:#c14948;
+	font-weight:bolder
+}
+.detailAttr .detailAttrName {
+	position:relative
+}
+.detailAttr .haulBack img {
+	vertical-align:middle;
+	position:absolute;
+	right:5px;
+	top:9px;
+	padding:3px 8px
+}
+.detailAttr .detailAttrList {
+	display:none
+}
+#detailBox .Present .oneGoods .mainGoods {
+	padding-top:4%;
+	padding-bottom:4%
+}
+#detailBox .Present .oneGoods .subclassGoods {
+	margin-top:35px
+}
+#detailBox .Present .moreGoods {
+	height:336px;
+	overflow:hidden
+}
+#detailBox .Present .moreGoods .mainGoods {
+	padding-top:36%;
+	padding-bottom:36%;
+	border-right:1px solid #e8e8e8
+}
+#detailBox .Present .moreGoods .addGoods {
+	top:40%
+}
+#detailBox .Present .moreGoods .subclassGoods {
+	position:relative
+}
+#detailBox .Present .moreGoods .subclassGoods .replaceButton {
+	display:block;
+	width:134px;
+	height:27px;
+	border:1px solid #e8e8e8;
+	overflow:hidden;
+	position:absolute;
+	bottom:-40px;
+	right:1px
+}
+#detailBox .Present .moreGoods .subclassGoods .bottomButton, #detailBox .Present .moreGoods .subclassGoods .topButton {
+	float:left
+}
+#detailBox .Present .moreGoods .subclassGoods .bottomButton img, #detailBox .Present .moreGoods .subclassGoods .topButton img {
+	padding:0 29px
+}
+#detailBox .Present .moreGoods .subclassGoods ul li {
+	display:block;
+	overflow:hidden;
+	margin-top:0
+}
+.mbFooter .mbClassify {
+	width:100%;
+	height:30px;
+	background:#656565
+}
+.mbFooter .mbClassify ul {
+	width:304px;
+	margin:5px auto
+}
+.mbFooter .mbClassify ul li {
+	display:inline-block;
+	line-height:30px;
+	color:#f4f4f4;
+	height:30px;
+	font-size:12px;
+	width:40px;
+	text-align:center
+}
+.mbFooter .mbClassify ul li a {
+	color:#f4f4f4
+}
+.mbFooter .mbFeature {
+	width:290px;
+	margin:10px auto;
+	color:#8f8f8f;
+	font-size:12px
+}
+.mbFooter .mbIntroduce {
+	background:#f1f1f1;
+	line-height:30px;
+	height:30px;
+	color:#9d9c9c;
+	font-size:14px;
+	text-align:center;
+	margin-top:10px;
+	font-weight:bolder
+}
+.mbFooter .mbMenu {
+	background:#f1f1f1;
+	width:304px;
+	height:60px;
+	margin:20px auto;
+	-webkit-border-radius:5px;
+	border:1px solid #e3e3e3
+}
+.mbFooter .mbMenu ul {
+	width:278px;
+	margin:0 auto
+}
+.mbFooter .mbMenu ul li {
+	display:inline-block;
+	line-height:30px;
+	height:30px;
+	width:65px;
+	margin-left:25px
+}
+.mbFooter .mbMenu ul li a {
+	color:#666
+}
+.mbFooter .mbSupport {
+	width:304px;
+	margin:0 auto;
+	text-align:center;
+	line-height:30px;
+	padding-top:5px
+}
+.mbFooter .mbSupport span {
+	width:146px;
+	height:30px;
+	font-size:16px;
+	font-weight:bolder;
+	color:#666;
+	display:inline-block
+}
+.mbFooter .mbCopyright {
+	margin-top:0
+}
+.mbFooter .mbCopyright p {
+	text-align:center
+}
+.frameLoginBox .annotation {
+	margin-left:16px;
+	text-align:left;
+	font-size:12px
+}
+.frameLoginBox .fasterRegister {
+	padding:10px 0 5px;
+	border-top:1px solid #e8e8e8
+}
+.frameLoginBox .fasterRegister .f_head {
+	margin-left:20px;
+	text-align:left;
+	font-size:16px;
+	font-weight:bolder
+}
+.frameLoginBox .fasterRegister .f_head a {
+	color:#ff8827;
+	font-size:14px;
+	text-decoration:underline
+}
+.frameLoginBox .fasterRegister .f_main {
+	color:#a6a6a6;
+	width:240px;
+	margin:0 auto
+}
+#mbMain .frameChang {
+	border-bottom:1px solid #e8e8e8;
+	line-height:35px;
+	width:304px;
+	height:35px;
+	color:#484848;
+	font-weight:bolder;
+	border-top-left-radius:5px 5px;
+	border-top-right-radius:5px 5px;
+	overflow:hidden;
+	font-size:0;
+	-webkit-box-shadow:0 1px 3px #999
+}
+#mbMain .frameChang .emailRegister, #mbMain .frameChang .mobileRegister {
+	width:152px;
+	background:#FFF;
+	display:inline-block;
+	text-align:center;
+	font-size:12px;
+	cursor:pointer
+}
+#mbMain .frameChang .checkedRegister {
+	background:#a4a4a4
+}
+#mbMain .frameLoginChang .modBaseBox {
+	border-top-left-radius:0 0;
+	border-top-right-radius:0 0
+}
+#mbMain .frameLoginChang .modBaseBox #emailRegister, #mbMain .frameLoginChang .modBaseBox #mobileRegister {
+	display:none
+}
+#mbMain .frameLoginChang .btnLoginBox {
+	border-top:none;
+	padding:5px 0 25px
+}
+#mbMain .frameLoginChang .registInfo {
+	border-top:1px solid #e8e8e8;
+	padding:15px 20px 10px
+}
+#mbMain .frameLoginChang .registInfo h3 {
+	height:20px;
+	color:#666
+}
+.giftContent dd .txt {
+	width:145px
+}
+.giftContent dd .gbutton {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#489cd3), to(#3980af));
+	border:1px solid #2c6287;
+	height:21px;
+	color:#fff;
+	line-height:14px;
+	-webkit-border-radius:2px;
+	-webkit-box-shadow:0 1px 3px #444;
+	margin-left:10px
+}
+.userAddressList .newAddressList p {
+	border-bottom:none;
+	line-height:16px;
+	width:220px
+}
+.userAddressList .newAddressList {
+	border-bottom:1px solid #d0d0d0;
+	padding-top:5px;
+	position:relative
+}
+.userAddressList .newAddressList span {
+	position:absolute;
+	top:30px;
+	right:20px
+}
+.userAddressList .newAddressList span img {
+	width:30px;
+	height:30px
+}
+.newCenterBox {
+	border-top:none
+}
+.newCenterBox .modBtnColor {
+	font-weight:500;
+	font-size:12px;
+	line-height:25px;
+	text-align:center;
+	cursor:pointer;
+	width:60px;
+	height:25px;
+	background-image:-webkit-linear-gradient(top, #eee, #e9e9e9);
+	margin:0 auto;
+	border:1px solid #e2e1e1;
+	color:#747474;
+	-webkit-box-shadow:none
+}
+.M_classify {
+	background:#fff;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:0 1px 3px #999;
+	margin-top:8px;
+	overflow:hidden
+}
+.M_classify .M_class {
+	float:left;
+	height:160px;
+	width:41px;
+	text-align:center;
+	font-family:'微软雅黑';
+	font-weight:bolder;
+	position:relative
+}
+.M_classify .M_pink {
+	background:#f7808e;
+	color:#fff
+}
+.M_classify .M_class a {
+	position:absolute;
+	left:0
+}
+.M_classify .M_subclass ul .M_pink {
+	background:#f7808e
+}
+.M_classify .M_subclass ul .M_pink a {
+	color:#fff
+}
+.M_classify .M_blue {
+	background:#9abfe5;
+	color:#fff
+}
+.M_classify .M_subclass ul .M_blue {
+	background:#9abfe5
+}
+.M_classify .M_subclass ul .M_blue a {
+	color:#fff
+}
+.M_classify .M_cyan {
+	background:#a9d7b4;
+	color:#fff
+}
+.M_classify .M_subclass ul .M_cyan {
+	background:#a9d7b4
+}
+.M_classify .M_subclass ul .M_cyan a {
+	color:#fff
+}
+.M_classify .M_subclass ul .M_more {
+	background:#fff
+}
+.M_classify .M_subclass ul .M_more a {
+	text-decoration:underline
+}
+.M_classify .M_class a {
+	color:#fff;
+	font-size:24px
+}
+.M_classify .M_model {
+	float:left;
+	width:137px
+}
+.M_classify .M_model img {
+	width:137px;
+	height:160px
+}
+.M_classify .M_subclass {
+	float:left;
+	width:126px
+}
+.M_classify .M_subclass ul li {
+	float:left;
+	background:#ececec;
+	margin:7px;
+	padding:0 5px
+}
+.M_classify .M_subclass ul li a {
+	color:#353535;
+	line-height:25px
+}
+.pu_box {
+	width:286px;
+	display:none
+}
+.pu_box .pu_top {
+	width:285px;
+	height:34px;
+	background:#eeece1;
+	line-height:34px;
+	text-align:center;
+	font-size:12px;
+	color:#474747;
+	position:relative
+}
+.pu_box .pu_top a {
+	color:#474747;
+	font-weight:bolder;
+	text-decoration:underline
+}
+.pu_box .pu_main {
+	overflow:hidden;
+	color:#a8a8a8;
+	text-align:center
+}
+.pu_box .pu_main .pu_left {
+	float:left;
+	width:48%;
+	background:#f7f7f5;
+	padding-top:35px
+}
+.pu_box .pu_main .pu_left a {
+	background:#e5395b;
+	border:1px solid #e2e2e0;
+	color:#fff;
+	padding:12px 13px;
+	font-size:14px;
+	font-weight:bolder;
+	-webkit-border-radius:3px
+}
+.pu_box .pu_main .pu_left p {
+	padding:30px 0
+}
+.pu_box .pu_main .pu_right {
+	float:left;
+	width:48%;
+	background:#f7f7f5;
+	padding-top:35px
+}
+.pu_box .pu_main .pu_right a {
+	background:#fff;
+	border:1px solid #e2e2e0;
+	color:#616161;
+	padding:12px 13px;
+	font-size:14px;
+	font-weight:bolder;
+	-webkit-border-radius:3px
+}
+.pu_box .pu_main .pu_right p {
+	padding:30px 0
+}
+.pu_box .pu_top .pu_close {
+	width:18px;
+	height:18px;
+	border-radius:18px;
+	border:3px solid #fff;
+	position:absolute;
+	background:#272727;
+	cursor:pointer;
+	line-height:18px;
+	text-align:center;
+	color:#fff;
+	font-weight:bolder;
+	font-size:14px;
+	top:-12px;
+	right:-12px
+}
+.pu_box .pu_main .pu_gradient-shadow {
+	width:4%;
+	height:134px;
+	background:url(http://cca.mbaobao.com/mbaobao/201309/20130913/pu_back.jpg) repeat-y center;
+	background-color:#f7f7f5;
+	float:left
+}
+.simplemodal-overlay {
+	background-color:#000
+}
+.checkoutShow .payWay .online {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/pay_05.jpg?a1a4e8) no-repeat;
+	background-size:13px 17px;
+	padding:0 0 0 18px
+}
+.checkoutShow .payWay .business {
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/pay_04.jpg?a1a4e8) no-repeat;
+	background-size:14px 14px;
+	padding:0 0 0 18px
+}
+.cartSuccess .cartSuccessHead .cartSuccesstitle {
+	color:#3e5c8e;
+	background:url(http://cca.mbaobao.com/static/mod/page/mbbMobile/1.0.2/img/pay_05.jpg?a1a4e8) no-repeat;
+	background-size:14px 14px;
+	padding:0 0 0 18px
+}
+.modBtnWidth_short {
+	width:50%
+}
+html .ac-list-2 li {
+	width:49%;
+	display:inline-block;
+	float:none
+}
+.ac-page-2 {
+	max-width:640px;
+	min-width:320px;
+	margin:0 auto 10px
+}
+.ac-info-2 {
+	background:#FFF;
+	padding:10px;
+	border-bottom:1px solid #DDD
+}
+.M_advertis {
+	max-width:620px;
+	min-width:300px;
+	margin:0 auto;
+	padding:10px;
+	background:#fff
+}
+.M_advertis dt {
+	background-color:#e21a53;
+	font-size:18px;
+	height:30px;
+	line-height:30px;
+	padding-left:5px;
+	font-family:"微软雅黑";
+	color:#fff
+}
+.M_advertis dd {
+	margin-top:10px
+}
+.M_advertis .underway dd {
+	overflow:hidden
+}
+.M_advertis .underway .u_left {
+	float:left;
+	width:54%
+}
+.M_advertis .underway .u_right {
+	float:right;
+	width:45%;
+	overflow:hidden
+}
+.M_advertis .underway .u_right .u_top {
+	float:left
+}
+.M_advertis .underway .u_right .u_bottom {
+	float:left;
+	margin-top:10px
+}
+.M_advertis .equities {
+	margin-top:10px
+}
+@media only screen and (max-width:330px) {
+html .M_advertis .underway .u_left img {
+height:118px
+}
+}
+@media only screen and (min-width:640px) {
+html .M_advertis .underway .u_left img {
+height:234px
+}
+}
+@media only screen and (max-width:320px) {
+html .ac-list-2 .productImg {
+width:100%;
+height:100%
+}
+.modBd .modList li {
+width:50%
+}
+.modBd .brandList li {
+width:33%
+}
+}
+@media only screen and (min-width:321px) and (max-width:640px) {
+html .ac-list-2 .modList .productImg {
+width:100%;
+height:100%;
+margin:0 auto
+}
+.modBd .modList li {
+width:33.3%
+}
+.home .modBd .modList li, .modBd .brandList li {
+width:25%
+}
+}
+@media only screen and (min-width:641px) {
+html .ac-list-2 .modList .productImg {
+margin:0 auto;
+width:100%;
+height:100%
+}
+.modBd .brandList li {
+width:20%
+}
+.modBd .modList li {
+width:33.3%
+}
+.home .modBd .modList li {
+width:25%
+}
+body .miss_top li {
+width:19.5%;
+margin-left:0
+}
+body .miss_top li a {
+display:block;
+width:100%
+}
+body i.miss_arrow {
+left:48%
+}
+#detailBox .detailImg {
+overflow:hidden;
+height:510px;
+width:426px;
+margin:0 auto
+}
+#detailBox #imgBlockBox div.moveWrap {
+height:414px
+}
+body #rollCot div.moveWrap {
+width:500px
+}
+.tabMod .item_content img {
+width:100%
+}
+#detailBox .Present .moreGoods .mainGoods {
+padding-top:80px;
+padding-bottom:0;
+height:100%
+}
+#detailBox .Present .goods .mainGoods .mainPrice {
+display:block;
+margin-left:20px;
+text-align:center;
+width:80px;
+margin-right:10px
+}
+#detailBox .Present .goods .addGoods {
+left:49.5%
+}
+}
+@media only screen and (min-width:321px) and (max-width:640px) {
+#M_classifyMen .M_blue {
+float:left
+}
+#detailBox .Present .goods .mainGoods .mainPrice {
+display:block;
+margin-left:20px;
+text-align:center;
+width:80px;
+margin-right:10px
+}
+#detailBox .Present .moreGoods .mainGoods {
+padding-top:70px;
+padding-bottom:0;
+height:100%
+}
+#detailBox .Present .goods .addGoods {
+left:48.5%
+}
+}
+@media only screen and (min-width:641px) and (max-width:768px) {
+.M_class_box {
+overflow:hidden;
+background:#fff;
+-webkit-border-radius:5px;
+-webkit-box-shadow:0 1px 3px #999;
+margin-top:8px
+}
+.M_classify {
+float:left;
+-webkit-border-radius:0;
+border:0;
+margin-top:0;
+width:33%;
+-webkit-box-shadow:none
+}
+.M_classify .M_model {
+display:none
+}
+#M_classifyMen .M_blue, #M_classifyMen .M_subclass {
+float:left
+}
+#detailBox .Present .goods .mainGoods .mainPrice {
+display:block;
+margin-left:20px;
+text-align:center;
+width:80px;
+margin-right:10px
+}
+#detailBox .Present .goods .addGoods {
+left:48.8%
+}
+}
+@media only screen and (min-width:769px) and (max-width:960px) {
+.M_classify .M_model, .M_classify .M_model img {
+width:75px
+}
+.M_class_box {
+overflow:hidden;
+background:#fff;
+-webkit-border-radius:5px;
+-webkit-box-shadow:0 1px 3px #999;
+margin-top:8px
+}
+.M_classify {
+float:left;
+-webkit-border-radius:0;
+border:0;
+margin-top:0;
+width:33%;
+-webkit-box-shadow:none
+}
+#M_classifyMen .M_blue, #M_classifyMen .M_subclass {
+float:left
+}
+#detailBox .Present .goods .addGoods {
+left:49%
+}
+}
+@media only screen and (min-width:961px) {
+.M_class_box {
+overflow:hidden;
+margin-top:8px
+}
+.M_classify {
+float:left;
+width:33%
+}
+#M_classifyMen .M_blue, #M_classifyMen .M_subclass, .M_class_box .M_classify:first-child {
+float:left
+}
+.M_class_box .M_classify:nth-child(2) {
+float:left;
+margin-left:.5%
+}
+.M_class_box .M_classify:last-child {
+float:right
+}
+#detailBox .Present .goods .addGoods {
+left:49.2%
+}
+}

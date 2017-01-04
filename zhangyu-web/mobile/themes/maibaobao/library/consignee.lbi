@@ -1,0 +1,69 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div id="J-view" class="cart-view">
+	<div>
+    	<section class="cart-address-edit-view">
+        	<dl class="f-group">
+            	<dd class="f-box">
+                	<div id="j_region_select" class="region-select">
+                    	<!-- {if $real_goods_count gt 0} --> 
+    					<!-- 购物车中存在实体商品显示国家和地区 -->
+                    	<div class="rg-selects">
+                        	<select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')" class="rg-item rg-province">
+          						<option value="0">{$lang.please_select}{$name_of_region[0]}</option>
+          						<!-- {foreach from=$country_list item=country} -->
+          						<option value="{$country.region_id}"{if $country.region_id eq '1'} selected{/if}>{$country.region_name}</option>
+          						<!-- {/foreach} -->
+        					</select>
+                            <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')" class="rg-item rg-province">
+          						<option value="0">{$lang.please_select}{$name_of_region[1]}</option>
+          						<!-- {foreach from=$province_list item=province} -->
+          						<option value="{$province.region_id}" {if $consignee.province eq $province.region_id}selected{/if}>{$province.region_name}</option>
+          						<!-- {/foreach} -->
+        					</select>
+                            <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')" class="rg-item rg-city">
+          						<option value="0">{$lang.please_select}{$name_of_region[2]}</option>
+          						<!-- {foreach from=$city_list.$sn item=city} -->
+          						<option value="{$city.region_id}" {if $consignee.city eq $city.region_id}selected{/if}>{$city.region_name}</option>
+          						<!-- {/foreach} -->
+        					</select>
+                            <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none"{/if} class="rg-item rg-district">
+          						<option value="0">{$lang.please_select}{$name_of_region[3]}</option>
+          						<!-- {foreach from=$district_list.$sn item=district} -->
+          						<option value="{$district.region_id}" {if $consignee.district eq $district.region_id}selected{/if}>{$district.region_name}</option>
+          						<!-- {/foreach} -->
+        					</select>
+                        </div>
+                        <!-- {/if} -->
+                    </div>
+                </dd>
+                <dd class="f-box">
+                	<!-- {if $real_goods_count gt 0} --> 
+    				<!-- 购物车中存在实体商品显示详细地址 -->
+                    <textarea name="address"  id="address_{$sn}" placeholder="详细地址" rows="10" cols="30">{$consignee.address|escape}</textarea>
+                    <!-- {/if} -->
+                </dd>
+            </dl>
+            <dl class="f-group-l">
+            	<dd class="f-box">
+                	<div class="f-line-item" style="border: 1px solid #c8c8c8;">
+                    	<input name="consignee" type="text" class="inputBg" id="consignee_{$sn}" placeholder="收货人姓名">
+                    </div>
+                    <div class="f-line-item">
+                    	<input name="mobile" type="text" class="inputBg"  id="mobile_{$sn}" placeholder="收货人手机">
+                    </div>
+                </dd>
+            </dl>
+            <div class="f-btns">
+            	<button type="submit" class="btm btm-xl btm-red f-btn j_confirm" name="Submit" style=" border:none; display:inline">{$lang.shipping_address}</button>
+                <!-- {if $smarty.session.user_id gt 0 and $consignee.address_id gt 0} --> 
+  				<!-- 如果登录了，显示删除按钮 --> 
+  				<a  class="btn btn-info"  onclick="if (confirm('{$lang.drop_consignee_confirm}')) location.href='{:url('flow/drop_consignee',array('id'=>$this->_var['consignee']['address_id']))}'" >{$lang.drop}</a> 
+  				<!-- {/if} -->
+                <input type="hidden" name="step" value="consignee" />
+				<input type="hidden" name="act" value="checkout" />
+				<input name="address_id" type="hidden" value="{$consignee.address_id}" />
+            </div>
+        </section>
+    </div>
+</div>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.back_url}" />
+{/if}
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/others.css">
+<link rel="stylesheet" href="__TPL__/css/cart.css">
+<style type="text/css">
+html{ font-size:100px}
+</style>
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<div class="m-container">
+	<section class="container_wrap">
+    	<!-- {if $step eq "cart"} 购物车列表-->
+		<!-- #BeginLibraryItem "/flow_cart.dwt" --><!-- #EndLibraryItem -->
+		<!-- {/if} -->
+        
+        <!-- {if $step eq "checkout"} 开始订单确认界面 -->
+		<!-- #BeginLibraryItem "/flow_checkout.dwt" --><!-- #EndLibraryItem -->
+		<!-- {/if} -->
+        
+        <!-- {if $step eq "done"} 订单提交成功 -->
+		<!-- #BeginLibraryItem "/flow_done.dwt" --><!-- #EndLibraryItem -->
+		<!-- {/if} -->
+        
+        <!-- {if $step eq "consignee"} 开始收货人信息填写界面 -->
+		<!-- #BeginLibraryItem "/flow_consignee.dwt" --><!-- #EndLibraryItem -->
+		<!-- {/if} -->
+    </section>
+</div>
+
+
+
+
+<!-- {if $step eq "label_favourable"} 购物车中的优惠活动 -->
+<!-- #BeginLibraryItem "/flow_label_favourable.dwt" --><!-- #EndLibraryItem -->
+<!-- {/if} -->
+
+
+
+
+
+ 
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> 
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript" src="__PUBLIC__/js/shopping_flow.js"></script>
+
+<script>
+function back_goods_number(id){
+ var goods_number = document.getElementById('goods_number'+id).value;
+  document.getElementById('back_number'+id).value = goods_number;
+}
+function change_goods_number(type, id)
+{
+  var goods_number = document.getElementById('goods_number'+id).value;
+  if(type != 2){  back_goods_number(id) }
+  if(type == 1){  goods_number--;  }
+  if(type == 3){  goods_number++;  }
+  if(goods_number <=0 ){ goods_number=1; }
+  if(!/^[0-9]*$/.test(goods_number)){ goods_number = document.getElementById('back_number'+id).value; }
+  document.getElementById('goods_number'+id).value = goods_number;
+	$.post('{:url("flow/ajax_update_cart")}', {
+		rec_id : id,goods_number : goods_number
+	}, function(data) {
+		change_goods_number_response(data,id);
+	}, 'json');  
+} 
+// 处理返回信息并显示
+function change_goods_number_response(result,id)
+{
+	if (result.error == 0){
+		var rec_id = result.rec_id;
+		$("#goods_number_"+rec_id).val(result.goods_number);
+		document.getElementById('total_number').innerHTML = result.total_number;//更新数量
+		document.getElementById('goods_subtotal').innerHTML = result.total_desc;//更新小计
+		if (document.getElementById('ECS_CARTINFO')){
+			//更新购物车数量
+			document.getElementById('ECS_CARTINFO').innerHTML = result.cart_info;
+		}
+	}else if (result.message != ''){
+		alert(result.message);
+		var goods_number = document.getElementById('back_number'+id).value;
+ 		document.getElementById('goods_number'+id).value = goods_number;
+	}                
+}
+
+	/*点击下拉手风琴效果*/
+	$('.collapse').collapse()
+	$(".checkout-select a").click(function(){
+		if(!$(this).hasClass("select")){
+			$(this).addClass("select");
+		}else{	
+			$(this).removeClass("select");
+		}
+	});
+	
+</script>
+
+</body>
+</html>

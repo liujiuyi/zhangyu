@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$page_title}</title>
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="{$ectouch_css_path}">
+<link rel="stylesheet" href="__TPL__/css/user.css">
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+<link rel="stylesheet" href="__TPL__/css/common.css">
+<link rel="stylesheet" href="__TPL__/css/module.css">
+</head>
+<body>
+<header class="m-head">
+	<div class="head-layout">
+    	<a class="mbb-logo" href="index.php"></a>
+        <a class="user-cart" href="index.php?m=default&c=flow&a=cart">
+        	<span class="iconfont"></span>
+            <span id="num_card" class="cart-num">{insert name='cart_info_number'}</span>
+        </a>
+        <a class="iconfont user-center" href="index.php?m=default&c=user"></a>
+    </div>
+</header>
+<div id="mbSubTitle">
+	<section class="subTitleBox">
+        <a class="backBtn" href="javascript:history.go(-1);"></a>
+        <span>我的订单</span>
+		<a class="homeBtn" href="index.php"></a>
+    </section>
+</div>
+<div id="mbMain">
+	<section class="modEmptyBox">
+    	<div class="mbBd">
+        	<div style="height:5px"></div>
+            <section class="userMdList">
+                <ul>
+                   <li>
+                       <header>
+                            <span class="mdName">订单：{$order.order_sn} </span>
+							<span class="mdTime">{$order.formated_add_time}</span>
+                       </header>
+                       <div class="mdCont">
+                            <div class="goodTxtInfo">
+                                <p>
+									订单金额：
+									<em style="color:red;">{$order.formated_total_fee}</em>
+								</p>
+                                <p>
+                                	订单状态：{$order.order_status}
+                                </p>
+                                <p>
+                                	支付状态：{$order.pay_status}
+                                </p>
+                                <p>
+                                	物流状态：{$order.shipping_status}
+                                </p>
+                                {if $order.order_amount gt 0}
+	<section class="ect-padding-lr ect-padding-tb ect-margin-tb ect-margin-bottom0">{$order.pay_online}</section>
+  {/if}
+                                <div class="clearfix modTop">
+                                	<!-- {if $order.shipping_id > 0} -->
+                                    <a class="modBtnColor colorWhite modFeft" style="padding:0 30px; margin-right:20px" type="button" href="{:url('order_tracking', array('order_id'=>$this->_var['order']['order_id']))}">{$lang.order_tracking}</a>
+                                    <!-- {/if} -->
+                                    {$order.handler} 
+                                </div>
+                            </div>
+                       </div>
+                   </li>
+                   <li>
+                   		<header>
+							<span class="mdName">配送信息</span>
+						</header>
+                        <div class="mdCont">
+                        	<div class="goodTxtInfo">
+                            	<p>收货人：{$order.consignee}</p>
+                                <p>联系电话：{$order.mobile}</p>
+                                <!-- {if $order.exist_real_goods} -->
+                                <p>收货地址：{$order.address}</p>
+                                <!-- {/if} -->
+                            </div>
+                        </div>
+                   </li>
+                   <!-- {if $allow_edit_surplus} 如果可以编辑使用余额数 -->
+                   <li>
+                   	<header>
+							<span class="mdName">继续付款</span>
+						</header>
+                   	
+    <form action="{:url('user/edit_surplus')}" method="post" name="formFee" id="formFee">
+    <section class="order-detail-info ect-margin-tb" style="border-top:none; margin-top:0;">
+        <ul><li> <b class="pull-left"> {$lang.use_more_surplus}：</b><span><input name="surplus" class="ect-padding-lr" type="text" size="8" value="0" /></span>
+         <p class="ect-margin-tb">{$max_surplus}</p>
+         </li></ul>
+         </section>
+          <section class="ect-padding-lr ect-padding-tb ect-margin-tb ect-margin-bottom0" style=" text-align: right; padding: 15px;">
+         <input type="submit" name="Submit" class="btn btn-info ect-btn-info ect-colorf ect-bg" value="{$lang.button_submit}{$lang.use_surplus}" />
+         <input type="hidden" name="order_id" value="{$smarty.get.order_id}" />
+         </section>
+    </form>
+    
+                   </li>
+                   <!--{/if}-->
+                   <li>
+                   		<header>
+							<span class="mdName">其余信息</span>
+						</header>
+                        <div class="mdCont">
+                        	<div class="goodTxtInfo">
+                            	<p>{$lang.select_payment}：{$order.pay_name}</p>
+                                <p>{$pay_desc}</p>
+                                <p>{$lang.order_amount}：{$order.formated_order_amount}</p>
+                                <p><!-- {if $order.shipping_id > 0} -->{$lang.shipping}：{$order.shipping_name}<!-- {/if} --></p>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                   		<header>
+							<span class="mdName">商品明细</span>
+						</header>
+                        <!-- {foreach from=$goods_list item=goods} -->
+                        <div class="mdCont">
+                        	<div class="goodImg">
+                            	<a href="{:url('goods/index', array('id'=>$this->_var['goods']['goods_id']))}" target="_blank"><img src="{$goods.goods_thumb}" width="100%"></a>
+                            </div>
+                            <div class="goodInfo">
+                            	<p>{$goods.goods_name}{$goods.goods_attr}</p>
+                                <p>价格：{$goods.goods_price}</p>
+                                <p>购买数量：{$goods.goods_number}</p>
+                            </div>
+                        </div>
+                        <!--{/foreach}--> 
+                   </li>
+                </ul>
+                <div class="feedBackPage">
+                	<div class="goodOrderTotal">
+                    	<p class="ect-margin-tb">{$lang.goods_all_price}：<b class="ect-colory"> 
+        <!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} -->{$order.formated_goods_amount}</b>
+         - {$lang.discount}：<b class="ect-colory">{$order.formated_discount} </b><br>
+      	 <!-- {if $order.tax gt 0} --> 
+      + {$lang.tax}:<b class="ect-colory">{$order.formated_tax}</b><br>
+      <!-- {/if} --> 
+      <!-- {if $order.shipping_fee > 0} --> 
+      + {$lang.shipping_fee}:<b class="ect-colory">{$order.formated_shipping_fee}</b><br>
+      <!-- {/if} --> 
+      <!-- {if $order.insure_fee > 0} --> 
+      + {$lang.insure_fee}:<b class="ect-colory">{$order.formated_insure_fee}</b><br>
+      <!-- {/if} --> 
+      <!-- {if $order.pay_fee > 0} --> 
+      + {$lang.pay_fee}:<b class="ect-colory">{$order.formated_pay_fee}</b><br>
+      <!-- {/if} --> 
+      <!-- {if $order.pack_fee > 0} --> 
+      + {$lang.pack_fee}:<b class="ect-colory">{$order.formated_pack_fee}</b><br>
+      <!-- {/if} --> 
+      <!-- {if $order.card_fee > 0} --> 
+      + {$lang.card_fee}:<b class="ect-colory">{$order.formated_card_fee}</b>
+      <!-- {/if} --> 
+      </p>
+      					<p class="ect-margin-tb">
+      	 <!-- {if $order.money_paid > 0} --> 
+      - {$lang.order_money_paid}: <b class="ect-colory">{$order.formated_money_paid}</b><br>
+      <!-- {/if} --> 
+      <!-- {if $order.surplus > 0} --> 
+      - {$lang.use_surplus}: <b class="ect-colory">{$order.formated_surplus}</b><br>
+      <!-- {/if} --> 
+      <!-- {if $order.integral_money > 0} --> 
+      - {$lang.use_integral}: <b class="ect-colory">{$order.formated_integral_money}</b><br>
+      <!-- {/if} --> 
+      <!-- {if $order.bonus > 0} --> 
+      - {$lang.use_bonus}: <b class="ect-colory">{$order.formated_bonus}</b><br>
+      <!-- {/if} --> 
+      </p>
+      					<p class="ect-margin-tb">{$lang.order_amount}：<b class="ect-colory">{$order.formated_order_amount}</b><br><!-- {if $order.extension_code eq "group_buy"} --> 
+      {$lang.notice_gb_order_amount}<!-- {/if} --> </p>
+                    </div>
+                </div>
+            </section>            
+        </div>
+    </section>
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>
