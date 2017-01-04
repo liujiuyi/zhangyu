@@ -1,0 +1,29 @@
+{
+  "button": [
+    {
+      "name": "章鱼商城",
+      "type": "view",
+      "url": "http://zhangyu.tttalk.org/mobile/"
+    },
+    {
+      "name": "关于我们",
+      "type": "media_id",
+      "media_id": "WGAWVLWoemUSKCYPF7BzHkd6yFepA8NZ8yj0l8meMVs"
+    },
+    {
+      "name": "我的中心",
+      "sub_button": [
+        {
+          "type": "view",
+          "name": "商家注册",
+          "url": "http://zhangyu.tttalk.org/mobile/index.php?m=default&c=user&a=user_shop"
+        },
+        {
+          "type": "click",
+          "key":"my_qrcode",
+          "name": "我的二维码"
+        }
+      ]
+    }
+  ]
+}

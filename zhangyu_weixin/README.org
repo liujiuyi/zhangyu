@@ -1,0 +1,15 @@
+* 说明
+** 设置
+*** 基本配置 / 填写服务器配置
+URL服务器地址 http://wechat.tttalk.org/weixin/
+*** 接口权限>网页账号>网页授权获取用户基本信息 OAuth
+wechat.tttalk.org
+*** 公众号设置>JS接口安全域名
+wechat.tttalk.org
+*** 微信支付>开发配置
+http://wechat.tttalk.org/wxpay/
+
+** 安装
+ - npm install; bower install
+ - cp  config.json.sample config.json
+ - gulp less

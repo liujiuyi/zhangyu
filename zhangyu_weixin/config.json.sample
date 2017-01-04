@@ -1,0 +1,13 @@
+{
+  "host" : "mailto:oizhaolei@gmail.com",
+  "port" : 80,
+
+  "appId": "",
+  "appSecret": "",
+  "appToken": "",
+
+  "mch_id" : "",
+  "wxpay_api_secret" : "",
+
+  "session_secret" : ""
+}
